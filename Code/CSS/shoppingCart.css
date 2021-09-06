@@ -1,0 +1,82 @@
+.cartContainer{
+    margin-top: 200px;
+    width: 80%;
+    margin-bottom: 200px;
+}
+
+.tableContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 100%;
+}
+
+table.tableCart {
+    background-color: #FCF9F3;
+}
+
+.cartProduct{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.cartProductImage{
+    max-width: 50px;
+}
+
+.quantitySection {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+    max-width: 20%;
+}
+
+.quantitySelector {
+    width: 71px;
+    height: 24px;
+    border: solid 2px #0C3E30;
+    border-radius: 14px;
+    padding:5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+tr {
+    vertical-align: top;
+}
+
+.selector {
+    background-color: transparent;
+    border: none;
+    color: #0C3E30;
+}
+
+th, td {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 1px solid #D8D8D8;
+}
+
+.subtotalArea{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    width: 30%;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+.subtotalAmount{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 90%;
+}

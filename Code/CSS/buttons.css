@@ -1,0 +1,65 @@
+button.hoverAddToCart {
+    width: 300px;
+    height: 50px;
+    background-color: #FCF9F3;
+    border: 1px solid rgba(34, 66, 41);
+    border-radius: 50px;
+    position:absolute;
+    margin-top: 300px;
+    margin-left: 10px;
+    display:none;
+}
+
+button.hoverAddToCart:hover {
+    background-color: #faecd1;
+}
+
+.standard {
+width: 150px;
+height: 50px;
+border-radius: 35px;
+border:none;
+}
+
+.long {
+border-radius: 35px;
+border:none;
+width: 90%;
+height: 50px;
+}
+
+.coral {
+background-color: #FDB5B1;
+}
+
+.beige {
+    background-color: #FCF9F3;
+}
+
+.green {
+    background-color: rgba(34, 66, 41);
+}
+
+.green:hover {
+    background-color: rgb(89, 143, 101);
+}
+
+.marginTop {
+    margin:8px;
+}
+
+.doubleMarginTop {
+    margin-top:20px;
+}
+
+.noMarginLeftRight {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.coral:hover{
+    background-color: #f8d1ce;
+}
+.beige:hover {
+    background-color: #faecd0;
+}

@@ -1,0 +1,134 @@
+body.about {
+    background-color: #FCF9F3;
+    margin-top: 250px;
+}
+
+.skip-link {
+    background: white;
+    color: darkgreen;
+    font-weight: normal;
+    padding: 5px;
+    position: absolute;
+    left: 46%;
+    font-size: 16px;
+    font-size: 1rem;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+  }
+  
+  .skip-link:focus {
+    transform: translateY(0%);
+  }
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#aboutForm input {
+    padding: 10px;
+    background-color: #FCF9F3;
+    border: 1px solid #E0E0E0;
+    margin-top:6px;
+    margin-bottom: 6px;
+    width: 100%;
+}
+
+textarea {
+    padding: 10px;
+    background-color: #FCF9F3;
+    border: 1px solid #E0E0E0;
+    margin-top:6px;
+    margin-bottom: 6px;
+    width: 100%;
+}
+
+
+.aboutFormFields{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+#aboutForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 60%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.aboutContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 90%;
+    margin-bottom: 150px;
+    align-items: flex-start;
+   
+}
+
+.mapImageContainer{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 100%;
+}
+
+.mapImage{
+    max-width: -webkit-fill-available;
+}
+
+.storeInfoContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.storeInfoLeftCol{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 60%;
+
+}
+
+.storeInfoLRightCol{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 30%;
+
+}
+
+@media (max-width: 950px) {
+    .aboutContainer {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width:720px) {
+    .storeInfoContainer{
+        flex-direction: column;
+    }
+
+    .storeInfoLRightCol {
+        width:100%;
+    }
+
+    .storeInfoLeftCol {
+        width:100%;
+    }
+    #aboutForm {
+        width:100%;
+    }
+}
+

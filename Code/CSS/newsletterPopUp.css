@@ -1,0 +1,70 @@
+#popup-box {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fcf0dc;
+    color:  #0C3E30;
+    width: 90%;
+    max-width: 20vw;
+    padding: 30px;
+    border: 2px solid #E0E0E0;
+    display: none; 
+    z-index: 20;
+}
+
+.popupFlexContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.popup-box-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: -webkit-fill-available;
+}
+
+
+#popup-box h1 {
+    margin: 0;
+    text-align: center;
+}
+
+#popup-box p {
+    text-align: center ;
+}
+
+
+#popup-box input {
+    padding: 10px;
+    background-color: FFFFFF;
+    border: 1px solid #E0E0E0;
+    margin:6px;
+}
+
+#emailAddress, #firstName, #lastName{
+    width: -webkit-fill-available;
+}
+
+.nameForm{
+    display: flex;
+    flex-direction: row;
+}
+
+#popup-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#newsletterModal{
+    color: #0C3E30;
+}
+
+
+
+

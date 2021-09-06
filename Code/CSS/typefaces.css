@@ -1,0 +1,114 @@
+/* Heading Styles */
+
+.headingType1 {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-size: 42px;
+    font-size:2.625rem;
+}
+
+.headingType2 {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-size: 32px;
+    font-size:2rem;
+}
+.headingType4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600px;
+    font-size: 14px;
+    font-size:0.875rem;
+
+}
+
+.headingType5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500px;
+    font-size: 12px;
+    font-size: 	0.75rem;
+}
+
+.headingType6 {
+    font-family: 'Lora', serif;
+    font-weight: 700;
+    font-size: 16px;
+    font-size: 	1rem;
+}
+
+.bodyType1 {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 	1rem;
+}
+
+.bodyType2 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    font-size: 	1rem;
+}
+
+.bodyType3 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    font-size:0.875rem;
+
+}
+
+
+
+/* Font Colours */
+
+.darkGreen {
+    color: #0C3E30;
+}
+.offWhite {
+    color: #F1F5F3;
+}
+.darkGrey {
+    color:rgb(68, 68, 68);
+}
+
+.darkGreenReducedOp{
+    color: RGB(12, 62, 48, 0.72);
+}
+
+.lightGreen {
+    color:rgba(252, 249, 243, 0.72);
+}
+
+
+/* Margin/Padding Adjustments */
+
+.noMargin {
+    margin: 0;
+}
+
+.margin {
+    margin: 5px;
+}
+
+.marginx2 {
+    margin: 10px;
+}
+
+.paddingRight {
+    padding-right:150px;
+}
+
+
+/* Link Styles */
+
+.linkNoUnderline {
+    text-decoration: none;
+}
+.linkUnderlined {
+    text-decoration: underline;
+    text-decoration-color:#F1F5F3;
+    text-underline-offset: 3px;
+}
+a.navLink {
+    text-decoration: none ;
+}

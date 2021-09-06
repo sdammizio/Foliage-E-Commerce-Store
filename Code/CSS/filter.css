@@ -1,0 +1,99 @@
+.productFilter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+}
+
+.dropDownIcon {
+    max-width: 50px;
+}
+
+.filterButtonArea {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-top: rgba(34, 66, 41, 0.16) solid 1px;
+    border-bottom: rgba(34, 66, 41, 0.16)solid 1px;
+    width: 20vh;
+}
+
+.dropdownOption_SmallSize, .dropdownOption_MedSize, .dropdownOption_LargeSize, .dropdownOption_LowMain, .dropdownOption_MedMain, .dropdownOption_HighMain,  .dropdownOption_LowSun, .dropdownOption_MedSun, .dropdownOption_HighSun {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.dropdownOption_SmallSize:hover, .dropdownOption_MedSize:hover, .dropdownOption_LargeSize:hover, .dropdownOption_LowMain:hover, .dropdownOption_MedMain:hover,.dropdownOption_HighMain:hover,.dropdownOption_LowSun:hover, .dropdownOption_MedSun:hover, .dropdownOption_HighSun:hover{
+    background-color: #faecd1;
+}
+
+
+.dropNav {
+    display: flex;
+    flex-direction: column;
+    width: 183px;
+}
+
+#sizeArrow, #sunArrow, #mainArrow {
+    width: 15px;
+    height: 10px;
+}
+.arrowRotation {
+    transform: rotate(180deg); 
+}
+
+.clickableDropDownSize, .clickableDropDownSunlight, .clickableDropDownMaintenance {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding:2px;
+}
+
+.filterCheckbox {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 20vh;
+}
+
+.checkbox > input {
+    height: 15px;
+    width: 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: 1px solid rgba(34, 66, 41);
+    border-radius: 1px;
+    outline: none;
+    transition-duration: 0.3s;
+    background-color:RGB(252, 249, 243);
+    cursor: pointer;
+  }
+
+.checkbox > input:checked {
+    border: 1px solid rgba(34, 66, 41, 0.16);
+    background-color: #224229;
+}
+
+  
