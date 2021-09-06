@@ -1,4 +1,4 @@
-##Sandra Dammizio GitHub Portfolio
+#Sandra Dammizio GitHub Portfolio
 
 Projects
 
