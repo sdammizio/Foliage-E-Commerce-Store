@@ -221,41 +221,6 @@ let plantFilterApp ={};
         
 //Filters
 
-    //create a method to update html of plant cards based on filter option plugged in
-    //function with two parameters- from property:value of plant array
-
-    // plantFilterApp.filterMethod = function(prop,val){
-    //     //empty the container holding all the plant cards
-    //     $(".cardFlexContainer").empty();
-        
-    //    //create variable for how plants array will be filtered
-    //     let filterPlants
-    //    //if property has a value (i.e. already showing filtered plants on page), this will be false and will go back to showing all plants on page
-    //    if (!prop) {
-    //         filterPlants=plants
-    //     } else {
-    //         //if property doesn't have a value yet(ie hasn't been filtered and is currently displaying all plants on page), filter if plant property= the value I am filtering by in finalFilterFunctions
-    //         filterPlants=plants.filter((plant)=>{
-    //             return plant[prop]===val
-    //         })
-    //     }
-    //     console.log(filterPlants, plants);
-    //     //for each of the plant array items that has been filtered, do this:
-    //     filterPlants.forEach(function(plant){
-    //     const html=`
-    //     <div class="plantCardItem ${plant.className}">
-    //                         <img class="plantCardImg" src="${plant.imgSRC}" alt="Snake Plant">
-    //                         <div class="cardText">
-    //                             <h4 class="plantName headingType6 darkGreen noMargin">${plant.name}</h4>
-    //                             <p class="plantPrice headingType6 darkGreen noMargin">$${plant.price}</p>
-    //                         </div>
-    //                         <p class="plantSize headingType5 darkGreenReducedOp">${plant.size}</p>
-    //                         <button class="hoverAddToCart headingType4 darkGreen">ADD TO CART</button>
-    //                     </div>`
-    //     //display container with plant cards that are from the filtered array
-    //     $(".cardFlexContainer").append(html);
-    //     });
-    // }
 
     //every time click button on filter, adds that filter into this array
     plantFilterApp.filters =[]
@@ -297,12 +262,17 @@ let plantFilterApp ={};
         //display container with plant cards that are from the filtered array
         $(".cardFlexContainer").append(html);
         });
+
     }
 
 
     //create functions for each of the filtering options and call above method to generate html accordingly
 
     plantFilterApp.finalFilterFunctions=function(){
+
+    $("#clearFiltersButton").on("click", function(){
+        location.reload();
+    })
 
     $('.dropdownOption_SmallSize').on("click", function(){
         //ccreate activeFilter class (an empty class not visible on page only used to indicate whether filter active)
@@ -537,7 +507,7 @@ plantFilterApp.finalFilterFunctions();
 //Pull-Out Search Bar
 
     plantFilterApp.searchBarPopOut=function(){
-        $("#searchIcon").on("click", function(){
+        $(".search").on("click", function(){
             console.log("hi")
             $("#searchBar").toggleClass("hiddenSearchBar");
         })
@@ -560,7 +530,8 @@ plantFilterApp.finalFilterFunctions();
             $("#shoppingCartPopOut").show();
            
             $("#shoppingModal").click(() => {
-                $("#popup-box").hide();
+                console.log("bye")
+                $("#shoppingCartPopOut").hide();
             })
             setTimeout(function(){
                 $("#shoppingCartPopOut").hide()
@@ -604,9 +575,12 @@ plantFilterApp.finalFilterFunctions();
 
 //Newsletter Pop-Up
     plantFilterApp.newsletterPopUp= function(){
-        setTimeout(function(){
-            $("#popup-box").show()
-          }, 10000);
+        if($(window).width() >= 1024) {
+            setTimeout(function(){
+                $("#popup-box").show()
+              }, 10000);
+        }
+        
 
         $("#newsletterModal").click(() => {
             $("#popup-box").hide();
@@ -667,79 +641,44 @@ plantFilterApp.beginnerPlantPageRedirection();
 //NavBar Dropdowns Desktop
 
 plantFilterApp.navDropdowns=function(){
-    $("#plantsLink").on("mouseover", function(event){
+    $("#plantsLink").on("click", function(event){
         event.preventDefault();
-        $(".navDropdownOverlayPlant").show();
+        $(".navDropdownOverlayGifts").hide();
+        $(".navDropdownOverlayLearn").hide();
+        $(".navDropdownOverlayAbout").hide();
+        $(".navDropdownOverlayPlant").toggle();
+       
     });
 
-    $("#plantsLink").on("mouseout", function(event){
-            $(".navDropdownOverlayPlant").hide();
-        
-    });
 
-    $(".navDropdownOverlayPlant").on("mouseover", function(event){
-        console.log("hi")
-        $(".navDropdownOverlayPlant").show();
-    });
-
-    $(".navDropdownOverlayPlant").on("mouseout", function(event){
+    $("#giftsLink").on("click", function(event){
+        event.preventDefault();
         $(".navDropdownOverlayPlant").hide();
-    });
-
-
-    $("#giftsLink").on("mouseover", function(event){
-        event.preventDefault();
-        $(".navDropdownOverlayGifts").show();
-    });
-
-    $("#giftsLink").on("mouseout", function(event){
-        $(".navDropdownOverlayGifts").hide();
-    });
-
-    $(".navDropdownOverlayGifts").on("mouseover", function(event){
-        console.log("hi")
-        $(".navDropdownOverlayGifts").show();
-    });
-
-    $(".navDropdownOverlayGifts").on("mouseout", function(event){
-        $(".navDropdownOverlayGifts").hide();
-    });
-
-    $("#aboutLink").on("mouseover", function(event){
-        event.preventDefault();
-        $(".navDropdownOverlayAbout").show();
-    });
-
-    $("#aboutLink").on("mouseout", function(event){
-        $(".navDropdownOverlayAbout").hide();
-    });
-
-    $(".navDropdownOverlayAbout").on("mouseover", function(event){
-        console.log("hi")
-        $(".navDropdownOverlayAbout").show();
-    });
-
-    $(".navDropdownOverlayAbout").on("mouseout", function(event){
-        $(".navDropdownOverlayAbout").hide();
-    });
-
-    $("#learnLink").on("mouseover", function(event){
-        event.preventDefault();
-        $(".navDropdownOverlayLearn").show();
-    });
-
-    $("#learnLink").on("mouseout", function(event){
         $(".navDropdownOverlayLearn").hide();
+        $(".navDropdownOverlayAbout").hide();
+        $(".navDropdownOverlayGifts").toggle();
+     
     });
 
-    $(".navDropdownOverlayLearn").on("mouseover", function(event){
-        console.log("hi")
-        $(".navDropdownOverlayLearn").show();
-    });
 
-    $(".navDropdownOverlayLearn").on("mouseout", function(event){
+    $("#aboutLink").on("click", function(event){
+        event.preventDefault();
+        $(".navDropdownOverlayGifts").hide();
+        $(".navDropdownOverlayPlant").hide();
         $(".navDropdownOverlayLearn").hide();
+        $(".navDropdownOverlayAbout").toggle();
     });
+
+
+    $("#learnLink").on("click", function(event){
+        event.preventDefault();
+        $(".navDropdownOverlayGifts").hide();
+        $(".navDropdownOverlayPlant").hide();
+        $(".navDropdownOverlayAbout").hide();
+        $(".navDropdownOverlayLearn").toggle();
+      
+    });
+
 }
 
 plantFilterApp.navDropdowns();

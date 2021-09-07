@@ -1,6 +1,5 @@
 body.about {
     background-color: #FCF9F3;
-    margin-top: 250px;
 }
 
 .skip-link {
@@ -20,10 +19,15 @@ body.about {
     transform: translateY(0%);
   }
 
+.marginCartModal {
+    margin-top: 25px;
+}
+
 .about {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 150px;
 }
 
 #aboutForm input {
@@ -66,7 +70,7 @@ textarea {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 90%;
+    max-width: 70vw;
     margin-bottom: 150px;
     align-items: flex-start;
    
@@ -108,10 +112,21 @@ textarea {
     width: 30%;
 
 }
+footer {
+    width: 100vw;
+}
+
 
 @media (max-width: 950px) {
     .aboutContainer {
-        margin-top: 100px;
+        margin-top: 50px;
+    }
+    .about {
+        margin-top: 50px;
+    }
+
+    .marginCartModal {
+        margin-top: 70px;
     }
 }
 
@@ -130,5 +145,13 @@ textarea {
     #aboutForm {
         width:100%;
     }
+
+    .marginCartModal {
+    margin-top: 70px;
+}
+
+.about {
+    margin-top: 50px;
+}
 }
 

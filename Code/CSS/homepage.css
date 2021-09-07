@@ -24,8 +24,10 @@
   }
 
   .addedMargin {
-      margin-top: 200px;
+      margin-top: 150px;
   }
+
+
 
 .hero{
     display:flex;
@@ -177,6 +179,12 @@
 
 }
 
+#cartUpdator {
+    background-color: RGB(12, 62, 48);
+    color: #FCF9F3;
+    border-radius: 50%;
+}
+
 .promiseItem{
     display: flex;
     flex-direction: row;
@@ -308,6 +316,12 @@
     display:flex;
 }
 
+.addedMargin {
+    margin-top: 150px;
+}
+
+
+
 }
 
 @media  (min-width:1055px) {
@@ -322,12 +336,11 @@
     
     }
 
-/* @media (min-width:1430px){
-
-    .bannerContent {
-        top:60%;
+@media (min-width:840px) AND (max-width:960px){
+    .addedMargin {
+        margin-top: 80px;
     }
-} */
+}
 
 
 
@@ -406,6 +419,10 @@
     .rotatingBannerContent {
         width: 40%;
         left: 10%;
+    }
+
+    .addedMargin {
+        margin-top: 70px;
     }
 
 }

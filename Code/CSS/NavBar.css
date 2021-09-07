@@ -4,7 +4,6 @@
 
 .promoBanner {
     background-color: #0C3E30;
-    padding:5px;
     text-align: center;
     overflow: hidden; 
 }
@@ -99,7 +98,7 @@ header {
     margin-left: 15px;
  }
 
-.navbar2 i{
+#hamburgerIcon{
      color:#0C3E30;
      margin-right: 15px;
  }

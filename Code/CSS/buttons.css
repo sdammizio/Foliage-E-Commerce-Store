@@ -10,7 +10,21 @@ button.hoverAddToCart {
     display:none;
 }
 
+.clearFilters {
+    width: 183px;
+    height: 50px;
+    background-color: #FCF9F3;
+    border: 1px solid rgba(34, 66, 41);
+    border-radius: 50px;
+    position:absolute;
+    margin-left: 10px;
+}
+
 button.hoverAddToCart:hover {
+    background-color: #faecd1;
+}
+
+.clearFilters:hover{
     background-color: #faecd1;
 }
 
@@ -45,7 +59,11 @@ background-color: #FDB5B1;
 }
 
 .marginTop {
-    margin:8px;
+    margin:40px;
+}
+
+.marginBottom {
+    margin-bottom: 50px;
 }
 
 .doubleMarginTop {

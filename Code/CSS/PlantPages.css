@@ -1,5 +1,4 @@
 body.plantPage {
-    padding-top: 200px;
     background-color: #FCF9F3;
 }
 
@@ -29,8 +28,14 @@ main {
 
 .shopBody {
     width: 70vw;
+    margin-top:200px;
     margin-bottom: 200px;
 }
+
+.marginModalTop {
+    margin-top: 180px;
+}
+
 .mainHeading {
     display: flex;
     flex-direction: row;
@@ -117,7 +122,17 @@ main {
     }
 }
 
-@media (max-width:950px) {
+@media (min-width:750px) AND (max-width:950px){
+    .marginModalTop {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width:750px) {
+
+    .marginModalTop {
+        margin-top: 10px;
+    }
     body.plantPage {
         padding-top: 100px;
     }
@@ -137,7 +152,7 @@ main {
 
     .cardFlexContainer{
         justify-content: flex-start;
-        margin-top: 40px;
+        margin-top: 80px;
     }
 
     .sortBox {
@@ -151,4 +166,6 @@ main {
     .dropbtn {
         width: 100%;
     }
+
 }
+
