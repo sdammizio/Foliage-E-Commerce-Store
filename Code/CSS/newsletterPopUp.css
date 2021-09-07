@@ -65,6 +65,11 @@
     color: #0C3E30;
 }
 
+@media (max-width:1500px) {
+    #popup-box {
+        max-width: 40vw;
+    }
+}
 
 
 
