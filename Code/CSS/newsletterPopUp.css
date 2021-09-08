@@ -24,7 +24,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: -webkit-fill-available;
+    width: 100%;
+    width: -moz-available;          
+    width: -webkit-fill-available;  
+    width: fill-available;
 }
 
 
@@ -46,7 +49,11 @@
 }
 
 #emailAddress, #firstName, #lastName{
-    width: -webkit-fill-available;
+    max-width: -webkit-fill-available;
+    width: 100%;
+    width: -moz-available;          
+    width: -webkit-fill-available;  
+    width: fill-available;
 }
 
 .nameForm{
