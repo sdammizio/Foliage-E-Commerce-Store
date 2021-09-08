@@ -73,6 +73,10 @@
 
 .hero2Image {
     max-width: -webkit-fill-available;
+    width: 100%;
+    width: -moz-available;          
+    width: -webkit-fill-available;  
+    width: fill-available;
 }
 
 .overlay {
@@ -113,6 +117,10 @@
 
 .collectionButton{
     max-width: -webkit-fill-available;
+    width: 100%;
+    width: -moz-available;          
+    width: -webkit-fill-available;  
+    width: fill-available;
 }
 
 .collectionButton:hover{
@@ -160,6 +168,10 @@
 
 .foliagePromiseImg{
     max-width: -webkit-fill-available;
+    width: 100%;
+    width: -moz-available;          
+    width: -webkit-fill-available;  
+    width: fill-available;
 }
 
 .foliagePromise{
@@ -268,7 +280,11 @@
 }
 
 .reviewerImage{
-    max-width: -webkit-fill-available;;
+    max-width: -webkit-fill-available;
+    width: 100%;
+    width: -moz-available;          
+    width: -webkit-fill-available;  
+    width: fill-available;
 }
 
 .reviewerTextContainer{
@@ -279,6 +295,10 @@
     max-width: 50%;
     text-align: center;
     
+}
+
+#curator-feed-default-feed-layout{
+    max-width: 70vw;
 }
 
 /*Responsive Design */

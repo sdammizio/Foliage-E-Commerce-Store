@@ -77,22 +77,30 @@ let plantFilterApp ={};
 //Instagram Feed API
 
 
-$.ajax({
-    url: 'http://proxy.hackeryou.com',
-	dataType: 'json',
-	type: 'GET',
-	data: {
-        reqUrl:'https://api.instagram.com/v1/users/49485932360/media/recent',
-        access_token: "IGQVJWOS1weU1OekxUWXlPOVJOSGw2TDJRTHh4dFRad3BNV2Q2Y0hRTlI4WjFCMTE4YzdnU2VRRm9QaTNFNFh3SGJtck9uREsxOV9UZA1ExVFhwRHl5ZAE1uR1F1VzM4ZAzRqdDJFcFZAEbF9tb01zcXJhaAZDZD", 
-        count: 4,
-        params: {
-            method:"GET",
-            dataType:"json"
-        }
-    }
-}).then(function(){
-    console.log("it worked");
-});
+// $.ajax({
+//     url: 'http://proxy.hackeryou.com',
+// 	dataType: 'json',
+// 	type: 'GET',
+// 	data: {
+//         reqUrl:'https://api.instagram.com/v1/users/49485932360/media/recent',
+//         access_token: "IGQVJWOS1weU1OekxUWXlPOVJOSGw2TDJRTHh4dFRad3BNV2Q2Y0hRTlI4WjFCMTE4YzdnU2VRRm9QaTNFNFh3SGJtck9uREsxOV9UZA1ExVFhwRHl5ZAE1uR1F1VzM4ZAzRqdDJFcFZAEbF9tb01zcXJhaAZDZD", 
+//         count: 4,
+//         params: {
+//             method:"GET",
+//             dataType:"json"
+//         }
+//     }
+// }).then(function(){
+//     console.log("it worked");
+// });
+
+// Instagram Embedded Widget
+(function(){
+    var i, e, d = document, s = "script";i = d.createElement("script");i.async = 1;
+    i.src = "https://cdn.curator.io/published/6ddcd501-c312-48cc-87a3-7d11b6af664b.js";
+    e = d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+    })();
+
 
 
 // success: function(data){
@@ -104,8 +112,7 @@ $.ajax({
 
 }
 
-
-    plantFilterApp.init();
+plantFilterApp.init();
 
 //Filter Dropdowns
 
