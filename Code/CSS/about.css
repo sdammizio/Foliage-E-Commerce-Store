@@ -82,8 +82,13 @@ textarea {
     max-width: 100%;
 }
 
-.mapImage{
-    max-width: -webkit-fill-available;
+iframe {
+    width: 70vw;
+}
+
+#map {
+    width:70vw;
+    height: 600px;
 }
 
 .storeInfoContainer{

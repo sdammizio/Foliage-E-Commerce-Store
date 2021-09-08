@@ -44,7 +44,7 @@ let plantFilterApp ={};
         $(".clickableDropDownMaintenance").hide();
 
         $('.sortBox').on('click', function(){ 
-            $(".dropdown-content").toggle();
+            $(".dropdown-content").toggle(); 
         });
 
         $("#shoppingCartPopOut").hide();
@@ -55,38 +55,75 @@ let plantFilterApp ={};
         $(".navDropdownOverlayGifts").hide();
         $(".navDropdownOverlayLearn").hide();
         $(".navDropdownOverlayAbout").hide();
+
+    //Google Map API 
+
+    // function initMap(){
+    //     //location want to show
+    //     const location = {lat: 43.65639296941359, lng:-79.45356737504656};
+    //     //map centered at that location
+    //     const map = new google.maps.Map(document.getElementById("map"), {
+    //         zoom: 15,
+    //         center: location
+    //     });
+    //     //marker positioned at location
+    //     const marker = new google.maps.Marker ({
+    //         position: location,
+    //         map: map
+    //     });
+    // }
+    // initMap();
+
+//Instagram Feed API
+
+
+$.ajax({
+    url: 'http://proxy.hackeryou.com',
+	dataType: 'json',
+	type: 'GET',
+	data: {
+        reqUrl:'https://api.instagram.com/v1/users/49485932360/media/recent',
+        access_token: "IGQVJWOS1weU1OekxUWXlPOVJOSGw2TDJRTHh4dFRad3BNV2Q2Y0hRTlI4WjFCMTE4YzdnU2VRRm9QaTNFNFh3SGJtck9uREsxOV9UZA1ExVFhwRHl5ZAE1uR1F1VzM4ZAzRqdDJFcFZAEbF9tb01zcXJhaAZDZD", 
+        count: 4,
+        params: {
+            method:"GET",
+            dataType:"json"
+        }
     }
+}).then(function(){
+    console.log("it worked");
+});
+
+
+// success: function(data){
+//     console.log(data);
+//    for( x in data.data ){
+//        $('ul.instaImageContainer').append('<li><img src="'+data.data[x].images.low_resolution.url+'"></li>'); // data.data[x].images.low_resolution.url - URL of image, 306х306
+//    }
+// }
+
+}
+
 
     plantFilterApp.init();
 
 //Filter Dropdowns
 
-    plantFilterApp.filterDropdownMethod=function(){
-
-        $('li.sizeButton').on('click', function(){ 
-            $(".clickableDropDownSize").toggle();
-            $("#sizeArrow").toggle (".arrowRotation");
-        });
-
-
-        
-        $('li.sunButton').on('click', function(){ 
-            $(".clickableDropDownSunlight").toggle();
-            $("#sunArrow").toggle (".arrowRotation");
-        });
-
-        
-        $('li.maintButton').on('click', function(){ 
-            $(".clickableDropDownMaintenance").toggle();
-            $("#mainArrow").toggle (".arrowRotation");
+    plantFilterApp.filterDropdownMethod=function(button, filterDropdown,arrow){
+        $(button).on ("click", function(){
+            $(filterDropdown).toggle();
+            $(arrow).toggle("arrowRotation");
         });
     }
+        plantFilterApp.filterDropdownMethod('li.sizeButton',".clickableDropDownSize","#sizeArrow");
+        plantFilterApp.filterDropdownMethod('li.sunButton',".clickableDropDownSunlight","#sunArrow");
+        plantFilterApp.filterDropdownMethod('li.maintButton',".clickableDropDownMaintenance","#mainArrow");
 
-    plantFilterApp.filterDropdownMethod();
 
 
 // Sort Buttons
     let sortOption;
+
 
     //create a method to generate plant cards based on sorting option plugged in
     plantFilterApp.sortingMethod = function(){
@@ -94,14 +131,14 @@ let plantFilterApp ={};
         
         sortOption.forEach(function(plant){
         const html=`
-            <div class="plantCardItem ${plant.name}">
+            <div class="plantCardItem ${plant.className}">
                                 <img class="plantCardImg" src="${plant.imgSRC}" alt="Snake Plant">
                                 <div class="cardText">
                                     <h4 class="plantName headingType6 darkGreen noMargin">${plant.name}</h4>
                                     <p class="plantPrice headingType6 darkGreen noMargin">$${plant.price}</p>
                                 </div>
                                 <p class="plantSize headingType5 darkGreenReducedOp">${plant.size}</p>
-                                <button class="hoverAddToCart headingType4 darkGreen">ADD TO CART</button>
+                                <button class="hoverAddToCart headingType4 darkGreen ${plant.className}">ADD TO CART</button>
                             </div>`
             //display container with plant cards that are from the sorted array
             $(".cardFlexContainer").append(html)
@@ -145,78 +182,81 @@ let plantFilterApp ={};
       
     //define the functions for each of the sorting options and call the above methods
 
-    plantFilterApp.finalSortingFunctions=function(){
+    // plantFilterApp.finalSortingFunctions=function(){
         
-        $('.sortBox').on('click','.sortZA',function(){
+        // $('.sortBox').on('click','.sortZA',function(){
 
-            sortOption= plants.sort(function(a,b){
-                if (a.name<b.name) {
-                    return 1
-                } else {
-                    return -1
-                }
-            });
-            console.log(sortOption);
-            plantFilterApp.sortingMethod();
-            plantFilterApp.dropdownHTMLMethod("SORT BY Z-A", "SORT BY A-Z", "SORT BY NEWEST", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortAZ", "sortNewest","sortLowHigh","sortHighLow");
-        }),
+        //     sortOption= plants.sort(function(a,b){
+        //         if (a.name<b.name) {
+        //             return 1
+        //         } else {
+        //             return -1
+        //         }
+        //     });
+        //     console.log(sortOption);
+        //     plantFilterApp.sortingMethod();
+        //     plantFilterApp.dropdownHTMLMethod("SORT BY Z-A", "SORT BY A-Z", "SORT BY NEWEST", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortAZ", "sortNewest","sortLowHigh","sortHighLow");
+        // }),
         
 
-        $('.sortBox').on('click','.sortAZ',function(){
-            sortOption= plants.sort(function(a,b){
-                if (a.name>b.name) {
-                    return 1
-                } else {
-                    return -1
-                }
-            });
-            console.log(sortOption);
-            plantFilterApp.sortingMethod();
-            plantFilterApp.dropdownHTMLMethod("SORT BY A-Z", "SORT BY Z-A", "SORT BY NEWEST", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortZA", "sortNewest","sortLowHigh","sortHighLow");
-        }),
+        // $('.sortBox').on('click','.sortAZ',function(){
+        //     sortOption= plants.sort(function(a,b){
+        //         if (a.name>b.name) {
+        //             return 1
+        //         } else {
+        //             return -1
+        //         }
+        //     });
+        //     console.log(sortOption);
+        //     plantFilterApp.sortingMethod();
+        //     plantFilterApp.dropdownHTMLMethod("SORT BY A-Z", "SORT BY Z-A", "SORT BY NEWEST", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortZA", "sortNewest","sortLowHigh","sortHighLow");
+        //     $(".dropdown-content").hide();
+        // }),
 
-        $('.sortBox').on('click','.sortNewest',function(){
-            sortOption= plants.sort(function(a,b){
-                if (a.name>b.name) {
-                    return 1
-                } else {
-                    return -1
-                }
-            });
-            console.log(sortOption);
-            plantFilterApp.sortingMethod();
-            plantFilterApp.dropdownHTMLMethod("SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortAZ", "sortZA","sortLowHigh", "sortHighLow");
-           
-        }),
+        // $('.sortBox').on('click','.sortNewest',function(){
+        //     sortOption= plants.sort(function(a,b){
+        //         if (a.date>b.date) {
+        //             return 1
+        //         } else {
+        //             return -1
+        //         }
+        //     });
+        //     console.log(sortOption);
+        //     plantFilterApp.sortingMethod();
+        //     plantFilterApp.dropdownHTMLMethod("SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortAZ", "sortZA","sortLowHigh", "sortHighLow");
+        //     $(".dropdown-content").hide();
+        // }),
 
-        $('.sortBox').on('click','.sortLowHigh',function(){
-            sortOption= plants.sort(function(a,b){
-                if (a.price>b.price) {
-                    return 1
-                } else {
-                    return -1
-                }
-            });
-            console.log(sortOption);
-            plantFilterApp.sortingMethod();
-            plantFilterApp.dropdownHTMLMethod("SORT BY PRICE LOW-HIGH", "SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A", "SORT BY PRICE HIGH-LOW","sortNewest", "sortAZ","sortZA","sortHighLow");
-        }),
+        // $('.sortBox').on('click','.sortLowHigh',function(){
+        //     sortOption= plants.sort(function(a,b){
+        //         if (a.price>b.price) {
+        //             return 1
+        //         } else {
+        //             return -1
+        //         }
+        //     });
+        //     console.log(sortOption);
+        //     plantFilterApp.sortingMethod();
+        //     plantFilterApp.dropdownHTMLMethod("SORT BY PRICE LOW-HIGH", "SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A", "SORT BY PRICE HIGH-LOW","sortNewest", "sortAZ","sortZA","sortHighLow");
+        //     $(".dropdown-content").hide();
+        // }),
 
-        $('.sortBox').on('click','.sortHighLow',function(){
-            sortOption= plants.sort(function(a,b){
-                if (a.price<b.price) {
-                    return 1
-                } else {
-                    return -1
-                }
-            });
-            console.log(sortOption);
-            plantFilterApp.sortingMethod();
-            plantFilterApp.dropdownHTMLMethod("SORT BY PRICE HIGH-LOW","SORT BY PRICE LOW-HIGH", "SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A","sortNewest", "sortLowHigh","sortNewest","sortAZ","sortZA");  
-        })
-    }
+        // $('.sortBox').on('click','.sortHighLow',function(){
+        //     sortOption= plants.sort(function(a,b){
+        //         if (a.price<b.price) {
+        //             return 1
+        //         } else {
+        //             return -1
+        //         }
+        //     });
+        //     console.log(sortOption);
+        //     plantFilterApp.sortingMethod();
+        //     plantFilterApp.dropdownHTMLMethod("SORT BY PRICE HIGH-LOW","SORT BY PRICE LOW-HIGH", "SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A","sortNewest", "sortLowHigh","sortNewest","sortAZ","sortZA");  
+        //     $(".dropdown-content").hide();
+        // })
+    // }
 
-    plantFilterApp.finalSortingFunctions();
+    // plantFilterApp.finalSortingFunctions();
 
         
 //Filters
@@ -242,7 +282,7 @@ let plantFilterApp ={};
                 filterPlants=filterPlants.filter((plant)=>{
                     //obtain the property in property:value from object, will give an array with one property name (eg.size)
                     const prop = Object.keys(filter)[0]
-                    //when the plant array prop = the prop from the filter array (eg. size)
+                    //when the plant array prop = the prop from the filter array (eg. size===size)
                     return plant[prop]===filter[prop]
                 })
             })
@@ -257,13 +297,150 @@ let plantFilterApp ={};
                                 <p class="plantPrice headingType6 darkGreen noMargin">$${plant.price}</p>
                             </div>
                             <p class="plantSize headingType5 darkGreenReducedOp">${plant.size}</p>
-                            <button class="hoverAddToCart headingType4 darkGreen">ADD TO CART</button>
+                            <button class="hoverAddToCart headingType4 darkGreen ${plant.className}">ADD TO CART</button>
                         </div>`
         //display container with plant cards that are from the filtered array
         $(".cardFlexContainer").append(html);
         });
 
+        //sort box options 
+
+        $('.sortBox').on('click','.sortZA',function(){
+            if (filters === []){
+                console.log("sorted original plants array")
+                sortOption= plants.sort(function(a,b){
+                    if (a.name<b.name) {
+                        return 1
+                    } else {
+                        return -1
+                    }
+                });
+                
+            } else {
+                sortOption= filterPlants.sort(function(a,b){
+                    if (a.name<b.name) {
+                        return 1
+                    } else {
+                        return -1
+                    }
+                });
+                console.log("sorted with filtered plants")
+            }
+            plantFilterApp.sortingMethod();
+            plantFilterApp.dropdownHTMLMethod("SORT BY Z-A", "SORT BY A-Z", "SORT BY NEWEST", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortAZ", "sortNewest","sortLowHigh","sortHighLow");
+            $(".dropdown-content").hide();
+        }),
+
+        $('.sortBox').on('click','.sortAZ',function(){
+            if (filters === []){
+                console.log("sorted original plants array")
+                sortOption= plants.sort(function(a,b){
+                    if (a.name>b.name) {
+                        return 1
+                    } else {
+                        return -1
+                    }
+                });
+                
+            } else {
+                sortOption= filterPlants.sort(function(a,b){
+                    if (a.name>b.name) {
+                        return 1
+                    } else {
+                        return -1
+                    }
+                });
+                console.log("sorted with filtered plants")
+            }
+            console.log(sortOption);
+            plantFilterApp.sortingMethod();
+            plantFilterApp.dropdownHTMLMethod("SORT BY A-Z", "SORT BY Z-A", "SORT BY NEWEST", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortZA", "sortNewest","sortLowHigh","sortHighLow");
+            $(".dropdown-content").hide();
+        }),
+
+        $('.sortBox').on('click','.sortNewest',function(){
+            if (filters === []){
+                console.log("sorted original plants array")
+                sortOption= plants.sort(function(a,b){
+                    if (a.date>b.date) {
+                        return 1
+                    } else {
+                        return -1
+                    }
+                });
+                
+            } else {
+                sortOption= plants.sort(function(a,b){
+                    if (a.date>b.date) {
+                        return 1
+                    } else {
+                        return -1
+                    }
+                });
+                console.log("sorted with filtered plants")
+            }
+            console.log(sortOption);
+            plantFilterApp.sortingMethod();
+            plantFilterApp.dropdownHTMLMethod("SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortAZ", "sortZA","sortLowHigh", "sortHighLow");
+            $(".dropdown-content").hide();
+        }),
+
+        $('.sortBox').on('click','.sortLowHigh',function(){
+            if (filters === []){
+                console.log("sorted original plants array")
+                sortOption= plants.sort(function(a,b){
+                    if (a.price>b.price) {
+                        return 1
+                    } else {
+                        return -1
+                    }
+                });
+                
+            } else {
+                sortOption= plants.sort(function(a,b){
+                    if (a.price>b.price) {
+                        return 1
+                    } else {
+                        return -1
+                    }
+                });
+                console.log("sorted with filtered plants")
+            }
+            console.log(sortOption);
+            plantFilterApp.sortingMethod();
+            plantFilterApp.dropdownHTMLMethod("SORT BY PRICE LOW-HIGH", "SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A", "SORT BY PRICE HIGH-LOW","sortNewest", "sortAZ","sortZA","sortHighLow");
+            $(".dropdown-content").hide();
+        }),
+
+        $('.sortBox').on('click','.sortHighLow',function(){
+            if (filters === []){
+                console.log("sorted original plants array")
+                sortOption= plants.sort(function(a,b){
+                    if (a.price<b.price) {
+                        return 1
+                    } else {
+                        return -1
+                    }
+                });
+                
+            } else {
+                sortOption= plants.sort(function(a,b){
+                    if (a.price<b.price) {
+                        return 1
+                    } else {
+                        return -1
+                    }
+                });
+                console.log("sorted with filtered plants")
+            }
+            console.log(sortOption);
+            plantFilterApp.sortingMethod();
+            plantFilterApp.dropdownHTMLMethod("SORT BY PRICE HIGH-LOW","SORT BY PRICE LOW-HIGH", "SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A","sortNewest", "sortLowHigh","sortNewest","sortAZ","sortZA");  
+            $(".dropdown-content").hide();
+        })
     }
+
+   
 
 
     //create functions for each of the filtering options and call above method to generate html accordingly
@@ -275,8 +452,8 @@ let plantFilterApp ={};
     })
 
     $('.dropdownOption_SmallSize').on("click", function(){
-        //ccreate activeFilter class (an empty class not visible on page only used to indicate whether filter active)
-        console.log($(".dropdownOption_SmallSize").hasClass("activeFilter"));
+        //create activeFilter class (an empty class not visible on page only used to indicate whether filter active)
+        
         const activeFilter = $(".dropdownOption_SmallSize").hasClass("activeFilter");
         // if activeFilter currently on, want it to switch to all plants when button clicked and remove the active filter. 
         if (activeFilter === true) {
@@ -293,6 +470,17 @@ let plantFilterApp ={};
         } else {
             // adding this filter object to the filters array
             plantFilterApp.filters.push({size:"SMALL"});
+            //remove button colour on prev. buttons pushed in size category
+            $(".dropdownOption_MedSize").css("background-color", "transparent"); 
+            $(".dropdownOption_LargeSize").css("background-color", "transparent"); 
+            plantFilterApp.filters = plantFilterApp.filters.filter((filterObject)=>{
+                //remove size:small property from array of FILTERS
+                return filterObject.size !== "MEDIUM"
+            })
+            plantFilterApp.filters = plantFilterApp.filters.filter((filterObject)=>{
+                //remove size:small property from array of FILTERS
+                return filterObject.size !== "LARGE"
+            })
             console.log(plantFilterApp.filters);
             // pass it the filters array
             plantFilterApp.filterMethod(plantFilterApp.filters);
@@ -304,7 +492,7 @@ let plantFilterApp ={};
     }),
 
     $('.dropdownOption_MedSize').on("click", function(){
-        console.log($(".dropdownOption_MedSize").hasClass("activeFilter"));
+    
         const activeFilter = $(".dropdownOption_MedSize").hasClass("activeFilter");
         let filterPlants
         if (activeFilter === true) {
@@ -317,6 +505,16 @@ let plantFilterApp ={};
             $(".dropdownOption_MedSize").css("background-color", "transparent"); 
         } else {
             plantFilterApp.filters.push({size:"MEDIUM"});
+            $(".dropdownOption_SmallSize").css("background-color", "transparent"); 
+            $(".dropdownOption_LargeSize").css("background-color", "transparent");
+            plantFilterApp.filters = plantFilterApp.filters.filter((filterObject)=>{
+                //remove size:small property from array of FILTERS
+                return filterObject.size !== "SMALL"
+            })
+            plantFilterApp.filters = plantFilterApp.filters.filter((filterObject)=>{
+                //remove size:small property from array of FILTERS
+                return filterObject.size !== "LARGE"
+            }) 
             console.log(plantFilterApp.filters);
             // pass it the filters array
             plantFilterApp.filterMethod(plantFilterApp.filters);
@@ -327,7 +525,6 @@ let plantFilterApp ={};
     }),
 
     $('.dropdownOption_LargeSize').on("click", function(){
-        console.log($(".dropdownOption_LargeSize").hasClass("activeFilter"));
         const activeFilter = $(".dropdownOption_LargeSize").hasClass("activeFilter");
         let filterPlants
         if (activeFilter === true) {
@@ -340,6 +537,18 @@ let plantFilterApp ={};
         
         } else {
             plantFilterApp.filters.push({size:"LARGE"});
+            $(".dropdownOption_MedSize").css("background-color", "transparent"); 
+            $(".dropdownOption_SmallSize").css("background-color", "transparent"); 
+            plantFilterApp.filters = plantFilterApp.filters.filter((filterObject)=>{
+                //remove size:small property from array of FILTERS, then run filter again
+                return filterObject.size !== "MEDIUM"
+            })
+            plantFilterApp.filters = plantFilterApp.filters.filter((filterObject)=>{
+                //remove size:small property from array of FILTERS, then run filter again
+                return filterObject.size !== "SMALL"
+            })
+            // $(".dropdownOption_SmallSize").removeClass("activeFilter");
+            // $(".dropdownOption_MedSize").removeClass("activeFilter");
             plantFilterApp.filterMethod(plantFilterApp.filters);
             $(".dropdownOption_LargeSize").addClass("activeFilter");
             $(".dropdownOption_LargeSize").css("background-color", "#faecd1"); 
@@ -497,29 +706,25 @@ let plantFilterApp ={};
             plantFilterApp.filterMethod(plantFilterApp.filters);
             $("input.airPurifying").addClass("activeFilter");
         }
-    });   
+    });
 }
 
 plantFilterApp.finalFilterFunctions();
 
 
-  
-//Pull-Out Search Bar
 
-    plantFilterApp.searchBarPopOut=function(){
-        $(".search").on("click", function(){
-            console.log("hi")
-            $("#searchBar").toggleClass("hiddenSearchBar");
-        })
-    }
-    plantFilterApp.searchBarPopOut();
 
-//Shopping Cart Update Icon and Overlay
+//Shopping Cart Icon and Modal Pop-Up
 
     plantFilterApp.shoppingCartIcon= function(){
         let iconValue=0;
         $("img.cart").on("click", function(){
             $("#shoppingCartPopOut").toggle();
+        })
+
+        $("#shoppingModal").click(() => {
+            console.log("bye")
+            $("#shoppingCartPopOut").hide();
         })
 
         $(".cardFlexContainer").on("click", ".hoverAddToCart",function(){
@@ -528,46 +733,39 @@ plantFilterApp.finalFilterFunctions();
             $("#cartUpdater").text(`${iconValue}`)
 
             $("#shoppingCartPopOut").show();
-           
-            $("#shoppingModal").click(() => {
-                console.log("bye")
-                $("#shoppingCartPopOut").hide();
-            })
+
             setTimeout(function(){
                 $("#shoppingCartPopOut").hide()
               }, 4000);
 
-            //when click Add to Cart on an item, return that item's name, src, price
-            const itemSelection = $(".plantCardItem", plant.className).val();
-            console.log(itemSelection)
+            
+            
             //clear contents of the shopping cart modal and append item's info
-            // $("#shoppingCartPopOut").empty();
-            // const cartModalHTML =`
-            // <modal id="shoppingCartPopOut" class="hiddenModal">
-            //     <div class="headerSection">
-            //         <h1 class="headingType2 offWhite">Your Cart</h1>
-            //         <i id="shoppingModal"class="fas fa-times"></i>
-            //     </div>
-            //     <div class="itemsSection">
-            //         <img class="cartModalImage"src="${plant.imgSRC}">
-            //         <div class="itemNameSection">
-            //             <h2 class="offWhite headingType6">${plant.name}</h2>
-            //             <div class="quantityPicker">
-            //                 <button class="picker headingType4">-</button>
-            //                 <p class="offWhite headingType4">1</p>
-            //                 <button class="picker headingType4">+</button>
-            //             </div>
-            //         </div>
-            //         <button class="picker headingType4">REMOVE</button>
-            //     </div>
-            //     <div class="subtotalSection">
-            //         <h3 class="headingType3 offWhite">Subtotal:</h3>
-            //         <h3 class="headingType3 offWhite">${plant.price}</h3>
-            //     </div>
-            //     <button class="long beige marginTop noMarginLeftRight darkGreen">CHECKOUT</button>
-            // </modal>
-            // `
-            // $("#shoppingCartPopOut").append(cartModalHTML);
+            $(".itemsSection").empty();
+            // return that item's name, src, price and store in variable
+            const itemSelection = $(".hoverAddToCart", plant.className).val();
+            const cartModalHTML =`
+            
+                <div class="itemsSection">
+                    <img class="cartModalImage"src="${itemSelection.imgSRC}">
+                    <div class="itemNameSection">
+                        <h2 class="offWhite headingType6">${itemSelection.name}</h2>
+                        <div class="quantityPicker">
+                            <button class="picker headingType4">-</button>
+                            <p class="offWhite headingType4">1</p>
+                            <button class="picker headingType4">+</button>
+                        </div>
+                    </div>
+                    <button class="picker headingType4">REMOVE</button>
+                </div>
+                <div class="subtotalSection">
+                    <h3 class="headingType3 offWhite">Subtotal:</h3>
+                    <h3 class="headingType3 offWhite">${itemSelection.price}</h3>
+                </div>
+                <button id="checkoutButton" class="long beige marginTop noMarginLeftRight darkGreen ">CHECKOUT</button>
+           
+            `
+            $(".itemsSection").append(cartModalHTML);
 
         })
     }
@@ -634,54 +832,34 @@ plantFilterApp.beginnerPlantPageRedirection=function(){
         window.location.href = '../HTML/beginnerPlants.html';
     }) 
 
+    $("#checkoutButton").on("click", function(){
+        window.location.href = '../HTML/shoppingCart.html';
+    })
+
 }
 
 plantFilterApp.beginnerPlantPageRedirection();
 
 //NavBar Dropdowns Desktop
 
-plantFilterApp.navDropdowns=function(){
-    $("#plantsLink").on("click", function(event){
+plantFilterApp.navDropdowns=function(button, hideDropdown1, hideDropdown2, hideDropdown3, dropdownShow){
+    $(button).on("click", function(event){
         event.preventDefault();
-        $(".navDropdownOverlayGifts").hide();
-        $(".navDropdownOverlayLearn").hide();
-        $(".navDropdownOverlayAbout").hide();
-        $(".navDropdownOverlayPlant").toggle();
-       
+        $(hideDropdown1).hide();
+        $(hideDropdown2).hide();
+        $(hideDropdown3).hide();
+        $(dropdownShow).toggle();
     });
-
-
-    $("#giftsLink").on("click", function(event){
-        event.preventDefault();
-        $(".navDropdownOverlayPlant").hide();
-        $(".navDropdownOverlayLearn").hide();
-        $(".navDropdownOverlayAbout").hide();
-        $(".navDropdownOverlayGifts").toggle();
-     
-    });
-
-
-    $("#aboutLink").on("click", function(event){
-        event.preventDefault();
-        $(".navDropdownOverlayGifts").hide();
-        $(".navDropdownOverlayPlant").hide();
-        $(".navDropdownOverlayLearn").hide();
-        $(".navDropdownOverlayAbout").toggle();
-    });
-
-
-    $("#learnLink").on("click", function(event){
-        event.preventDefault();
-        $(".navDropdownOverlayGifts").hide();
-        $(".navDropdownOverlayPlant").hide();
-        $(".navDropdownOverlayAbout").hide();
-        $(".navDropdownOverlayLearn").toggle();
-      
-    });
-
 }
+    plantFilterApp.navDropdowns("#plantsLink", ".navDropdownOverlayLearn",".navDropdownOverlayAbout",".navDropdownOverlayGifts",".navDropdownOverlayPlant");
+    plantFilterApp.navDropdowns("#giftsLink", ".navDropdownOverlayLearn",".navDropdownOverlayAbout",".navDropdownOverlayPlant",".navDropdownOverlayGifts");
+    plantFilterApp.navDropdowns("#learnLink", ".navDropdownOverlayPlant",".navDropdownOverlayAbout",".navDropdownOverlayGifts",".navDropdownOverlayLearn");
+    plantFilterApp.navDropdowns("#aboutLink", ".navDropdownOverlayLearn",".navDropdownOverlayPlant",".navDropdownOverlayGifts",".navDropdownOverlayAbout");
 
-plantFilterApp.navDropdowns();
+
+
+
+
 
 
 //Shopping Cart Page 
