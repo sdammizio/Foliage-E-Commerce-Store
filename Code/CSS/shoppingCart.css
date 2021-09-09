@@ -11,9 +11,7 @@
     max-width: 100%;
 }
 
-table.tableCart {
-    background-color: #FCF9F3;
-}
+
 
 .cartProduct{
     display: flex;

@@ -1,24 +1,24 @@
 //Plant Array
 const plants = [
-    {name: "Snake Plant",className: "snakePlant", size: "MEDIUM",sunlight: "low",maintenance: "low",petFriendly: true,airPurifying: false,price:16, imgSRC:"../Images/Plant images/snake_plant.webp", date: 30},
+    {name: "Snake Plant",className: "snakePlant", size: "MEDIUM",sunlight: "low",maintenance: "low",petFriendly: true,airPurifying: false,price:16, imgSRC:"../Assets/snakePlant.jpg", date: 30},
 
-    {name: "ZZ Plant",className:"zzPlant",size:"LARGE",sunlight: "medium",maintenance: "medium",petFriendly: true,airPurifying: false,price:26, imgSRC:"../Images/Plant images/zz_plant.webp", date: 25},
+    {name: "ZZ Plant",className:"zzPlant",size:"LARGE",sunlight: "medium",maintenance: "medium",petFriendly: true,airPurifying: false,price:26, imgSRC:"../Assets/zzPlant.jpg", date: 25},
 
-    {name: "Dragon Tree",className:"dragonTree",size: "LARGE", sunlight: "high",maintenance: "medium",petFriendly: false,airPurifying: false,price:20, imgSRC:"../Images/Plant images/dragon_tree.jpeg", date: 10},
+    {name: "Dragon Tree",className:"dragonTree",size: "LARGE", sunlight: "high",maintenance: "medium",petFriendly: false,airPurifying: false,price:20, imgSRC:"../Assets/dragonTree.jpeg", date: 10},
     
-    {name: "Sago Palm",className:"sagoPalm",size: "SMALL",sunlight: "high",maintenance: "low",petFriendly: false,airPurifying: true,price:10, imgSRC:"../Images/Plant images/sago_palm.jpeg", date: 12},
+    {name: "Sago Palm",className:"sagoPalm",size: "SMALL",sunlight: "high",maintenance: "low",petFriendly: false,airPurifying: true,price:10, imgSRC:"../Assets/sagoPalm.jpeg", date: 12},
 
-    {name: "Devil's Ivy",className:"devilsIvy",size: "LARGE",sunlight: "high",maintenance: "low",petFriendly: false,airPurifying: true,price:30, imgSRC:"../Images/Plant images/devils_ivy.jpeg", date: 3},
+    {name: "Devil's Ivy",className:"devilsIvy",size: "LARGE",sunlight: "high",maintenance: "low",petFriendly: false,airPurifying: true,price:30, imgSRC:"../Assets/devilsIvy.jpeg", date: 3},
     
-    {name: "Blue Star Fern",className:"blueStarFern",size: "MEDIUM",sunlight: "low",maintenance: "medium",petFriendly: false,airPurifying: false,price:15, imgSRC:"../Images/Plant images/blue_star_fern.jpeg", date: 9},
+    {name: "Blue Star Fern",className:"blueStarFern",size: "MEDIUM",sunlight: "low",maintenance: "medium",petFriendly: false,airPurifying: false,price:15, imgSRC:"../Assets/blueStarFern.jpeg", date: 9},
 
-    {name: "Jade Succulent",className:"jadeSucculent",size: "LARGE",sunlight: "low",maintenance: "high",petFriendly: true,airPurifying: true,price:25, imgSRC:"../Images/Plant images/succulent_jade.jpeg", date: 21},
+    {name: "Jade Succulent",className:"jadeSucculent",size: "LARGE",sunlight: "low",maintenance: "high",petFriendly: true,airPurifying: true,price:25, imgSRC:"../Assets/succulentJade.jpeg", date: 21},
 
-    {name: "Pilea",className:"pilea",size: "SMALL",sunlight: "medium",maintenance: "high",petFriendly: false,airPurifying: false,price:15, imgSRC:"../Images/Plant images/pilea.jpeg", date: 30},
+    {name: "Pilea",className:"pilea",size: "SMALL",sunlight: "medium",maintenance: "high",petFriendly: false,airPurifying: false,price:15, imgSRC:"../Assets/pilea.jpeg", date: 30},
 
-    {name: "Rubber Plant",className:"rubberPlant",size: "MEDIUM",sunlight: "low",maintenance: "high",petFriendly: true,airPurifying: true,price:25, imgSRC:"../Images/Plant images/fiscus.jpeg",date: 15},
+    {name: "Rubber Plant",className:"rubberPlant",size: "MEDIUM",sunlight: "low",maintenance: "high",petFriendly: true,airPurifying: true,price:25, imgSRC:"../Assets/fiscus.jpeg",date: 15},
 
-    {name: "Watermellon Pepperomelia",className:"watermellonPeperomelia",size: "MEDIUM",sunlight: "high",maintenance: "low",petFriendly: false,airPurifying: false,price:22, imgSRC:"../Images/Plant images/watermellon.jpeg", date: 2},
+    {name: "Watermellon Pepperomelia",className:"watermellonPeperomelia",size: "MEDIUM",sunlight: "high",maintenance: "low",petFriendly: false,airPurifying: false,price:22, imgSRC:"../Assets/watermellon.jpeg", date: 2},
 ]
 
 
@@ -177,7 +177,7 @@ plantFilterApp.init();
                         <div class="dropdown">
                         <div class="dropbtn">
                             <p class="headingType4 darkGrey marginx2 ">${dropDownTop}</p>
-                            <img class= "arrowNav" src="../icons/arrow_down_icon 2.10.13 PM.png" alt="dropdown arrow">
+                            <img class= "arrowNav" src="../Assets/iconArrowDown.png" alt="dropdown arrow">
                         </div> 
                         <!--Hidden Dropdown Content-->
                         <div class="dropdown-content">
