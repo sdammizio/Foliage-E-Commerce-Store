@@ -70,10 +70,10 @@ header {
 }
 
 .navPhoto{
+  width: -webkit-fill-available;  
   max-width: -webkit-fill-available;
   width: 100%;
   width: -moz-available;          
-  width: -webkit-fill-available;  
   width: fill-available;
   margin-bottom: 20px;
 }
@@ -168,7 +168,7 @@ ul {
      display: flex;
      flex-direction: row;
      justify-content: flex-end;
-     width: 332px;
+     width: 278px;
  }
 
 

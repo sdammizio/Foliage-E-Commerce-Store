@@ -30,7 +30,13 @@ let plantFilterApp ={};
 
 //Add to Cart Buttons on Hover
 
-    plantFilterApp.init = function(){
+plantFilterApp.init = function(){
+
+        $(".navDropdownOverlayPlant").hide();
+        $(".navDropdownOverlayGifts").hide();
+        $(".navDropdownOverlayLearn").hide();
+        $(".navDropdownOverlayAbout").hide();
+
         $(".cardFlexContainer").on("mouseover", ".plantCardItem", function(){
             $(this).find("button.hoverAddToCart").css("display", "unset")
         });
@@ -51,28 +57,9 @@ let plantFilterApp ={};
 
         $(".hiddenLinks").hide()
 
-        $(".navDropdownOverlayPlant").hide();
-        $(".navDropdownOverlayGifts").hide();
-        $(".navDropdownOverlayLearn").hide();
-        $(".navDropdownOverlayAbout").hide();
+        
 
-    //Google Map API 
 
-    // function initMap(){
-    //     //location want to show
-    //     const location = {lat: 43.65639296941359, lng:-79.45356737504656};
-    //     //map centered at that location
-    //     const map = new google.maps.Map(document.getElementById("map"), {
-    //         zoom: 15,
-    //         center: location
-    //     });
-    //     //marker positioned at location
-    //     const marker = new google.maps.Marker ({
-    //         position: location,
-    //         map: map
-    //     });
-    // }
-    // initMap();
 
 //Instagram Feed API
 
@@ -95,11 +82,11 @@ let plantFilterApp ={};
 // });
 
 // Instagram Embedded Widget
-(function(){
-    var i, e, d = document, s = "script";i = d.createElement("script");i.async = 1;
-    i.src = "https://cdn.curator.io/published/6ddcd501-c312-48cc-87a3-7d11b6af664b.js";
-    e = d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
-    })();
+// (function(){
+//     var i, e, d = document, s = "script";i = d.createElement("script");i.async = 1;
+//     i.src = "https://cdn.curator.io/published/6ddcd501-c312-48cc-87a3-7d11b6af664b.js";
+//     e = d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+//     })();
 
 
 
@@ -113,6 +100,34 @@ let plantFilterApp ={};
 }
 
 plantFilterApp.init();
+
+
+//Google Map API 
+
+    // Create the script tag, set the appropriate attributes
+    const script = document.createElement('script');
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyABMNO4WBePgQWjvYvF4U9DFgiHjmKv1Jc&callback=initMap';
+    script.async = true;
+
+    // Attach your callback function to the `window` object
+    window.initMap = function() {
+        //location want to show
+        const location = {lat: 43.65639296941359, lng:-79.45356737504656};
+        //map centered at that location
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center: location
+        });
+        //marker positioned at location
+        const marker = new google.maps.Marker ({
+            position: location,
+            map: map
+        });
+    // JS API is loaded and available
+    };
+
+    // Append the 'script' element to 'head'
+    document.head.appendChild(script);
 
 //Filter Dropdowns
 
@@ -189,81 +204,81 @@ plantFilterApp.init();
       
     //define the functions for each of the sorting options and call the above methods
 
-    // plantFilterApp.finalSortingFunctions=function(){
+    plantFilterApp.finalSortingFunctions=function(){
         
-        // $('.sortBox').on('click','.sortZA',function(){
+        $('.sortBox').on('click','.sortZA',function(){
 
-        //     sortOption= plants.sort(function(a,b){
-        //         if (a.name<b.name) {
-        //             return 1
-        //         } else {
-        //             return -1
-        //         }
-        //     });
-        //     console.log(sortOption);
-        //     plantFilterApp.sortingMethod();
-        //     plantFilterApp.dropdownHTMLMethod("SORT BY Z-A", "SORT BY A-Z", "SORT BY NEWEST", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortAZ", "sortNewest","sortLowHigh","sortHighLow");
-        // }),
+            sortOption= plants.sort(function(a,b){
+                if (a.name<b.name) {
+                    return 1
+                } else {
+                    return -1
+                }
+            });
+            console.log(sortOption);
+            plantFilterApp.sortingMethod();
+            plantFilterApp.dropdownHTMLMethod("SORT BY Z-A", "SORT BY A-Z", "SORT BY NEWEST", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortAZ", "sortNewest","sortLowHigh","sortHighLow");
+        }),
         
 
-        // $('.sortBox').on('click','.sortAZ',function(){
-        //     sortOption= plants.sort(function(a,b){
-        //         if (a.name>b.name) {
-        //             return 1
-        //         } else {
-        //             return -1
-        //         }
-        //     });
-        //     console.log(sortOption);
-        //     plantFilterApp.sortingMethod();
-        //     plantFilterApp.dropdownHTMLMethod("SORT BY A-Z", "SORT BY Z-A", "SORT BY NEWEST", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortZA", "sortNewest","sortLowHigh","sortHighLow");
-        //     $(".dropdown-content").hide();
-        // }),
+        $('.sortBox').on('click','.sortAZ',function(){
+            sortOption= plants.sort(function(a,b){
+                if (a.name>b.name) {
+                    return 1
+                } else {
+                    return -1
+                }
+            });
+            console.log(sortOption);
+            plantFilterApp.sortingMethod();
+            plantFilterApp.dropdownHTMLMethod("SORT BY A-Z", "SORT BY Z-A", "SORT BY NEWEST", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortZA", "sortNewest","sortLowHigh","sortHighLow");
+            $(".dropdown-content").hide();
+        }),
 
-        // $('.sortBox').on('click','.sortNewest',function(){
-        //     sortOption= plants.sort(function(a,b){
-        //         if (a.date>b.date) {
-        //             return 1
-        //         } else {
-        //             return -1
-        //         }
-        //     });
-        //     console.log(sortOption);
-        //     plantFilterApp.sortingMethod();
-        //     plantFilterApp.dropdownHTMLMethod("SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortAZ", "sortZA","sortLowHigh", "sortHighLow");
-        //     $(".dropdown-content").hide();
-        // }),
+        $('.sortBox').on('click','.sortNewest',function(){
+            sortOption= plants.sort(function(a,b){
+                if (a.date>b.date) {
+                    return 1
+                } else {
+                    return -1
+                }
+            });
+            console.log(sortOption);
+            plantFilterApp.sortingMethod();
+            plantFilterApp.dropdownHTMLMethod("SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortAZ", "sortZA","sortLowHigh", "sortHighLow");
+            $(".dropdown-content").hide();
+        }),
 
-        // $('.sortBox').on('click','.sortLowHigh',function(){
-        //     sortOption= plants.sort(function(a,b){
-        //         if (a.price>b.price) {
-        //             return 1
-        //         } else {
-        //             return -1
-        //         }
-        //     });
-        //     console.log(sortOption);
-        //     plantFilterApp.sortingMethod();
-        //     plantFilterApp.dropdownHTMLMethod("SORT BY PRICE LOW-HIGH", "SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A", "SORT BY PRICE HIGH-LOW","sortNewest", "sortAZ","sortZA","sortHighLow");
-        //     $(".dropdown-content").hide();
-        // }),
+        $('.sortBox').on('click','.sortLowHigh',function(){
+            sortOption= plants.sort(function(a,b){
+                if (a.price>b.price) {
+                    return 1
+                } else {
+                    return -1
+                }
+            });
+            console.log(sortOption);
+            plantFilterApp.sortingMethod();
+            plantFilterApp.dropdownHTMLMethod("SORT BY PRICE LOW-HIGH", "SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A", "SORT BY PRICE HIGH-LOW","sortNewest", "sortAZ","sortZA","sortHighLow");
+            $(".dropdown-content").hide();
+        }),
 
-        // $('.sortBox').on('click','.sortHighLow',function(){
-        //     sortOption= plants.sort(function(a,b){
-        //         if (a.price<b.price) {
-        //             return 1
-        //         } else {
-        //             return -1
-        //         }
-        //     });
-        //     console.log(sortOption);
-        //     plantFilterApp.sortingMethod();
-        //     plantFilterApp.dropdownHTMLMethod("SORT BY PRICE HIGH-LOW","SORT BY PRICE LOW-HIGH", "SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A","sortNewest", "sortLowHigh","sortNewest","sortAZ","sortZA");  
-        //     $(".dropdown-content").hide();
-        // })
-    // }
+        $('.sortBox').on('click','.sortHighLow',function(){
+            sortOption= plants.sort(function(a,b){
+                if (a.price<b.price) {
+                    return 1
+                } else {
+                    return -1
+                }
+            });
+            console.log(sortOption);
+            plantFilterApp.sortingMethod();
+            plantFilterApp.dropdownHTMLMethod("SORT BY PRICE HIGH-LOW","SORT BY PRICE LOW-HIGH", "SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A","sortNewest", "sortLowHigh","sortNewest","sortAZ","sortZA");  
+            $(".dropdown-content").hide();
+        })
+    }
 
-    // plantFilterApp.finalSortingFunctions();
+    plantFilterApp.finalSortingFunctions();
 
         
 //Filters
@@ -313,17 +328,6 @@ plantFilterApp.init();
         //sort box options 
 
         $('.sortBox').on('click','.sortZA',function(){
-            if (filters === []){
-                console.log("sorted original plants array")
-                sortOption= plants.sort(function(a,b){
-                    if (a.name<b.name) {
-                        return 1
-                    } else {
-                        return -1
-                    }
-                });
-                
-            } else {
                 sortOption= filterPlants.sort(function(a,b){
                     if (a.name<b.name) {
                         return 1
@@ -332,24 +336,14 @@ plantFilterApp.init();
                     }
                 });
                 console.log("sorted with filtered plants")
-            }
+            
             plantFilterApp.sortingMethod();
             plantFilterApp.dropdownHTMLMethod("SORT BY Z-A", "SORT BY A-Z", "SORT BY NEWEST", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortAZ", "sortNewest","sortLowHigh","sortHighLow");
             $(".dropdown-content").hide();
         }),
 
         $('.sortBox').on('click','.sortAZ',function(){
-            if (filters === []){
-                console.log("sorted original plants array")
-                sortOption= plants.sort(function(a,b){
-                    if (a.name>b.name) {
-                        return 1
-                    } else {
-                        return -1
-                    }
-                });
-                
-            } else {
+        
                 sortOption= filterPlants.sort(function(a,b){
                     if (a.name>b.name) {
                         return 1
@@ -358,7 +352,7 @@ plantFilterApp.init();
                     }
                 });
                 console.log("sorted with filtered plants")
-            }
+            
             console.log(sortOption);
             plantFilterApp.sortingMethod();
             plantFilterApp.dropdownHTMLMethod("SORT BY A-Z", "SORT BY Z-A", "SORT BY NEWEST", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortZA", "sortNewest","sortLowHigh","sortHighLow");
@@ -366,18 +360,8 @@ plantFilterApp.init();
         }),
 
         $('.sortBox').on('click','.sortNewest',function(){
-            if (filters === []){
-                console.log("sorted original plants array")
-                sortOption= plants.sort(function(a,b){
-                    if (a.date>b.date) {
-                        return 1
-                    } else {
-                        return -1
-                    }
-                });
-                
-            } else {
-                sortOption= plants.sort(function(a,b){
+            
+                sortOption= filterPlants.sort(function(a,b){
                     if (a.date>b.date) {
                         return 1
                     } else {
@@ -385,7 +369,7 @@ plantFilterApp.init();
                     }
                 });
                 console.log("sorted with filtered plants")
-            }
+            
             console.log(sortOption);
             plantFilterApp.sortingMethod();
             plantFilterApp.dropdownHTMLMethod("SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortAZ", "sortZA","sortLowHigh", "sortHighLow");
@@ -393,18 +377,8 @@ plantFilterApp.init();
         }),
 
         $('.sortBox').on('click','.sortLowHigh',function(){
-            if (filters === []){
-                console.log("sorted original plants array")
-                sortOption= plants.sort(function(a,b){
-                    if (a.price>b.price) {
-                        return 1
-                    } else {
-                        return -1
-                    }
-                });
-                
-            } else {
-                sortOption= plants.sort(function(a,b){
+      
+                sortOption= filterPlants.sort(function(a,b){
                     if (a.price>b.price) {
                         return 1
                     } else {
@@ -412,7 +386,7 @@ plantFilterApp.init();
                     }
                 });
                 console.log("sorted with filtered plants")
-            }
+            
             console.log(sortOption);
             plantFilterApp.sortingMethod();
             plantFilterApp.dropdownHTMLMethod("SORT BY PRICE LOW-HIGH", "SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A", "SORT BY PRICE HIGH-LOW","sortNewest", "sortAZ","sortZA","sortHighLow");
@@ -420,18 +394,8 @@ plantFilterApp.init();
         }),
 
         $('.sortBox').on('click','.sortHighLow',function(){
-            if (filters === []){
-                console.log("sorted original plants array")
-                sortOption= plants.sort(function(a,b){
-                    if (a.price<b.price) {
-                        return 1
-                    } else {
-                        return -1
-                    }
-                });
-                
-            } else {
-                sortOption= plants.sort(function(a,b){
+         
+                sortOption= filterPlants.sort(function(a,b){
                     if (a.price<b.price) {
                         return 1
                     } else {
@@ -439,7 +403,7 @@ plantFilterApp.init();
                     }
                 });
                 console.log("sorted with filtered plants")
-            }
+            
             console.log(sortOption);
             plantFilterApp.sortingMethod();
             plantFilterApp.dropdownHTMLMethod("SORT BY PRICE HIGH-LOW","SORT BY PRICE LOW-HIGH", "SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A","sortNewest", "sortLowHigh","sortNewest","sortAZ","sortZA");  
@@ -554,8 +518,6 @@ plantFilterApp.init();
                 //remove size:small property from array of FILTERS, then run filter again
                 return filterObject.size !== "SMALL"
             })
-            // $(".dropdownOption_SmallSize").removeClass("activeFilter");
-            // $(".dropdownOption_MedSize").removeClass("activeFilter");
             plantFilterApp.filterMethod(plantFilterApp.filters);
             $(".dropdownOption_LargeSize").addClass("activeFilter");
             $(".dropdownOption_LargeSize").css("background-color", "#faecd1"); 
@@ -577,6 +539,16 @@ plantFilterApp.init();
         
         } else {
             plantFilterApp.filters.push({sunlight:"low"});
+            $(".dropdownOption_MedSun").css("background-color", "transparent"); 
+            $(".dropdownOption_HighSun").css("background-color", "transparent");
+            plantFilterApp.filters = plantFilterApp.filters.filter((filterObject)=>{
+                //remove size:small property from array of FILTERS
+                return filterObject.sunlight !== "medium"
+            })
+            plantFilterApp.filters = plantFilterApp.filters.filter((filterObject)=>{
+                //remove size:small property from array of FILTERS
+                return filterObject.size !== "high"
+            }) 
             plantFilterApp.filterMethod(plantFilterApp.filters);
             $(".dropdownOption_LowSun").addClass("activeFilter");
             $(".dropdownOption_LowSun").css("background-color", "#faecd1"); 
@@ -597,6 +569,16 @@ plantFilterApp.init();
         
         } else {
             plantFilterApp.filters.push({sunlight:"medium"});
+            $(".dropdownOption_LowSun").css("background-color", "transparent"); 
+            $(".dropdownOption_HighSun").css("background-color", "transparent");
+            plantFilterApp.filters = plantFilterApp.filters.filter((filterObject)=>{
+                //remove size:small property from array of FILTERS
+                return filterObject.sunlight !== "low"
+            })
+            plantFilterApp.filters = plantFilterApp.filters.filter((filterObject)=>{
+                //remove size:small property from array of FILTERS
+                return filterObject.sunlight !== "high"
+            }) 
             plantFilterApp.filterMethod(plantFilterApp.filters);
             $(".dropdownOption_MedSun").addClass("activeFilter");
             $(".dropdownOption_MedSun").css("background-color", "#faecd1"); 
@@ -617,6 +599,16 @@ plantFilterApp.init();
         
         } else {
             plantFilterApp.filters.push({sunlight:"high"});
+            $(".dropdownOption_LowSun").css("background-color", "transparent"); 
+            $(".dropdownOption_MedSun").css("background-color", "transparent");
+            plantFilterApp.filters = plantFilterApp.filters.filter((filterObject)=>{
+                //remove size:small property from array of FILTERS
+                return filterObject.sunlight !== "low"
+            })
+            plantFilterApp.filters = plantFilterApp.filters.filter((filterObject)=>{
+                //remove size:small property from array of FILTERS
+                return filterObject.sunlight !== "medium"
+            }) 
             plantFilterApp.filterMethod(plantFilterApp.filters);
             $(".dropdownOption_HighSun").addClass("activeFilter");
             $(".dropdownOption_HighSun").css("background-color", "#faecd1"); 
@@ -637,6 +629,16 @@ plantFilterApp.init();
             $(".dropdownOption_LowMain").css("background-color", "transparent"); 
         } else {
             plantFilterApp.filters.push({maintenance:"low"});
+            $(".dropdownOption_MedMain").css("background-color", "transparent"); 
+            $(".dropdownOption_HighMain").css("background-color", "transparent");
+            plantFilterApp.filters = plantFilterApp.filters.filter((filterObject)=>{
+                //remove size:small property from array of FILTERS
+                return filterObject.maintenance !== "medium"
+            })
+            plantFilterApp.filters = plantFilterApp.filters.filter((filterObject)=>{
+                //remove size:small property from array of FILTERS
+                return filterObject.maintenance !== "high"
+            }) 
             plantFilterApp.filterMethod(plantFilterApp.filters);
             $(".dropdownOption_LowMain").addClass("activeFilter");
         $(".dropdownOption_LowMain").css("background-color", "#faecd1"); 
@@ -657,6 +659,16 @@ plantFilterApp.init();
             $(".dropdownOption_MedMain").css("background-color", "transparent"); 
         } else {
             plantFilterApp.filters.push({maintenance:"medium"});
+            $(".dropdownOption_LowMain").css("background-color", "transparent"); 
+            $(".dropdownOption_HighMain").css("background-color", "transparent");
+            plantFilterApp.filters = plantFilterApp.filters.filter((filterObject)=>{
+                //remove size:small property from array of FILTERS
+                return filterObject.maintenance !== "low"
+            })
+            plantFilterApp.filters = plantFilterApp.filters.filter((filterObject)=>{
+                //remove size:small property from array of FILTERS
+                return filterObject.maintenance !== "high"
+            }) 
             plantFilterApp.filterMethod(plantFilterApp.filters);
         $(".dropdownOption_MedMain").addClass("activeFilter");
         $(".dropdownOption_MedMain").css("background-color", "#faecd1"); 
@@ -676,6 +688,16 @@ plantFilterApp.init();
             $(".dropdownOption_HighMain").css("background-color", "transparent"); 
         } else {
             plantFilterApp.filters.push({maintenance:"high"});
+            $(".dropdownOption_LowSun").css("background-color", "transparent"); 
+            $(".dropdownOption_MedSun").css("background-color", "transparent");
+            plantFilterApp.filters = plantFilterApp.filters.filter((filterObject)=>{
+                //remove size:small property from array of FILTERS
+                return filterObject.maintenance!== "low"
+            })
+            plantFilterApp.filters = plantFilterApp.filters.filter((filterObject)=>{
+                //remove size:small property from array of FILTERS
+                return filterObject.maintenance !== "medium"
+            }) 
             plantFilterApp.filterMethod(plantFilterApp.filters);
             $(".dropdownOption_HighMain").addClass("activeFilter");
             $(".dropdownOption_HighMain").css("background-color", "#faecd1"); 
@@ -822,7 +844,7 @@ plantFilterApp.mobileNavHamburgerMenu();
 
 
 //Button Connections
-plantFilterApp.beginnerPlantPageRedirection=function(){
+plantFilterApp.buttonRedirections=function(){
     $("button.heroButton").on("click", function(){
         window.location.href = '../HTML/beginnerPlants.html';
     }) 
@@ -831,11 +853,11 @@ plantFilterApp.beginnerPlantPageRedirection=function(){
         window.location.href = '../HTML/beginnerPlants.html';
     }) 
 
-    $("img.logo").on("click", function(){
-        window.location.href = '../HTML/homepage.html';
+    $("#beginnerFriendly").on("click", function(){
+        window.location.href = '../HTML/beginnerPlants.html';
     }) 
 
-    $("#beginnerFriendly").on("click", function(){
+    $("#beginnerPlantButton").on("click", function(){
         window.location.href = '../HTML/beginnerPlants.html';
     }) 
 
@@ -845,7 +867,7 @@ plantFilterApp.beginnerPlantPageRedirection=function(){
 
 }
 
-plantFilterApp.beginnerPlantPageRedirection();
+plantFilterApp.buttonRedirections();
 
 //NavBar Dropdowns Desktop
 
