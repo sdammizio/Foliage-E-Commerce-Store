@@ -1,24 +1,24 @@
 //Plant Array
 const plants = [
-    {name: "Snake Plant",className: "snakePlant", size: "MEDIUM",sunlight: "low",maintenance: "low",petFriendly: true,airPurifying: false,price:16, imgSRC:"../Images/Plant images:Beginner/medium-plant-snake-white-pot.webp", date: 30},
+    {name: "Snake Plant",className: "snakePlant", size: "MEDIUM",sunlight: "low",maintenance: "low",petFriendly: true,airPurifying: false,price:16, imgSRC:"../Images/Plant images/snake_plant.webp", date: 30},
 
-    {name: "ZZ Plant",className:"zzPlant",size:"LARGE",sunlight: "medium",maintenance: "medium",petFriendly: true,airPurifying: false,price:26, imgSRC:"../Images/Plant images:Beginner/large-plant-zz-white-pot_2_1.webp", date: 25},
+    {name: "ZZ Plant",className:"zzPlant",size:"LARGE",sunlight: "medium",maintenance: "medium",petFriendly: true,airPurifying: false,price:26, imgSRC:"../Images/Plant images/zz_plant.webp", date: 25},
 
-    {name: "Dragon Tree",className:"dragonTree",size: "LARGE", sunlight: "high",maintenance: "medium",petFriendly: false,airPurifying: false,price:20, imgSRC:"../Images/Plant images:Beginner/medium-plant-dragon-tree-black-pot_1080x.jpeg", date: 10},
+    {name: "Dragon Tree",className:"dragonTree",size: "LARGE", sunlight: "high",maintenance: "medium",petFriendly: false,airPurifying: false,price:20, imgSRC:"../Images/Plant images/dragon_tree.jpeg", date: 10},
     
-    {name: "Sago Palm",className:"sagoPalm",size: "SMALL",sunlight: "high",maintenance: "low",petFriendly: false,airPurifying: true,price:10, imgSRC:"../Images/Plant images:Beginner/medium-plant-sago-palm-seafoam-pot_1080x.jpeg", date: 12},
+    {name: "Sago Palm",className:"sagoPalm",size: "SMALL",sunlight: "high",maintenance: "low",petFriendly: false,airPurifying: true,price:10, imgSRC:"../Images/Plant images/sago_palm.jpeg", date: 12},
 
-    {name: "Devil's Ivy",className:"devilsIvy",size: "LARGE",sunlight: "high",maintenance: "low",petFriendly: false,airPurifying: true,price:30, imgSRC:"../Images/Plant images:Beginner/medium-plant-devils-ivy-seafoam-pot_39bb26a2-cfa4-4a5d-aa6f-608cc41d2956_1080x.jpeg", date: 3},
+    {name: "Devil's Ivy",className:"devilsIvy",size: "LARGE",sunlight: "high",maintenance: "low",petFriendly: false,airPurifying: true,price:30, imgSRC:"../Images/Plant images/devils_ivy.jpeg", date: 3},
     
-    {name: "Blue Star Fern",className:"blueStarFern",size: "MEDIUM",sunlight: "low",maintenance: "medium",petFriendly: false,airPurifying: false,price:15, imgSRC:"../Images/Plant images:Beginner/large-plant-blue-star-fern-seafoam-pot_1080x.jpeg", date: 9},
+    {name: "Blue Star Fern",className:"blueStarFern",size: "MEDIUM",sunlight: "low",maintenance: "medium",petFriendly: false,airPurifying: false,price:15, imgSRC:"../Images/Plant images/blue_star_fern.jpeg", date: 9},
 
-    {name: "Jade Succulent",className:"jadeSucculent",size: "LARGE",sunlight: "low",maintenance: "high",petFriendly: true,airPurifying: true,price:25, imgSRC:"../Images/Plant images:Beginner/small-succulent-jade-periwinkle-pot_1080x.jpeg", date: 21},
+    {name: "Jade Succulent",className:"jadeSucculent",size: "LARGE",sunlight: "low",maintenance: "high",petFriendly: true,airPurifying: true,price:25, imgSRC:"../Images/Plant images/succulent_jade.jpeg", date: 21},
 
-    {name: "Pilea",className:"pilea",size: "SMALL",sunlight: "medium",maintenance: "high",petFriendly: false,airPurifying: false,price:15, imgSRC:"../Images/Plant images:Beginner/small-plant-pilea-rosewood-pot_1080x.jpeg", date: 30},
+    {name: "Pilea",className:"pilea",size: "SMALL",sunlight: "medium",maintenance: "high",petFriendly: false,airPurifying: false,price:15, imgSRC:"../Images/Plant images/pilea.jpeg", date: 30},
 
-    {name: "Rubber Plant",className:"rubberPlant",size: "MEDIUM",sunlight: "low",maintenance: "high",petFriendly: true,airPurifying: true,price:25, imgSRC:"../Images/Plant images:Beginner/medium-plant-ficus-black-pot_1080x.jpeg",date: 15},
+    {name: "Rubber Plant",className:"rubberPlant",size: "MEDIUM",sunlight: "low",maintenance: "high",petFriendly: true,airPurifying: true,price:25, imgSRC:"../Images/Plant images/fiscus.jpeg",date: 15},
 
-    {name: "Watermellon Pepperomelia",className:"watermellonPeperomelia",size: "MEDIUM",sunlight: "high",maintenance: "low",petFriendly: false,airPurifying: false,price:22, imgSRC:"../Images/Plant images:Beginner/small-plant-watermelon-peperomia-rosewood-pot_1080x.jpeg", date: 2},
+    {name: "Watermellon Pepperomelia",className:"watermellonPeperomelia",size: "MEDIUM",sunlight: "high",maintenance: "low",petFriendly: false,airPurifying: false,price:22, imgSRC:"../Images/Plant images/watermellon.jpeg", date: 2},
 ]
 
 
@@ -105,7 +105,7 @@ plantFilterApp.init();
 //Google Map API 
 
     // Create the script tag, set the appropriate attributes
-    const script = document.createElement('script');
+    const script = document.createElement('script');  
     script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyABMNO4WBePgQWjvYvF4U9DFgiHjmKv1Jc&callback=initMap';
     script.async = true;
 
@@ -129,6 +129,7 @@ plantFilterApp.init();
     // Append the 'script' element to 'head'
     document.head.appendChild(script);
 
+
 //Filter Dropdowns
 
     plantFilterApp.filterDropdownMethod=function(button, filterDropdown,arrow){
@@ -145,7 +146,6 @@ plantFilterApp.init();
 
 // Sort Buttons
     let sortOption;
-
 
     //create a method to generate plant cards based on sorting option plugged in
     plantFilterApp.sortingMethod = function(){
@@ -215,7 +215,6 @@ plantFilterApp.init();
                     return -1
                 }
             });
-            console.log(sortOption);
             plantFilterApp.sortingMethod();
             plantFilterApp.dropdownHTMLMethod("SORT BY Z-A", "SORT BY A-Z", "SORT BY NEWEST", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortAZ", "sortNewest","sortLowHigh","sortHighLow");
         }),
@@ -229,7 +228,6 @@ plantFilterApp.init();
                     return -1
                 }
             });
-            console.log(sortOption);
             plantFilterApp.sortingMethod();
             plantFilterApp.dropdownHTMLMethod("SORT BY A-Z", "SORT BY Z-A", "SORT BY NEWEST", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortZA", "sortNewest","sortLowHigh","sortHighLow");
             $(".dropdown-content").hide();
@@ -243,7 +241,6 @@ plantFilterApp.init();
                     return -1
                 }
             });
-            console.log(sortOption);
             plantFilterApp.sortingMethod();
             plantFilterApp.dropdownHTMLMethod("SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortAZ", "sortZA","sortLowHigh", "sortHighLow");
             $(".dropdown-content").hide();
@@ -257,7 +254,6 @@ plantFilterApp.init();
                     return -1
                 }
             });
-            console.log(sortOption);
             plantFilterApp.sortingMethod();
             plantFilterApp.dropdownHTMLMethod("SORT BY PRICE LOW-HIGH", "SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A", "SORT BY PRICE HIGH-LOW","sortNewest", "sortAZ","sortZA","sortHighLow");
             $(".dropdown-content").hide();
@@ -271,7 +267,6 @@ plantFilterApp.init();
                     return -1
                 }
             });
-            console.log(sortOption);
             plantFilterApp.sortingMethod();
             plantFilterApp.dropdownHTMLMethod("SORT BY PRICE HIGH-LOW","SORT BY PRICE LOW-HIGH", "SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A","sortNewest", "sortLowHigh","sortNewest","sortAZ","sortZA");  
             $(".dropdown-content").hide();
@@ -335,15 +330,12 @@ plantFilterApp.init();
                         return -1
                     }
                 });
-                console.log("sorted with filtered plants")
-            
             plantFilterApp.sortingMethod();
             plantFilterApp.dropdownHTMLMethod("SORT BY Z-A", "SORT BY A-Z", "SORT BY NEWEST", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortAZ", "sortNewest","sortLowHigh","sortHighLow");
             $(".dropdown-content").hide();
         }),
 
         $('.sortBox').on('click','.sortAZ',function(){
-        
                 sortOption= filterPlants.sort(function(a,b){
                     if (a.name>b.name) {
                         return 1
@@ -351,16 +343,12 @@ plantFilterApp.init();
                         return -1
                     }
                 });
-                console.log("sorted with filtered plants")
-            
-            console.log(sortOption);
             plantFilterApp.sortingMethod();
             plantFilterApp.dropdownHTMLMethod("SORT BY A-Z", "SORT BY Z-A", "SORT BY NEWEST", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortZA", "sortNewest","sortLowHigh","sortHighLow");
             $(".dropdown-content").hide();
         }),
 
         $('.sortBox').on('click','.sortNewest',function(){
-            
                 sortOption= filterPlants.sort(function(a,b){
                     if (a.date>b.date) {
                         return 1
@@ -368,16 +356,12 @@ plantFilterApp.init();
                         return -1
                     }
                 });
-                console.log("sorted with filtered plants")
-            
-            console.log(sortOption);
             plantFilterApp.sortingMethod();
             plantFilterApp.dropdownHTMLMethod("SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A", "SORT BY PRICE LOW-HIGH", "SORT BY PRICE HIGH-LOW", "sortAZ", "sortZA","sortLowHigh", "sortHighLow");
             $(".dropdown-content").hide();
         }),
 
         $('.sortBox').on('click','.sortLowHigh',function(){
-      
                 sortOption= filterPlants.sort(function(a,b){
                     if (a.price>b.price) {
                         return 1
@@ -385,9 +369,6 @@ plantFilterApp.init();
                         return -1
                     }
                 });
-                console.log("sorted with filtered plants")
-            
-            console.log(sortOption);
             plantFilterApp.sortingMethod();
             plantFilterApp.dropdownHTMLMethod("SORT BY PRICE LOW-HIGH", "SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A", "SORT BY PRICE HIGH-LOW","sortNewest", "sortAZ","sortZA","sortHighLow");
             $(".dropdown-content").hide();
@@ -402,9 +383,6 @@ plantFilterApp.init();
                         return -1
                     }
                 });
-                console.log("sorted with filtered plants")
-            
-            console.log(sortOption);
             plantFilterApp.sortingMethod();
             plantFilterApp.dropdownHTMLMethod("SORT BY PRICE HIGH-LOW","SORT BY PRICE LOW-HIGH", "SORT BY NEWEST","SORT BY A-Z", "SORT BY Z-A","sortNewest", "sortLowHigh","sortNewest","sortAZ","sortZA");  
             $(".dropdown-content").hide();
@@ -452,7 +430,6 @@ plantFilterApp.init();
                 //remove size:small property from array of FILTERS
                 return filterObject.size !== "LARGE"
             })
-            console.log(plantFilterApp.filters);
             // pass it the filters array
             plantFilterApp.filterMethod(plantFilterApp.filters);
             //if true(filter inactive), want to set to show filtered plants next time click button and apply activeFilter class
@@ -486,7 +463,6 @@ plantFilterApp.init();
                 //remove size:small property from array of FILTERS
                 return filterObject.size !== "LARGE"
             }) 
-            console.log(plantFilterApp.filters);
             // pass it the filters array
             plantFilterApp.filterMethod(plantFilterApp.filters);
             $(".dropdownOption_MedSize").addClass("activeFilter");
@@ -752,7 +728,6 @@ plantFilterApp.finalFilterFunctions();
         })
 
         $("#shoppingModal").click(() => {
-            console.log("bye")
             $("#shoppingCartPopOut").hide();
         })
 
