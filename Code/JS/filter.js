@@ -1,24 +1,24 @@
 //Plant Array
 const plants = [
-    {name: "Snake Plant",className: "snakePlant", size: "MEDIUM",sunlight: "low",maintenance: "low",petFriendly: true,airPurifying: false,price:16, imgSRC:"../Assets/snakePlant.jpg", date: 30},
+    {name: "Snake Plant",className: "snakePlant", size: "MEDIUM",sunlight: "low",maintenance: "low",petFriendly: true,airPurifying: false,price:16, imgSRC:"../Assets/snakePlant.jpg",replacementText:"Snake Plant", date: 30},
 
-    {name: "ZZ Plant",className:"zzPlant",size:"LARGE",sunlight: "medium",maintenance: "medium",petFriendly: true,airPurifying: false,price:26, imgSRC:"../Assets/zzPlant.jpg", date: 25},
+    {name: "ZZ Plant",className:"zzPlant",size:"LARGE",sunlight: "medium",maintenance: "medium",petFriendly: true,airPurifying: false,price:26, imgSRC:"../Assets/zzPlant.jpg", replacementText:"ZZ Plant",date: 25},
 
-    {name: "Dragon Tree",className:"dragonTree",size: "LARGE", sunlight: "high",maintenance: "medium",petFriendly: false,airPurifying: false,price:20, imgSRC:"../Assets/dragonTree.jpeg", date: 10},
+    {name: "Dragon Tree",className:"dragonTree",size: "LARGE", sunlight: "high",maintenance: "medium",petFriendly: false,airPurifying: false,price:20, imgSRC:"../Assets/dragonTree.jpeg",replacementText:"Dragon Tree", date: 10},
     
-    {name: "Sago Palm",className:"sagoPalm",size: "SMALL",sunlight: "high",maintenance: "low",petFriendly: false,airPurifying: true,price:10, imgSRC:"../Assets/sagoPalm.jpeg", date: 12},
+    {name: "Sago Palm",className:"sagoPalm",size: "SMALL",sunlight: "high",maintenance: "low",petFriendly: false,airPurifying: true,price:10, imgSRC:"../Assets/sagoPalm.jpeg", replacementText:"Sago Palm",date: 12},
 
-    {name: "Devil's Ivy",className:"devilsIvy",size: "LARGE",sunlight: "high",maintenance: "low",petFriendly: false,airPurifying: true,price:30, imgSRC:"../Assets/devilsIvy.jpeg", date: 3},
+    {name: "Devil's Ivy",className:"devilsIvy",size: "LARGE",sunlight: "high",maintenance: "low",petFriendly: false,airPurifying: true,price:30, imgSRC:"../Assets/devilsIvy.jpeg", replacementText:"Devil's Ivy",date: 3},
     
-    {name: "Blue Star Fern",className:"blueStarFern",size: "MEDIUM",sunlight: "low",maintenance: "medium",petFriendly: false,airPurifying: false,price:15, imgSRC:"../Assets/blueStarFern.jpeg", date: 9},
+    {name: "Blue Star Fern",className:"blueStarFern",size: "MEDIUM",sunlight: "low",maintenance: "medium",petFriendly: false,airPurifying: false,price:15, imgSRC:"../Assets/blueStarFern.jpeg",replacementText:"Blue Star Fern", date: 9},
 
-    {name: "Jade Succulent",className:"jadeSucculent",size: "LARGE",sunlight: "low",maintenance: "high",petFriendly: true,airPurifying: true,price:25, imgSRC:"../Assets/succulentJade.jpeg", date: 21},
+    {name: "Jade Succulent",className:"jadeSucculent",size: "LARGE",sunlight: "low",maintenance: "high",petFriendly: true,airPurifying: true,price:25, imgSRC:"../Assets/succulentJade.jpeg", replacementText:"Jade Succulent",date: 21},
 
-    {name: "Pilea",className:"pilea",size: "SMALL",sunlight: "medium",maintenance: "high",petFriendly: false,airPurifying: false,price:15, imgSRC:"../Assets/pilea.jpeg", date: 30},
+    {name: "Pilea",className:"pilea",size: "SMALL",sunlight: "medium",maintenance: "high",petFriendly: false,airPurifying: false,price:15, imgSRC:"../Assets/pilea.jpeg", replacementText:"Pilea",date: 30},
 
-    {name: "Rubber Plant",className:"rubberPlant",size: "MEDIUM",sunlight: "low",maintenance: "high",petFriendly: true,airPurifying: true,price:25, imgSRC:"../Assets/fiscus.jpeg",date: 15},
+    {name: "Rubber Plant",className:"rubberPlant",size: "MEDIUM",sunlight: "low",maintenance: "high",petFriendly: true,airPurifying: true,price:25, imgSRC:"../Assets/fiscus.jpeg",replacementText:"Rubber Plant",date: 15},
 
-    {name: "Watermellon Pepperomelia",className:"watermellonPeperomelia",size: "MEDIUM",sunlight: "high",maintenance: "low",petFriendly: false,airPurifying: false,price:22, imgSRC:"../Assets/watermellon.jpeg", date: 2},
+    {name: "Watermellon Pepperomelia",className:"watermellonPeperomelia",size: "MEDIUM",sunlight: "high",maintenance: "low",petFriendly: false,airPurifying: false,price:22, imgSRC:"../Assets/watermellon.jpeg",replacementText:"Rubber Plant", date: 2},
 ]
 
 
@@ -27,114 +27,15 @@ $(document).ready(function(){
 //create namespace
 let plantFilterApp ={};
 
-
-//Add to Cart Buttons on Hover
-
 plantFilterApp.init = function(){
 
-        $(".navDropdownOverlayPlant").hide();
-        $(".navDropdownOverlayGifts").hide();
-        $(".navDropdownOverlayLearn").hide();
-        $(".navDropdownOverlayAbout").hide();
-
-        $(".cardFlexContainer").on("mouseover", ".plantCardItem", function(){
-            $(this).find("button.hoverAddToCart").css("display", "unset")
-        });
-        
-        $(".cardFlexContainer").on("mouseout", ".plantCardItem", function(){
-            $(this).find("button.hoverAddToCart").css("display", "none")
-        });
-
-        $(".clickableDropDownSize").hide();
-        $(".clickableDropDownSunlight").hide();
-        $(".clickableDropDownMaintenance").hide();
-
-        $('.sortBox').on('click', function(){ 
-            $(".dropdown-content").toggle(); 
-        });
-
-        $("#shoppingCartPopOut").hide();
-
-        $(".hiddenLinks").hide()
-
-        
-
-
-
-//Instagram Feed API
-
-
-// $.ajax({
-//     url: 'http://proxy.hackeryou.com',
-// 	dataType: 'json',
-// 	type: 'GET',
-// 	data: {
-//         reqUrl:'https://api.instagram.com/v1/users/49485932360/media/recent',
-//         access_token: "IGQVJWOS1weU1OekxUWXlPOVJOSGw2TDJRTHh4dFRad3BNV2Q2Y0hRTlI4WjFCMTE4YzdnU2VRRm9QaTNFNFh3SGJtck9uREsxOV9UZA1ExVFhwRHl5ZAE1uR1F1VzM4ZAzRqdDJFcFZAEbF9tb01zcXJhaAZDZD", 
-//         count: 4,
-//         params: {
-//             method:"GET",
-//             dataType:"json"
-//         }
-//     }
-// }).then(()=>{
-// console.log(promiseObject);
-
-// });
-
-
-// success: function(data){
-//     console.log(data);
-//    for( x in data.data ){
-//        $('ul.instaImageContainer').append('<li><img src="'+data.data[x].images.low_resolution.url+'"></li>'); // data.data[x].images.low_resolution.url - URL of image, 306х306
-//    }
-// }
-
-
-
-
-// Instagram Embedded Widget
-// (function(){
-//     var i, e, d = document, s = "script";i = d.createElement("script");i.async = 1;
-//     i.src = "https://cdn.curator.io/published/6ddcd501-c312-48cc-87a3-7d11b6af664b.js";
-//     e = d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
-//     })();
-
-
-
-
+$('.sortBox').on('click', function(){ 
+    $(".dropdown-content").toggle(); 
+});
 
 }
 
 plantFilterApp.init();
-
-
-//Google Map API 
-
-    // Create the script tag, set the appropriate attributes
-    const script = document.createElement('script');  
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyABMNO4WBePgQWjvYvF4U9DFgiHjmKv1Jc&callback=initMap';
-    script.async = true;
-
-    // Attach your callback function to the `window` object
-    window.initMap = function() {
-        //location want to show
-        const location = {lat: 43.65639296941359, lng:-79.45356737504656};
-        //map centered at that location
-        const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 15,
-            center: location
-        });
-        //marker positioned at location
-        const marker = new google.maps.Marker ({
-            position: location,
-            map: map
-        });
-    // JS API is loaded and available
-    };
-
-    // Append the 'script' element to 'head'
-    document.head.appendChild(script);
 
 
 //Filter Dropdowns
@@ -161,7 +62,7 @@ plantFilterApp.init();
         sortOption.forEach(function(plant){
         const html=`
             <div class="plantCardItem ${plant.className}">
-                                <img class="plantCardImg" src="${plant.imgSRC}" alt="Snake Plant">
+                                <img class="plantCardImg" src="${plant.imgSRC}" alt="${plant.replacementText}">
                                 <div class="cardText">
                                     <h4 class="plantName headingType6 darkGreen noMargin">${plant.name}</h4>
                                     <p class="plantPrice headingType6 darkGreen noMargin">$${plant.price}</p>
@@ -315,7 +216,7 @@ plantFilterApp.init();
         filterPlants.forEach(function(plant){
         const html=`
         <div class="plantCardItem ${plant.className}">
-                            <img class="plantCardImg" src="${plant.imgSRC}" alt="Snake Plant">
+                            <img class="plantCardImg" src="${plant.imgSRC}" alt="${plant.replacementText}">
                             <div class="cardText">
                                 <h4 class="plantName headingType6 darkGreen noMargin">${plant.name}</h4>
                                 <p class="plantPrice headingType6 darkGreen noMargin">$${plant.price}</p>
@@ -722,273 +623,6 @@ plantFilterApp.init();
 }
 
 plantFilterApp.finalFilterFunctions();
-
-//create new array to store items in cart
-plantFilterApp.shoppingCart =[]
-
-//Shopping Cart Icon and Modal Pop-Up
-
-    plantFilterApp.shoppingCartIcon= function(){
-        let iconValue=0;
-
-        //toggle cart overlay by pressing on cart icon on page
-        $("img.cart").on("click", function(){
-            $("#shoppingCartPopOut").toggle();
-        })
-
-        //click x on cart modal to close
-        $("#shoppingModal").click(() => {
-            $("#shoppingCartPopOut").hide();
-        })
-
-        //when click an Add to Cart button on a product...
-        $(".cardFlexContainer").on("click", ".hoverAddToCart",function(){
-            //it adds a number beside the cart icon
-            $("#cartUpdater").removeClass('hiddenCartIcon');
-            iconValue=iconValue+1;
-            $("#cartUpdater").text(`${iconValue}`)
-            // and at the same time opens up the cart modal pop-up (and closes automatically in 4000ms)
-            $("#shoppingCartPopOut").show();
-            setTimeout(function(){
-                $("#shoppingCartPopOut").hide()
-              }, 4000);
-
-            //it updates the content in the cart modal from empty to show the item...
-
-            //create variable to store plant data associated with that button
-            
-            // add that data to the cart array
-            
-            //clear contents of the shopping cart modal and append item's info
-            $(".itemsSection").empty();
-
-            const itemSelection = $(".hoverAddToCart", plant.className).val();
-            const cartModalHTML =`
-            
-                <div class="itemsSection">
-                    <img class="cartModalImage"src="${itemSelection.imgSRC}">
-                    <div class="itemNameSection">
-                        <h2 class="offWhite headingType6">${itemSelection.name}</h2>
-                        <div class="quantityPicker">
-                            <button class="picker headingType4">-</button>
-                            <p class="offWhite headingType4">1</p>
-                            <button class="picker headingType4">+</button>
-                        </div>
-                    </div>
-                    <button class="picker headingType4">REMOVE</button>
-                </div>
-                <div class="subtotalSection">
-                    <h3 class="headingType3 offWhite">Subtotal:</h3>
-                    <h3 class="headingType3 offWhite">${itemSelection.price}</h3>
-                </div>
-                <button id="checkoutButton" class="long beige marginTop noMarginLeftRight darkGreen ">CHECKOUT</button>
-           
-            `
-            $(".itemsSection").append(cartModalHTML);
-
-            //and update the content of the Shopping Cart page to show the item too
-
-// $(".cartContainer").empty();
-
-// const updatedShoppingCartHTML =  `
-//         <section class="cartContainer">
-//         <h2 class="headingType1 darkGreen">Your Cart</h2>
-//         <div class="tableContainer">
-//             <table class="tableCart">
-//                 <tr>
-//                     <th class="darkGreen headingType5" colspan="4">Product</th>
-//                     <th class="darkGreen headingType5">Price</th>
-//                     <th class="darkGreen headingType5">Quantity</th>
-//                     <th class="darkGreen headingType5">Total</th>
-//                 </tr>
-//                 <tr>
-//                     <td colspan="4">
-//                         <div class="cartProduct">
-//                             <img class="cartProductImage" src="${}" alt="snake plant">
-//                             <p class="darkGreen bodyType3">${}</p>
-//                         </div>
-//                     </td>
-//                     <td>
-//                             <p class="darkGreen bodyType3">${}</p>
-
-//                     </td>
-//                     <td>
-//                         <div class="quantitySection">
-//                             <div class="quantitySelector">
-//                                 <button class="selector headingType4">-</button>
-//                                 <p class="darkGreen headingType4">1</p>
-//                                 <button class="selector headingType4">+</button>
-//                             </div>
-//                             <button class="selector bodyType3">Remove</button>
-//                         </div>
-//                     </td> 
-//                     <td>
-//                             <p class="darkGreen bodyType3">${}</p>
-//                     </td>
-//                 </tr>
-//             </table>
-
-//         <aside class="subtotalArea">
-//             <div class="subtotalAmount">
-//                 <p class="bodyType3 darkGreen">Subtotal</p>
-//                 <p class="bodyType3 darkGreen">${}</p>
-//             </div>
-//             <p class="bodyType3 darkGreen">Taxes and shipping calculated at checkout</p>
-//             <button class="noMarginLeftRight standard green offWhite headingType4 doubleMarginTop">CHECKOUT</button>
-//         </aside>
-//         </section>
-// `
-
-        })
-    }
-    plantFilterApp.shoppingCartIcon();
-
-//Newsletter Pop-Up
-    plantFilterApp.newsletterPopUp= function(){
-        if($(window).width() >= 1024) {
-            setTimeout(function(){
-                $("#popup-box").show()
-              }, 10000);
-        }
-        
-        $("#popup-box").on("click", "#newsletterModal", function(){
-            $("#popup-box").hide();
-        });
-
-        $("#newsletterSubmitButton").on("click", function(){
-            $(".popupFlexContainer").empty();
-            const updatedNewsletterHTML = `
-           
-                <div class="popupFlexContainer">
-                    <i id="newsletterModal"class="fas fa-times"></i>
-                    <div class="popup-box-content">
-                        <h1 class="headingType3 darkGreen">Thank You!</h1>
-                        <p class="bodyType2 darkGreen">We look forward to sending you updates and news on a monthly basis. You can subscribe any time by clicking on the link at the bottom of each newsletter email.</p>
-                    </div>
-                </div>
-           
-            `
-            $(".popupFlexContainer").append(updatedNewsletterHTML)
-        });
-    }
-    plantFilterApp.newsletterPopUp();
-
-
-//NavBar Box Shadow on Scroll
-
-plantFilterApp.navbarBoxShadow=function(){
-    $(window).scroll(function(){ 
-        if ($(this).scrollTop() > 50) {
-            $("header").css("box-shadow", "rgba(99, 99, 99, 0.2) 0 4px 2px -2px")
-        } else {
-            $("header").css("box-shadow", "none")
-        }
-    })
-}
-plantFilterApp.navbarBoxShadow();
-
-
-//Mobile Navbar Hamburger Menu
-
-plantFilterApp.mobileNavHamburgerMenu=function(){
-    $(".navbar2").on("click", "svg", function(){
-        $(".hiddenLinks").toggle()
-    })
-}
-
-plantFilterApp.mobileNavHamburgerMenu();
-
-
-
-
-//Button Connections
-plantFilterApp.buttonRedirections=function(){
-    $("button.heroButton").on("click", function(){
-        window.location.href = '../HTML/beginnerPlants.html';
-    }) 
-
-    $("img.heroButton").on("click", function(){
-        window.location.href = '../HTML/beginnerPlants.html';
-    }) 
-
-    $("#beginnerFriendly").on("click", function(){
-        window.location.href = '../HTML/beginnerPlants.html';
-    }) 
-
-    $("#beginnerPlantButton").on("click", function(){
-        window.location.href = '../HTML/beginnerPlants.html';
-    }) 
-
-    $("#checkoutButton").on("click", function(){
-        window.location.href = '../HTML/shoppingCart.html';
-    })
-
-    $("#checkoutButton").on("click", function(){
-        window.location.href = '../HTML/shoppingCart.html';
-    })
-
-}
-
-plantFilterApp.buttonRedirections();
-
-//NavBar Dropdowns Desktop
-
-plantFilterApp.navDropdowns=function(button, hideDropdown1, hideDropdown2, hideDropdown3, dropdownShow){
-    $(button).on("click", function(event){
-        event.preventDefault();
-        $(hideDropdown1).hide();
-        $(hideDropdown2).hide();
-        $(hideDropdown3).hide();
-        $(dropdownShow).toggle();
-    });
-}
-    plantFilterApp.navDropdowns("#plantsLink", ".navDropdownOverlayLearn",".navDropdownOverlayAbout",".navDropdownOverlayGifts",".navDropdownOverlayPlant");
-    plantFilterApp.navDropdowns("#giftsLink", ".navDropdownOverlayLearn",".navDropdownOverlayAbout",".navDropdownOverlayPlant",".navDropdownOverlayGifts");
-    plantFilterApp.navDropdowns("#learnLink", ".navDropdownOverlayPlant",".navDropdownOverlayAbout",".navDropdownOverlayGifts",".navDropdownOverlayLearn");
-    plantFilterApp.navDropdowns("#aboutLink", ".navDropdownOverlayLearn",".navDropdownOverlayPlant",".navDropdownOverlayGifts",".navDropdownOverlayAbout");
-
-
-
-//About Page Form Submit 
-
-plantFilterApp.aboutFormResponse = function (){
-    $("#aboutFormSubmitButton").on("click", function(){
-        $(".storeInfoLeftCol").empty();
-
-        const updatedAboutForm=`
-        
-        <div class="storeInfoLeftCol">
-                        <h2 class="darkGreen headingType3">Drop Us a Line</h2>
-                        <form id="aboutForm" action="">
-                            <div class="aboutFormFields">
-                                <label class="darkGreen headingType4"for="name">YOUR NAME</label><br>
-                                <input type="text" id="name" name="name"><br>
-                                <label class="darkGreen headingType4"for="phoneNum">YOUR PHONE</label><br>
-                                <input type="number" id="phone" name="phone"><br>
-                                <label class="darkGreen headingType4"for="email">YOUR EMAIL</label><br>
-                                <input type="text" id="email" name="email"><br>
-                                <label class="darkGreen headingType4"for="comment">YOUR COMMENT</label><br>
-                                <textarea type="text" id="comment" rows = "5" cols = "60" name = "comment"></textarea>
-                            </div>
-                        </form>
-                        <p class="darkGreen" "bodyType3"> Thank you for submitting your comments. We will get back to you soon!</p>
-                        <button id="aboutFormSubmitButton" class="noMarginLeftRight marginTop standard offWhite green">SUBMIT</button>
-                    </div>
-        
-        
-        
-        `
-        $(".storeInfoLeftCol").append(updatedAboutForm);
-    });
-}
-
-plantFilterApp.aboutFormResponse();
-
-
-
-
-
-
 
 
 })
