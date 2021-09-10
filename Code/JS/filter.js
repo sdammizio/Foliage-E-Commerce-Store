@@ -77,9 +77,21 @@ plantFilterApp.init = function(){
 //             dataType:"json"
 //         }
 //     }
-// }).then(function(){
-//     console.log("it worked");
+// }).then(()=>{
+// console.log(promiseObject);
+
 // });
+
+
+// success: function(data){
+//     console.log(data);
+//    for( x in data.data ){
+//        $('ul.instaImageContainer').append('<li><img src="'+data.data[x].images.low_resolution.url+'"></li>'); // data.data[x].images.low_resolution.url - URL of image, 306х306
+//    }
+// }
+
+
+
 
 // Instagram Embedded Widget
 // (function(){
@@ -90,12 +102,7 @@ plantFilterApp.init = function(){
 
 
 
-// success: function(data){
-//     console.log(data);
-//    for( x in data.data ){
-//        $('ul.instaImageContainer').append('<li><img src="'+data.data[x].images.low_resolution.url+'"></li>'); // data.data[x].images.low_resolution.url - URL of image, 306х306
-//    }
-// }
+
 
 }
 
@@ -716,37 +723,45 @@ plantFilterApp.init();
 
 plantFilterApp.finalFilterFunctions();
 
-
-
+//create new array to store items in cart
+plantFilterApp.shoppingCart =[]
 
 //Shopping Cart Icon and Modal Pop-Up
 
     plantFilterApp.shoppingCartIcon= function(){
         let iconValue=0;
+
+        //toggle cart overlay by pressing on cart icon on page
         $("img.cart").on("click", function(){
             $("#shoppingCartPopOut").toggle();
         })
 
+        //click x on cart modal to close
         $("#shoppingModal").click(() => {
             $("#shoppingCartPopOut").hide();
         })
 
+        //when click an Add to Cart button on a product...
         $(".cardFlexContainer").on("click", ".hoverAddToCart",function(){
+            //it adds a number beside the cart icon
             $("#cartUpdater").removeClass('hiddenCartIcon');
             iconValue=iconValue+1;
             $("#cartUpdater").text(`${iconValue}`)
-
+            // and at the same time opens up the cart modal pop-up (and closes automatically in 4000ms)
             $("#shoppingCartPopOut").show();
-
             setTimeout(function(){
                 $("#shoppingCartPopOut").hide()
               }, 4000);
 
+            //it updates the content in the cart modal from empty to show the item...
+
+            //create variable to store plant data associated with that button
             
+            // add that data to the cart array
             
             //clear contents of the shopping cart modal and append item's info
             $(".itemsSection").empty();
-            // return that item's name, src, price and store in variable
+
             const itemSelection = $(".hoverAddToCart", plant.className).val();
             const cartModalHTML =`
             
@@ -771,6 +786,59 @@ plantFilterApp.finalFilterFunctions();
             `
             $(".itemsSection").append(cartModalHTML);
 
+            //and update the content of the Shopping Cart page to show the item too
+
+// $(".cartContainer").empty();
+
+// const updatedShoppingCartHTML =  `
+//         <section class="cartContainer">
+//         <h2 class="headingType1 darkGreen">Your Cart</h2>
+//         <div class="tableContainer">
+//             <table class="tableCart">
+//                 <tr>
+//                     <th class="darkGreen headingType5" colspan="4">Product</th>
+//                     <th class="darkGreen headingType5">Price</th>
+//                     <th class="darkGreen headingType5">Quantity</th>
+//                     <th class="darkGreen headingType5">Total</th>
+//                 </tr>
+//                 <tr>
+//                     <td colspan="4">
+//                         <div class="cartProduct">
+//                             <img class="cartProductImage" src="${}" alt="snake plant">
+//                             <p class="darkGreen bodyType3">${}</p>
+//                         </div>
+//                     </td>
+//                     <td>
+//                             <p class="darkGreen bodyType3">${}</p>
+
+//                     </td>
+//                     <td>
+//                         <div class="quantitySection">
+//                             <div class="quantitySelector">
+//                                 <button class="selector headingType4">-</button>
+//                                 <p class="darkGreen headingType4">1</p>
+//                                 <button class="selector headingType4">+</button>
+//                             </div>
+//                             <button class="selector bodyType3">Remove</button>
+//                         </div>
+//                     </td> 
+//                     <td>
+//                             <p class="darkGreen bodyType3">${}</p>
+//                     </td>
+//                 </tr>
+//             </table>
+
+//         <aside class="subtotalArea">
+//             <div class="subtotalAmount">
+//                 <p class="bodyType3 darkGreen">Subtotal</p>
+//                 <p class="bodyType3 darkGreen">${}</p>
+//             </div>
+//             <p class="bodyType3 darkGreen">Taxes and shipping calculated at checkout</p>
+//             <button class="noMarginLeftRight standard green offWhite headingType4 doubleMarginTop">CHECKOUT</button>
+//         </aside>
+//         </section>
+// `
+
         })
     }
     plantFilterApp.shoppingCartIcon();
@@ -783,10 +851,25 @@ plantFilterApp.finalFilterFunctions();
               }, 10000);
         }
         
-
-        $("#newsletterModal").click(() => {
+        $("#popup-box").on("click", "#newsletterModal", function(){
             $("#popup-box").hide();
-        })
+        });
+
+        $("#newsletterSubmitButton").on("click", function(){
+            $(".popupFlexContainer").empty();
+            const updatedNewsletterHTML = `
+           
+                <div class="popupFlexContainer">
+                    <i id="newsletterModal"class="fas fa-times"></i>
+                    <div class="popup-box-content">
+                        <h1 class="headingType3 darkGreen">Thank You!</h1>
+                        <p class="bodyType2 darkGreen">We look forward to sending you updates and news on a monthly basis. You can subscribe any time by clicking on the link at the bottom of each newsletter email.</p>
+                    </div>
+                </div>
+           
+            `
+            $(".popupFlexContainer").append(updatedNewsletterHTML)
+        });
     }
     plantFilterApp.newsletterPopUp();
 
@@ -840,6 +923,10 @@ plantFilterApp.buttonRedirections=function(){
         window.location.href = '../HTML/shoppingCart.html';
     })
 
+    $("#checkoutButton").on("click", function(){
+        window.location.href = '../HTML/shoppingCart.html';
+    })
+
 }
 
 plantFilterApp.buttonRedirections();
@@ -862,60 +949,47 @@ plantFilterApp.navDropdowns=function(button, hideDropdown1, hideDropdown2, hideD
 
 
 
+//About Page Form Submit 
+
+plantFilterApp.aboutFormResponse = function (){
+    $("#aboutFormSubmitButton").on("click", function(){
+        $(".storeInfoLeftCol").empty();
+
+        const updatedAboutForm=`
+        
+        <div class="storeInfoLeftCol">
+                        <h2 class="darkGreen headingType3">Drop Us a Line</h2>
+                        <form id="aboutForm" action="">
+                            <div class="aboutFormFields">
+                                <label class="darkGreen headingType4"for="name">YOUR NAME</label><br>
+                                <input type="text" id="name" name="name"><br>
+                                <label class="darkGreen headingType4"for="phoneNum">YOUR PHONE</label><br>
+                                <input type="number" id="phone" name="phone"><br>
+                                <label class="darkGreen headingType4"for="email">YOUR EMAIL</label><br>
+                                <input type="text" id="email" name="email"><br>
+                                <label class="darkGreen headingType4"for="comment">YOUR COMMENT</label><br>
+                                <textarea type="text" id="comment" rows = "5" cols = "60" name = "comment"></textarea>
+                            </div>
+                        </form>
+                        <p class="darkGreen" "bodyType3"> Thank you for submitting your comments. We will get back to you soon!</p>
+                        <button id="aboutFormSubmitButton" class="noMarginLeftRight marginTop standard offWhite green">SUBMIT</button>
+                    </div>
+        
+        
+        
+        `
+        $(".storeInfoLeftCol").append(updatedAboutForm);
+    });
+}
+
+plantFilterApp.aboutFormResponse();
 
 
 
 
-//Shopping Cart Page 
 
-// const updatedShoppingCartHTML =  `
-//         <section class="cartContainer">
-//         <h2 class="headingType1 darkGreen">Your Cart</h2>
-//         <div class="tableContainer">
-//             <table class="tableCart">
-//                 <tr>
-//                     <th class="darkGreen headingType5" colspan="4">Product</th>
-//                     <th class="darkGreen headingType5">Price</th>
-//                     <th class="darkGreen headingType5">Quantity</th>
-//                     <th class="darkGreen headingType5">Total</th>
-//                 </tr>
-//                 <tr>
-//                     <td colspan="4">
-//                         <div class="cartProduct">
-//                             <img class="cartProductImage" src="../Images/Plant images:Beginner/medium-plant-snake-white-pot.webp" alt="snake plant">
-//                             <p class="darkGreen bodyType3">Snake Plant</p>
-//                         </div>
-//                     </td>
-//                     <td>
-//                             <p class="darkGreen bodyType3">$16</p>
 
-//                     </td>
-//                     <td>
-//                         <div class="quantitySection">
-//                             <div class="quantitySelector">
-//                                 <button class="selector headingType4">-</button>
-//                                 <p class="darkGreen headingType4">1</p>
-//                                 <button class="selector headingType4">+</button>
-//                             </div>
-//                             <button class="selector bodyType3">Remove</button>
-//                         </div>
-//                     </td> 
-//                     <td>
-//                             <p class="darkGreen bodyType3">$16</p>
-//                     </td>
-//                 </tr>
-//             </table>
 
-//         <aside class="subtotalArea">
-//             <div class="subtotalAmount">
-//                 <p class="bodyType3 darkGreen">Subtotal</p>
-//                 <p class="bodyType3 darkGreen">$16</p>
-//             </div>
-//             <p class="bodyType3 darkGreen">Taxes and shipping calculated at checkout</p>
-//             <button class="noMarginLeftRight standard green offWhite headingType4 doubleMarginTop">CHECKOUT</button>
-//         </aside>
-//         </section>
-// `
 
 })
 
