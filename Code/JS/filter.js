@@ -387,6 +387,7 @@ plantFilterApp.init();
                 //remove size:small property from array of FILTERS, then run filter again
                 return filterObject.size !== "LARGE"
             })
+            plantFilterApp.filterMethod(plantFilterApp.filters);
             $(".dropdownOption_LargeSize").removeClass("activeFilter");
             $(".dropdownOption_LargeSize").css("background-color", "transparent"); 
         
@@ -418,6 +419,7 @@ plantFilterApp.init();
                 //remove size:small property from array of FILTERS, then run filter again
                 return filterObject.sunlight !== "low"
             })
+            plantFilterApp.filterMethod(plantFilterApp.filters);
             $(".dropdownOption_LowSun").removeClass("activeFilter");
             $(".dropdownOption_LowSun").css("background-color", "transparent"); 
         
@@ -448,6 +450,7 @@ plantFilterApp.init();
                 //remove size:small property from array of FILTERS, then run filter again
                 return filterObject.sunlight !== "medium"
             })
+            plantFilterApp.filterMethod(plantFilterApp.filters);
             $(".dropdownOption_MedSun").removeClass("activeFilter");
             $(".dropdownOption_MedSun").css("background-color", "transparent"); 
         
@@ -478,6 +481,7 @@ plantFilterApp.init();
                 //remove size:small property from array of FILTERS, then run filter again
                 return filterObject.sunlight !== "high"
             })
+            plantFilterApp.filterMethod(plantFilterApp.filters);
             $(".dropdownOption_HighSun").removeClass("activeFilter");
             $(".dropdownOption_HighSun").css("background-color", "transparent"); 
         
@@ -509,6 +513,7 @@ plantFilterApp.init();
                 //remove size:small property from array of FILTERS, then run filter again
                 return filterObject.maintenance !== "low"
             })
+            plantFilterApp.filterMethod(plantFilterApp.filters);
             $(".dropdownOption_LowMain").removeClass("activeFilter");
             $(".dropdownOption_LowMain").css("background-color", "transparent"); 
         } else {
@@ -539,6 +544,7 @@ plantFilterApp.init();
                 //remove size:small property from array of FILTERS, then run filter again
                 return filterObject.maintenance !== "medium"
             })
+            plantFilterApp.filterMethod(plantFilterApp.filters);
             $(".dropdownOption_MedMain").removeClass("activeFilter");
             $(".dropdownOption_MedMain").css("background-color", "transparent"); 
         } else {
@@ -568,6 +574,7 @@ plantFilterApp.init();
                 //remove size:small property from array of FILTERS, then run filter again
                 return filterObject.maintenance !== "high"
             })
+            plantFilterApp.filterMethod(plantFilterApp.filters);
             $(".dropdownOption_HighMain").removeClass("activeFilter");
             $(".dropdownOption_HighMain").css("background-color", "transparent"); 
         } else {
@@ -594,14 +601,14 @@ plantFilterApp.init();
         if (activeFilter === true) {
             plantFilterApp.filters = plantFilterApp.filters.filter((filterObject)=>{
                 //remove size:small property from array of FILTERS, then run filter again
-                return filterObject.petFriendly !== "true"
+                return filterObject.petFriendly !== true
             })
+            plantFilterApp.filterMethod(plantFilterApp.filters);
             $("input.petFriendly").removeClass("activeFilter");
         } else {
             plantFilterApp.filters.push({petFriendly:true});
             plantFilterApp.filterMethod(plantFilterApp.filters);
             $("input.petFriendly").addClass("activeFilter");
-
         }
     }),
     
@@ -611,8 +618,9 @@ plantFilterApp.init();
         if (activeFilter === true) {
             plantFilterApp.filters = plantFilterApp.filters.filter((filterObject)=>{
                 //remove size:small property from array of FILTERS, then run filter again
-                return filterObject.airPurifying !== "true"
+                return filterObject.airPurifying !== true
             })
+            plantFilterApp.filterMethod(plantFilterApp.filters);
             $("input.airPurifying").removeClass("activeFilter");
         } else {
             plantFilterApp.filters.push({airPurifying:true});
