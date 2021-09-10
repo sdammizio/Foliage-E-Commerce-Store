@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="../CSS/cartModal.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../JS/filter.js"></script>
+    <script src="../JS/APIs.js"></script>
+    <script src="../JS/buttonsAndNav.js"></script>
+    <script src="../JS/newsletter.js"></script>
+    <script src="../JS/shoppingCart.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"data-auto-a11y="true"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +43,7 @@
         </div>
 <!--Nav Bar Desktop-->
     
-        <div class="navbar">
+        <nav class="navbar">
             <ul class="leftNav">
                 <li id="plantsLink"><div class="navDropdown">
                     <a id=""class="navLink headingType4 darkGreen" href="">PLANTS</a>
@@ -67,11 +71,11 @@
                 <img class="iconButtons cart"src="../Assets/iconCart.png" alt="Shopping Cart">
                 <div id="cartUpdater" class="hiddenCartIcon">0</div>
             </div>
-        </div>
+        </nav>
 
         <!--Nav Bar Desktop Dropdowns-->
 
-        <div class= "navDropdownOverlayPlant">
+        <nav class= "navDropdownOverlayPlant" aria-label="dropdown menu for Plants">
             <div class="navOverlayContainer">
                 <div class="navOverlayLinks">
                     <a class="darkGreen headingType4"href="">INDOOR PLANTS</a>
@@ -93,9 +97,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </nav>
 
-        <div class= "navDropdownOverlayGifts">
+        <nav class= "navDropdownOverlayGifts" aria-label="dropdown menu for Gifts">
             <div class="navOverlayContainer">
                 <div class="navOverlayLinks">
                     <a class="darkGreen headingType4"href="">GIFTS</a>
@@ -115,9 +119,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </nav>
 
-        <div class= "navDropdownOverlayLearn">
+        <nav class= "navDropdownOverlayLearn" aria-label="dropdown menu for Learn">
             <div class="navOverlayContainer">
                 <div class="navOverlayLinks">
                     <a class="darkGreen headingType4"href="">LEARN</a>
@@ -136,9 +140,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </nav>
 
-        <div class= "navDropdownOverlayAbout">
+        <nav class= "navDropdownOverlayAbout" aria-label="dropdown menu for About">
             <div class="navOverlayContainer">
                 <div class="navOverlayLinks">
                     <a class="darkGreen headingType4"href="../HTML/about.html">STORE HOURS & LOCATION</a>
@@ -154,19 +158,19 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </nav>
 
 
     <!--Nav Bar for Tablet/Mobile-->
-        <div class="navbar2">
-            <i id="hamburgerIcon" class="fas fa-bars fa-2x"></i>
-            <img class="logo" src="../Assets/logo.png">
+        <div class="navbar2" aria-label="navigation bar">
+            <i id="hamburgerIcon" class="fas fa-bars fa-2x" aria-label="hamburger menu button to open navigation links"></i>
+            <img class="logo" src="../Assets/logo.png" alt="foliage business logo">
             <div class="iconSection">
-                <img class="iconButtons cart"src="../Assets/iconCart.png" alt="Shopping Cart">
+                <img class="iconButtons cart"src="../Assets/iconCart.png" alt="Shopping Cart icon" aria-label="button to access shopping cart">
                 <div id="cartUpdater" class="hiddenCartIcon">0</div>
             </div>
         </div>
-        <divid class="hiddenLinks">
+        <div id class="hiddenLinks" aria-label="website page links">
                 <div class="dropdownLinks">
                     <a class="nav2 darkGreen headingType4" href="">PLANTS</a>
                     <a class="nav2 darkGreen headingType4" href="">GIFTS</a>
@@ -385,9 +389,9 @@
             <a class="bodyType2 offWhite linkNoUnderline marginx2" href="">Accessibility</a>
         </div>
         <div>
-            <img class="socialicon" src="../Assets/iconFacebook.png" alt="Facebook">
-            <img class="socialicon" src="../Assets/iconInstagram.png" alt="Instagram">
-            <img class="socialicon" src="../Assets/iconTwitter.png" alt="Twitter">
+            <img class="socialicon" src="../Assets/iconFacebook.png" alt="Facebook icon">
+            <img class="socialicon" src="../Assets/iconInstagram.png" alt="Instagram icon">
+            <img class="socialicon" src="../Assets/iconTwitter.png" alt="Twitter icon">
         </div>
     </div>
 </footer>
