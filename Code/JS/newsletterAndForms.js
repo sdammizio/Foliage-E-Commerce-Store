@@ -85,11 +85,9 @@ newsletterOperations.aboutFormResponse = function (){
         });
 
         if ($("input").prop('required')===false){
-            $(".storeInfoContainer").empty();
+            $(".storeInfoLeftCol").empty();
             
             const errorAboutForm = `
-            <div class="storeInfoContainer">
-                <div class="storeInfoLeftCol">
                             <h2 class="darkGreen headingType3">Drop Us a Line</h2>
                             <form id="aboutForm" action="">
                                 <div class="aboutFormFields">
@@ -105,16 +103,12 @@ newsletterOperations.aboutFormResponse = function (){
                             </form>
                             <p class="formRequiredInputs">Please fill out all fields</p>
                             <button id="aboutFormSubmitButton" class="noMarginLeftRight marginTop standard offWhite green">SUBMIT</button>
-                        </div>
-                </div>
             `
-            $(".storeInfoContainer").append(errorAboutForm);
+            $(".storeInfoLeftCol").append(errorAboutForm);
         }else{
-            $(".storeInfoContainer").empty();
+            $(".storeInfoLeftCol").empty();
     
         const updatedAboutForm=`
-        <div class="storeInfoContainer">
-            <div class="storeInfoLeftCol">
                     <h2 class="darkGreen headingType3">Drop Us a Line</h2>
                     <form id="aboutForm" action="">
                         <div class="aboutFormFields">
@@ -130,13 +124,8 @@ newsletterOperations.aboutFormResponse = function (){
                     </form>
                     <p class="darkGreen" "bodyType3"> Thank you for submitting your comments. We will get back to you soon!</p>
                     <button id="aboutFormSubmitButton" class="noMarginLeftRight marginTop standard offWhite green">SUBMIT</button>
-                </div>
-            </div>
-        
-        
-        
         `
-        $(".storeInfoContainer").append(updatedAboutForm);
+        $(".storeInfoLeftCol").append(updatedAboutForm);
     }
     });
 }
