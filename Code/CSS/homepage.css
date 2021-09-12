@@ -27,7 +27,9 @@
       margin-top: 150px;
   }
 
-
+.instaPostsContainer{
+    max-width: 75%;
+}
 
 .hero{
     display:flex;
