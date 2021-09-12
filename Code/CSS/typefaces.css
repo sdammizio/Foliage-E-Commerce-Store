@@ -57,6 +57,14 @@
 
 }
 
+.formRequiredInputs {
+    color: red;
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: left;
+}
+
 
 
 /* Font Colours */
@@ -96,6 +104,10 @@
 
 .paddingRight {
     padding-right:150px;
+}
+
+.noPadding {
+    padding: 0;
 }
 
 

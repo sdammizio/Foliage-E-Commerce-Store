@@ -21,8 +21,9 @@
     <script src="../JS/filter.js"></script>
     <script src="../JS/APIs.js"></script>
     <script src="../JS/buttonsAndNav.js"></script>
-    <script src="../JS/newsletter.js"></script>
+    <script src="../JS/newsletterAndForms.js"></script>
     <script src="../JS/shoppingCart.js"></script>
+    <script src="../JS/slideshow.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"data-auto-a11y="true"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -202,16 +203,24 @@
 
     <!--ShoppingCart Slide Out Modal-->
 
-    <modal id="shoppingCartPopOut" class="hiddenModal addedMargin">
+    <modal id="shoppingCartPopOut" class="hiddenModal marginModalTop">
         <div class="headerSection">
             <h1 class="headingType2 offWhite">Your Cart</h1>
             <div id="shoppingModal">
                 <i class="fas fa-times" alt="hamburger dropdown menu"></i>
             </div>
+            
         </div>
         <div class="itemsSection">
-            <p class="headingType6 offWhite">Nothing to see here!</p>
+            <div class="indivItem">
+                <p class="headingType6 offWhite">Nothing to see here!</p>
+            </div>
         </div>
+        <div class="subtotalSection tripleMarginTop">
+            <h3 class="headingType3 offWhite">Subtotal:</h3>
+            <h3 id="subtotal" class="headingType3 offWhite"></h3>
+        </div>
+        <button id= "checkoutButton" class="noMarginLeftRight long beige darkGreen headingType4 doubleMarginTop">CHECKOUT</button>
     </modal>
    
     <!--Hero Banner Section Desktop-->
@@ -220,7 +229,7 @@
             <div class="bannerContent">
                 <h1 class="headingType1 darkGreen noMargin">Create Your Own Garden Oasis</h1>
                 <p class="bodyType1 darkGreen">Shop our selection of plants and get started on building your dream garden.</p>
-                <button class="heroButton standard coral marginTop noMarginLeftRight" href="../HTML/beginnerPlants.html">SHOP NOW</button>
+                <button class="heroButton standard coral heroMarginTop noMarginLeftRight" href="../HTML/beginnerPlants.html">SHOP NOW</button>
             </div>
         </section>
 
@@ -340,7 +349,9 @@
             <div class="instagramFlexbox">
                 <h3 class="headingType2 darkGreen">Follow Us on Instagram!</h3>
             </div>
-            <div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
+            <ul class="instagramPhotoContainer">
+
+            </ul>
         </section>
 
     </main>
