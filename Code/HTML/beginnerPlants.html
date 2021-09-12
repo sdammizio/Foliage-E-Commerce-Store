@@ -18,8 +18,9 @@
     <script src="../JS/filter.js"></script>
     <script src="../JS/APIs.js"></script>
     <script src="../JS/buttonsAndNav.js"></script>
-    <script src="../JS/newsletter.js"></script>
+    <script src="../JS/newsletterAndForms.js"></script>
     <script src="../JS/shoppingCart.js"></script>
+    <script src="../JS/slideshow.js"></script>
     <script
     src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
     data-auto-a11y="true"
@@ -193,8 +194,15 @@
                 
             </div>
             <div class="itemsSection">
-                <p class="headingType6 offWhite">Nothing to see here!</p>
+                <div class="indivItem">
+                    <p class="headingType6 offWhite">Nothing to see here!</p>
+                </div>
             </div>
+            <div class="subtotalSection tripleMarginTop">
+                <h3 class="headingType3 offWhite">Subtotal:</h3>
+                <h3 id="subtotal"class="headingType3 offWhite"></h3>
+            </div>
+            <button id= "checkoutButton" class="noMarginLeftRight long beige darkGreen headingType4 doubleMarginTop">CHECKOUT</button>
         </modal>
         
         <section class="shopBody">
@@ -360,7 +368,7 @@
                             <p class="plantPrice headingType6 darkGreen noMargin">$16</p>
                         </div>
                         <p class="plantSize headingType5 darkGreenReducedOp">MEDIUM</p>
-                        <button class="hoverAddToCart headingType4 darkGreen" data-plant="snakePlant">ADD TO CART</button>
+                        <button class="hoverAddToCart headingType4 darkGreen" data-name="Snake Plant" data-price="16" data-src="../Assets/snakePlant.jpg">ADD TO CART</button>
                     </div>
                     <div class="plantCardItem zzPlant">
                         <img class="plantCardImg" src="../Assets/zzPlant.jpg" alt="ZZ Plant">
@@ -369,7 +377,7 @@
                             <p class="plantPrice headingType6 darkGreen noMargin">$26</p>
                         </div>
                         <p class="plantSize headingType5 darkGreenReducedOp">LARGE</p>
-                        <button class="hoverAddToCart headingType4 darkGreen" data-plant="zzPlant">ADD TO CART</button>
+                        <button class="hoverAddToCart headingType4 darkGreen" data-name="ZZ Plant" data-price="26" data-src="../Assets/zzPlant.jpg">ADD TO CART</button>
                     </div>
                     <div class="plantCardItem dragonTree">
                         <img class="plantCardImg" src="../Assets/dragonTree.jpeg" alt="Dragon Tree">
@@ -378,7 +386,7 @@
                             <p class="plantPrice headingType6 darkGreen noMargin">$20</p>
                         </div>
                         <p class="plantSize headingType5 darkGreenReducedOp">LARGE</p>
-                        <button class="hoverAddToCart headingType4 darkGreen" data-plant="dragonTree">ADD TO CART</button>
+                        <button class="hoverAddToCart headingType4 darkGreen" data-name="Dragon Tree" data-price="20" data-src="../Assets/dragonTree.jpeg">ADD TO CART</button>
                     </div>
                     <div class="plantCardItem sagoPalm">
                         <img class="plantCardImg" src="../Assets/sagoPalm.jpeg" alt="Sago Palm">
@@ -387,7 +395,7 @@
                             <p class="plantPrice headingType6  darkGreen noMargin">$10</p>
                         </div>
                         <p class="plantSize headingType5 darkGreenReducedOp">SMALL</p>
-                        <button class="hoverAddToCart headingType4 darkGreen" data-plant="sagoPalm">ADD TO CART</button>
+                        <button class="hoverAddToCart headingType4 darkGreen" data-name="Sago Palm" data-price="10" data-src="../Assets/sagoPalm.jpeg">ADD TO CART</button>
                     </div>
                     <div class="plantCardItem devilsIvy">
                         <img class="plantCardImg" src="../Assets/devilsIvy.jpeg" alt="Devil's Ivy">
@@ -396,7 +404,7 @@
                             <p class="plantPrice headingType6 darkGreen noMargin">$30</p>
                         </div>
                         <p class="plantSize headingType5 darkGreenReducedOp">LARGE</p>
-                        <button class="hoverAddToCart headingType4 darkGreen" data-plant="devilsIvy">ADD TO CART</button>
+                        <button class="hoverAddToCart headingType4 darkGreen" data-name="Devil's Ivy" data-price="30" data-src="../Assets/devilsIvy.jpeg">ADD TO CART</button>
                     </div>
                     <div class="plantCardItem blueStarFern">
                         <img class="plantCardImg" src="../Assets/blueStarFern.jpeg" alt="Blue Star Fern">
@@ -404,8 +412,7 @@
                             <h4 class="plantName headingType6  darkGreen noMargin">Blue Star Fern</h4>
                             <p class="plantPrice headingType6  darkGreen noMargin">$15</p>
                         </div>
-                        <p class="plantSize headingType5 darkGreenReducedOp">MEDIUM</p> 
-                        <button class="hoverAddToCart headingType4 darkGreen" data-plant="blueStarFern">ADD TO CART</button>
+                        <p class="plantSize headingType5 darkGreenReducedOp" data-name="Blue Star Fern" data-price="15" data-src="../Assets/blueStarFern.jpeg"data-plant="blueStarFern">MEDIUM</p>ADD TO CART</button>
                     </div>
                     <div class="plantCardItem jadeSucculent">
                         <img class="plantCardImg" src="../Assets/succulentJade.jpeg" alt="Jade Succulent">
@@ -414,7 +421,7 @@
                             <p class="plantPrice headingType6  darkGreen noMargin">$25</p>
                         </div>
                         <p class="plantSize headingType5 darkGreenReducedOp">LARGE</p> 
-                        <button class="hoverAddToCart headingType4 darkGreen" data-plant="jadeSucculent">ADD TO CART</button>
+                        <button class="hoverAddToCart headingType4 darkGreen" data-name="Jade Succulent" data-price="25" data-src="../Assets/succulentJade.jpeg">ADD TO CART</button>
                     </div>
                     <div class="plantCardItem pilea">
                         <img class="plantCardImg" src="../Assets/pilea.jpeg" alt="Pilea">
@@ -423,7 +430,7 @@
                             <p class="plantPrice headingType6  darkGreen noMargin">$15</p>
                         </div>
                         <p class="plantSize headingType5 darkGreenReducedOp">SMALL</p> 
-                        <button class="hoverAddToCart headingType4 darkGreen" data-plant="pilea">ADD TO CART</button>
+                        <button class="hoverAddToCart headingType4 darkGreen" data-name="Pilea" data-price="15" data-src="../Assets/pilea.jpeg">ADD TO CART</button>
                     </div>
                     <div class="plantCardItem rubberPlant">
                         <img class="plantCardImg" src="../Assets/fiscus.jpeg" alt="Rubber Plant">
@@ -432,16 +439,16 @@
                             <p class="plantPrice headingType6  darkGreen noMargin">$25</p>
                         </div>
                         <p class="plantSize headingType5 darkGreenReducedOp">MEDIUM</p> 
-                        <button class="hoverAddToCart headingType4 darkGreen" data-plant="rubberPlant">ADD TO CART</button>
+                        <button class="hoverAddToCart headingType4 darkGreen" data-name="Rubber Plant" data-price="25" data-src="../Assets/fiscus.jpeg">ADD TO CART</button>
                     </div>
                     <div class="plantCardItem watermellonPeperomelia">
-                        <img class="plantCardImg" src="../Assets/watermellon.jpeg" alt="Rubber Plant">
+                        <img class="plantCardImg" src="../Assets/watermellon.jpeg" alt="Watermellon Pepperomelia">
                         <div class="cardText">
                             <h4 class="plantName headingType6  darkGreen noMargin">Watermellon Pepperomelia</h4>
                             <p class="plantPrice headingType6  darkGreen noMargin">$22</p>
                         </div>
                         <p class="plantSize headingType5 darkGreenReducedOp">MEDIUM</p> 
-                        <button class="hoverAddToCart headingType4 darkGreen" data-plant="watermellonPeperomelia">ADD TO CART</button>
+                        <button class="hoverAddToCart headingType4 darkGreen" data-name="Watermellon Pepperomelia" data-price="22" data-src="../Assets/watermellon.jpeg">ADD TO CART</button>
                     </div>
                 </div>
             </section>

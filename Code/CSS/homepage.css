@@ -81,7 +81,7 @@
 
 .overlay {
     background-color: black;
-    opacity: 45%;
+    opacity: 30%;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -95,9 +95,9 @@
     height: 100vh;
     width:100%;
     position: relative;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
 }
 
 .rotatingBannerContent{

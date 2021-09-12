@@ -62,12 +62,20 @@ background-color: #FDB5B1;
     margin:40px;
 }
 
+.heroMarginTop {
+    margin-top:20px;
+}
+
 .marginBottom {
     margin-bottom: 50px;
 }
 
 .doubleMarginTop {
     margin-top:20px;
+}
+
+.tripleMarginTop{
+    margin-top: 100px;
 }
 
 .noMarginLeftRight {

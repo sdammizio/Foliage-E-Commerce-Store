@@ -78,7 +78,8 @@ buttonOperations.buttonRedirections=function(){
         window.location.href = '../HTML/shoppingCart.html';
     })
 
-    $("#checkoutButton").on("click", function(){
+    $("#shoppingCartPopOut").on("click","#checkoutButton", function(){
+        console.log("hi")
         window.location.href = '../HTML/shoppingCart.html';
     })
 
@@ -105,39 +106,5 @@ buttonOperations.navDropdowns=function(button, hideDropdown1, hideDropdown2, hid
     buttonOperations.navDropdowns("#aboutLink", ".navDropdownOverlayLearn",".navDropdownOverlayPlant",".navDropdownOverlayGifts",".navDropdownOverlayAbout");
 
 
-//About Page Form Submit 
-
-buttonOperations.aboutFormResponse = function (){
-    $("#aboutFormSubmitButton").on("click", function(){
-        $(".storeInfoLeftCol").empty();
-
-        const updatedAboutForm=`
-        
-        <div class="storeInfoLeftCol">
-                        <h2 class="darkGreen headingType3">Drop Us a Line</h2>
-                        <form id="aboutForm" action="">
-                            <div class="aboutFormFields">
-                                <label class="darkGreen headingType4"for="name">YOUR NAME</label><br>
-                                <input type="text" id="name" name="name"><br>
-                                <label class="darkGreen headingType4"for="phoneNum">YOUR PHONE</label><br>
-                                <input type="number" id="phone" name="phone"><br>
-                                <label class="darkGreen headingType4"for="email">YOUR EMAIL</label><br>
-                                <input type="text" id="email" name="email"><br>
-                                <label class="darkGreen headingType4"for="comment">YOUR COMMENT</label><br>
-                                <textarea type="text" id="comment" rows = "5" cols = "60" name = "comment"></textarea>
-                            </div>
-                        </form>
-                        <p class="darkGreen" "bodyType3"> Thank you for submitting your comments. We will get back to you soon!</p>
-                        <button id="aboutFormSubmitButton" class="noMarginLeftRight marginTop standard offWhite green">SUBMIT</button>
-                    </div>
-        
-        
-        
-        `
-        $(".storeInfoLeftCol").append(updatedAboutForm);
-    });
-}
-
-buttonOperations.aboutFormResponse();
 
 });
