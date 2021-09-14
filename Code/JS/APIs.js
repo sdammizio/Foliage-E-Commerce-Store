@@ -31,34 +31,11 @@ $(document).ready(function(){
 
 
 
+//Meetup.com API
 
 
 
-//Instagram Feed API
-
-$.ajax({
-    url: 'http://proxy.hackeryou.com',
-	dataType: 'json',
-	type: 'GET',
-	data: {
-        reqUrl:'https://api.instagram.com/v1/users/49485932360/media/recent',
-        access_token: "IGQVJWOS1weU1OekxUWXlPOVJOSGw2TDJRTHh4dFRad3BNV2Q2Y0hRTlI4WjFCMTE4YzdnU2VRRm9QaTNFNFh3SGJtck9uREsxOV9UZA1ExVFhwRHl5ZAE1uR1F1VzM4ZAzRqdDJFcFZAEbF9tb01zcXJhaAZDZD", 
-        params: {
-            method:"GET",
-            dataType:"json"
-        }
-    }
-}).then((params)=>{
-console.log(params);
-
-});
 
 
-// success: function(data){
-//     console.log(data);
-//    for( x in data.data ){
-//        $('ul.instaImageContainer').append('<li><img src="'+data.data[x].images.low_resolution.url+'"></li>'); // data.data[x].images.low_resolution.url - URL of image, 306х306
-//    }
-// }
 
 });
