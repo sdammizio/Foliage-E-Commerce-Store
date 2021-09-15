@@ -1,0 +1,55 @@
+footer {
+    background-color:  RGB(12, 62, 48);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.footerFlexContainer_Top {
+display:flex;
+flex-direction: row;
+align-items: flex-start;
+justify-content: space-between;
+width: 60vw;
+}
+
+.footerFlexItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.footerFlexContainer_Bottom {
+display:flex;
+flex-direction: row;
+align-items: flex-start;
+justify-content: space-between;
+width: 60vw;
+padding-top: 50px;
+}
+
+.termsTextBlock {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.socialicon {
+    max-width: 20px;
+    margin:5px;
+}
+
+input.bodyType2 {
+    border: 2px solid #F1F5F3;
+    border-radius:4px;
+    background-color:  RGB(12, 62, 48);
+    padding: 8px 10px 8px 10px;
+    margin: 10px 0px 10px 0px;
+    height: 40px;   
+}
+
+

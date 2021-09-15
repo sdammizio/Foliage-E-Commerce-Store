@@ -1,0 +1,175 @@
+body.plantPage {
+    background-color: #FCF9F3;
+}
+
+.skip-link {
+    background: white;
+    color: darkgreen;
+    font-weight: normal;
+    padding: 5px;
+    position: absolute;
+    left: 46%;
+    font-size: 16px;
+    font-size: 1rem;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+  }
+  
+  .skip-link:focus {
+    transform: translateY(0%);
+  }
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.shopBody {
+    width: 70vw;
+    margin-top:200px;
+    margin-bottom: 200px;
+}
+
+.marginModalTop {
+    margin-top: 180px;
+}
+
+.mainHeading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px;
+}
+
+.mainBodyCardBlock{
+    display:flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+
+.cardFlexContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.plantCardItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin:20px;
+}
+
+.cardText {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    max-width: -webkit-fill-available;
+    width: 100%;
+    width: -moz-available;          
+    width: -webkit-fill-available;  
+    width: fill-available;
+}
+
+.plantCardImg {
+    max-width: 325px;
+    
+}
+
+/*Screen Size Responsivity*/
+
+@media (max-width:840px) {
+   
+
+    .footerFlexContainer_Top{
+        flex-direction: column;
+    }
+
+    .footerFlexContainer_Bottom {
+        flex-direction: column;
+    }
+
+    .footerFlexItem {
+        margin-bottom: 20px;
+    }
+
+
+
+}
+
+
+@media (min-width:1647px) AND (max-width:1882px) {
+    .shopBody {
+        width: 80vw;
+    }
+}
+
+@media (min-width:1361px) AND (max-width:1646px) {
+    .shopBody {
+        width: 80vw;
+    }
+}
+
+@media (min-width:950px) AND (max-width:1360px) {
+    .shopBody {
+        width: 80vw;
+    }
+}
+
+@media (min-width:750px) AND (max-width:950px){
+    .marginModalTop {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width:750px) {
+
+    .marginModalTop {
+        margin-top: 10px;
+    }
+    body.plantPage {
+        padding-top: 100px;
+    }
+
+    .mainBodyCardBlock {
+        padding-top: 50px;
+    }
+
+    .mainHeading{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .mainBodyCardBlock{
+        flex-direction: column;
+    }
+
+    .cardFlexContainer{
+        justify-content: flex-start;
+        margin-top: 80px;
+    }
+
+    .sortBox {
+        width: 100%;
+    }
+
+    .sortAZ, .sortZA, .sortLowHigh, .sortHighLow, .sortNewest, .dropbtn {
+        width: 100%;
+    }
+
+    .dropbtn {
+        width: 100%;
+    }
+
+}
+

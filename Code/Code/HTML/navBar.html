@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Beginner-Friendly Plants</title>
+    <link rel="stylesheet" href="../CSS/NavBar.css" />
+    <link rel="stylesheet" href="../CSS/PlantPages.css">
+    <link rel="stylesheet" href="..//CSS/Footer.css">
+    <link rel="stylesheet" href="../CSS/buttons.css">
+    <link rel="stylesheet" href="..//CSS/typefaces.css">
+    <link rel="stylesheet" href="..//CSS/typefaces.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../JS/filter.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito&family=Poppins:ital,wght@0,500;0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+</head>
+
+<body>
+    <header>
+
+        <div class="promoBanner">
+            <p class="bodyType2 offWhite">Get 20% Off Selected Plants <a class= "bodyType2 linkUnderlined offWhite" href="">Shop Now</a></p>
+        </div>
+<!--Nav Bar Desktop-->
+    
+        <div class="navbar">
+            <ul class="leftNav">
+                <li id="plantsLink"><div class="navDropdown">
+                    <a id=""class="navLink headingType4 darkGreen" href="">PLANTS</a>
+                    <img class="arrowNav"src="../icons/arrow_down_icon 2.10.13 PM.png">
+                    </div></li>
+                <li id="giftsLink"> <div class="navDropdown">
+                    <a class="navLink headingType4 darkGreen" href="">GIFTS</a>
+                    <img class="arrowNav"src="../icons/arrow_down_icon 2.10.13 PM.png">
+                    </div></li>
+                <li id="aboutLink"><div class="navDropdown">
+                    <a class="navLink headingType4 darkGreen" href="">ABOUT</a>
+                    <img class="arrowNav"src="../icons/arrow_down_icon 2.10.13 PM.png">
+                    </div></li>
+                <li id="learnLink"><div class="navDropdown">
+                    <a class="navLink headingType4 darkGreen" href="">LEARN</a>
+                    <img class="arrowNav"src="../icons/arrow_down_icon 2.10.13 PM.png">
+                    </div></li>
+            </ul>
+            <a class="logoActive" href="../HTML/homepage.html" title="Link to Homepage">
+                <div>
+                    <img class="logoLarge" src="../logo/foliage_logo.png" alt="Foliage company logo">
+                </div>
+            </a>
+            <div class="iconSection">
+                <img class="iconButtons search" src="../icons/search_icon.png" alt="Search">
+                <img class="iconButtons cart"src="../icons/cart_icon.png" alt="Shopping Cart">
+            </div>
+        </div>
+
+        <!--Nav Bar Desktop Dropdowns-->
+
+        <div class= "navDropdownOverlayPlant">
+            <div class="navOverlayContainer">
+                <div class="navOverlayLinks">
+                    <a class="darkGreen headingType4"href="">INDOOR PLANTS</a>
+                    <a class="darkGreen headingType4"href="">NEW ARRIVALS</a>
+                    <a class="darkGreen headingType4"href="../HTML/beginnerPlants.html">BEGINNER-FRIENDLY</a>
+                    <a class="darkGreen headingType4"href="">LOW-MAINTENANCE</a>
+                    <a class="darkGreen headingType4"href="">PET-FRIENDLY</a>
+                    <a class="darkGreen headingType4"href="">LARGE + XL</a>
+                    <a class="darkGreen headingType4"href="">SHOP ALL</a>
+                </div>
+                <div class="navOverlayPhotos">
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Images/NavbarImages/pexels-brett-sayles-5144485.jpg">
+                        <a class="darkGreen headingType4">BEST SELLERS</a>
+                    </div>
+                    <div id= "beginnerFriendly"class="navPhotoContainer">
+                        <img class="navPhoto" src="../Images/NavbarImages/pexels-huy-phan-5084183.jpg">
+                        <a class="darkGreen headingType4">BEGINNER-FRIENDLY</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class= "navDropdownOverlayGifts">
+            <div class="navOverlayContainer">
+                <div class="navOverlayLinks">
+                    <a class="darkGreen headingType4"href="">GIFTS</a>
+                    <a class="darkGreen headingType4"href="">NEW ARRIVALS</a>
+                    <a class="darkGreen headingType4"href="">LAST CHANCE</a>
+                    <a class="darkGreen headingType4"href="">HOUSEWARMING</a>
+                    <a class="darkGreen headingType4"href="">SHOP ALL</a>
+                </div>
+                <div class="navOverlayPhotos">
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Images/NavbarImages/pexels-stephanie-ho-993626.jpg">
+                        <a class="darkGreen headingType4">BEST SELLERS</a>
+                    </div>
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Images/NavbarImages/pexels-iryna-stasiukova-212185.jpg">
+                        <a class="darkGreen headingType4">HOUSEWARMING GIFTS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class= "navDropdownOverlayLearn">
+            <div class="navOverlayContainer">
+                <div class="navOverlayLinks">
+                    <a class="darkGreen headingType4"href="">LEARN</a>
+                    <a class="darkGreen headingType4"href="">PLANT CARE GUIDES</a>
+                    <a class="darkGreen headingType4"href="">INDOOR PLANT CARE</a>
+                    <a class="darkGreen headingType4"href="">GREEN LIVING INSPIRATION</a>
+                </div>
+                <div class="navOverlayPhotos">
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Images/NavbarImages/pexels-jonathan-borba-3255246.jpg">
+                        <a class="darkGreen headingType4">GREEN LIVING BLOG</a>
+                    </div>
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Images/NavbarImages//pexels-karolina-grabowska-4751961.jpg">
+                        <a class="darkGreen headingType4">PLANT CARE GUIDES</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class= "navDropdownOverlayAbout">
+            <div class="navOverlayContainer">
+                <div class="navOverlayLinks">
+                    <a class="darkGreen headingType4"href="../HTML/about.html">STORE HOURS & LOCATION</a>
+                </div>
+                <div class="navOverlayPhotos">
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Images/NavbarImages/pexels-maksim-romashkin-6152103.jpg">
+                        <a class="darkGreen headingType4">OUR TEAM</a>
+                    </div>
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Images/NavbarImages/pexels-josh-sorenson-427649.jpg">
+                        <a class="darkGreen headingType4">COMMUNITY CALENDAR</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <!--Nav Bar for Tablet/Mobile-->
+        <div class="navbar2">
+            <i class="fas fa-bars fa-2x"></i>
+            <img class="logo" src="../logo/foliage_logo.png">
+            <div class="iconSection">
+                <img class="iconButtons search" src="../icons/search_icon.png" alt="Search">
+                <img class="iconButtons login"src="../icons/user_icon.png" alt="User Login">
+                <img class="iconButtons cart"src="../icons/cart_icon.png" alt="Shopping Cart">
+            </div>
+        </div>
+        <divid class="hiddenLinks">
+                <div class="dropdownLinks">
+                    <a class="nav2 darkGreen headingType4" href="">PLANTS</a>
+                    <a class="nav2 darkGreen headingType4" href="">GIFTS</a>
+                    <a class="nav2 darkGreen headingType4" href="">ABOUT</a>
+                    <a class="nav2 darkGreen headingType4" href="">LEARN</a>
+                </div>
+        </div>
+        <!---->
+    </header>
+
+    <body>
+
+    </body>
+
+    </html>
+    

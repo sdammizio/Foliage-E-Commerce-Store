@@ -1,0 +1,131 @@
+#shoppingCartPopOut {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #0C3E30;
+    width: 321px;
+    height: 500px;
+    overflow: auto;
+    padding: 20px;
+    right:0;
+    position: fixed;
+    z-index: 21;
+}
+
+.hiddenModal {
+    display: none;
+}
+
+.headerSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    padding: 10px;
+    align-items: center;
+}
+
+.itemsSection{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.indivItem {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 90%;
+    padding-right: 0px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+.fixedWidth {
+    width: 100px;
+}
+
+.cartModalImage{
+    max-width: 71px;
+}
+
+.itemNameSection{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 10px;
+    padding-bottom: 3px;
+}
+
+.quantityPicker {
+    width: 71px;
+    height: 24px;
+    border: solid 2px #D0E1BE;
+    border-radius: 14px;
+    padding:5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.picker {
+    background-color: transparent;
+    border: none;
+    color: #D0E1BE;
+}
+
+.subtotalSection{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    padding:10px;
+}
+
+.popupFlexContainer i{
+    color: white;
+}
+
+#shoppingModal {
+    color: white;
+}
+
+
+@media (max-width:700px){
+    #shoppingCartPopOut{
+        width: 250px;
+    }
+
+    .headerSection{
+        width: 95%;
+    }
+
+    .indivItem {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 20px;
+}
+
+.itemsSection{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+}
+

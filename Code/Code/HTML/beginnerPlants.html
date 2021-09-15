@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Beginner-Friendly Plants</title>
+    <link rel="icon" type="image/jpeg" href="../Assets/iconTabBar.png"/>
+    <link rel="stylesheet" href="../CSS/NavBar.css" />
+    <link rel="stylesheet" href="../CSS/PlantPages.css">
+    <link rel="stylesheet" href="..//CSS/Footer.css">
+    <link rel="stylesheet" href="../CSS/buttons.css">
+    <link rel="stylesheet" href="../CSS/filter.css">
+    <link rel="stylesheet" href="..//CSS/typefaces.css">
+    <link rel="stylesheet" href="../CSS/cartModal.css">
+    <link rel="stylesheet" href="..//CSS/sortBox.css">
+    <link rel="stylesheet" href="../CSS/homepage.css">
+    <link rel="stylesheet" href="../CSS/newsletterPopUp.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../JS/filter.js"></script>
+    <script src="../JS/APIs.js"></script>
+    <script src="../JS/buttonsAndNav.js"></script>
+    <script src="../JS/newsletterAndForms.js"></script>
+    <script src="../JS/shoppingCart.js"></script>
+    <script src="../JS/slideshow.js"></script>
+    <script
+    src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+    data-auto-a11y="true"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito&family=Poppins:ital,wght@0,500;0,600;1,600&display=swap" rel="stylesheet">
+</head>
+
+<body class="plantPage">
+
+    
+
+    <header>
+        
+        <a class="skip-link" href='#main'>Skip to Content</a>
+
+        <div class="promoBanner">
+            <p class="bodyType2 offWhite">Get 20% Off Selected Plants <a class= "bodyType2 linkUnderlined offWhite" href="">Shop Now</a></p>
+        </div>
+<!--Nav Bar Desktop-->
+    
+        <nav class="navbar">
+            <ul class="leftNav">
+                <li id="plantsLink"><div class="navDropdown">
+                    <a id=""class="navLink headingType4 darkGreen" href="">PLANTS</a>
+                    <img class="arrowNav"src="../Assets/iconArrowDown.png">
+                    </div></li>
+                <li id="giftsLink"> <div class="navDropdown">
+                    <a class="navLink headingType4 darkGreen" href="">GIFTS</a>
+                    <img class="arrowNav"src="../Assets/iconArrowDown.png">
+                    </div></li>
+                <li id="aboutLink"><div class="navDropdown">
+                    <a class="navLink headingType4 darkGreen" href="">ABOUT</a>
+                    <img class="arrowNav"src="../Assets/iconArrowDown.png">
+                    </div></li>
+                <li id="learnLink"><div class="navDropdown">
+                    <a class="navLink headingType4 darkGreen" href="">LEARN</a>
+                    <img class="arrowNav"src="../Assets/iconArrowDown.png">
+                    </div></li>
+            </ul>
+            <a class="logoActive" href="../HTML/homepage.html" title="Link to Homepage">
+                <div>
+                    <img class="logoLarge" src="../Assets/logo.png" alt="Foliage company logo">
+                </div>
+            </a>
+            <div class="iconSection">
+                <img class="iconButtons cart"src="../Assets/iconCart.png" alt="Shopping Cart">
+                <div id="cartUpdater" class="hiddenCartIcon">0</div>
+            </div>
+        </nav>
+
+        <!--Nav Bar Desktop Dropdowns-->
+
+        <nav class= "navDropdownOverlayPlant" aria-label="dropdown menu for Plants">
+            <div class="navOverlayContainer">
+                <div class="navOverlayLinks">
+                    <a class="darkGreen headingType4"href="">INDOOR PLANTS</a>
+                    <a class="darkGreen headingType4"href="">NEW ARRIVALS</a>
+                    <a class="darkGreen headingType4"href="">LAST CHANCE PLANTS</a>
+                    <a class="darkGreen headingType4"href="../HTML/beginnerPlants.html">BEGINNER-FRIENDLY PLANTS</a>
+                    <a class="darkGreen headingType4"href="">PET-FRIENDLY PLANTS</a>
+                    <a class="darkGreen headingType4"href="">LARGE + XL PLANTS</a>
+                    <a class="darkGreen headingType4"href="">SHOP ALL</a>
+                </div>
+                <div class="navOverlayPhotos">
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Assets/plants1.jpg">
+                        <a class="darkGreen headingType4">BEST SELLERS</a>
+                    </div>
+                    <div id="beginnerPlantButton" class="navPhotoContainer">
+                        <img class="navPhoto" src="../Assets/plants2.jpg">
+                        <a class="darkGreen headingType4" href="../HTML/beginnerPlants.html">BEGINNER-FRIENDLY PLANTS</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <nav class= "navDropdownOverlayGifts" aria-label="dropdown menu for Gifts">
+            <div class="navOverlayContainer">
+                <div class="navOverlayLinks">
+                    <a class="darkGreen headingType4"href="">GIFTS</a>
+                    <a class="darkGreen headingType4"href="">NEW ARRIVALS</a>
+                    <a class="darkGreen headingType4"href="">LAST CHANCE GIFTS</a>
+                    <a class="darkGreen headingType4"href="">HOUSEWARMING GIFTS</a>
+                    <a class="darkGreen headingType4"href="">SHOP ALL GIFTS</a>
+                </div>
+                <div class="navOverlayPhotos">
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Assets/gifts1.jpg">
+                        <a class="darkGreen headingType4">BEST SELLERS</a>
+                    </div>
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Assets/gifts2.jpg">
+                        <a class="darkGreen headingType4">HOUSEWARMING GIFTS</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <nav class= "navDropdownOverlayLearn" aria-label="dropdown menu for Learn">
+            <div class="navOverlayContainer">
+                <div class="navOverlayLinks">
+                    <a class="darkGreen headingType4"href="">LEARN</a>
+                    <a class="darkGreen headingType4"href="">PLANT CARE GUIDES</a>
+                    <a class="darkGreen headingType4"href="">INDOOR PLANT CARE</a>
+                    <a class="darkGreen headingType4"href="">GREEN LIVING INSPIRATION</a>
+                </div>
+                <div class="navOverlayPhotos">
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Assets/learn1.jpg">
+                        <a class="darkGreen headingType4">GREEN LIVING BLOG</a>
+                    </div>
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Assets/learn2.jpg">
+                        <a class="darkGreen headingType4">PLANT CARE GUIDES</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <nav class= "navDropdownOverlayAbout" aria-label="dropdown menu for About">
+            <div class="navOverlayContainer">
+                <div class="navOverlayLinks">
+                    <a class="darkGreen headingType4"href="../HTML/about.html">STORE HOURS & LOCATION</a>
+                </div>
+                <div class="navOverlayPhotos">
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Assets/about1.jpg">
+                        <a class="darkGreen headingType4">OUR TEAM</a>
+                    </div>
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Assets/about2.jpg">
+                        <a class="darkGreen headingType4">COMMUNITY CALENDAR</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+    <!--Nav Bar for Tablet/Mobile-->
+        <div class="navbar2" aria-label="navigation bar">
+            <i id="hamburgerIcon" class="fas fa-bars fa-2x" aria-label="hamburger menu button to open navigation links"></i>
+            <img class="logo" src="../Assets/logo.png" alt="foliage business logo">
+            <div class="iconSection">
+                <img class="iconButtons cart"src="../Assets/iconCart.png" alt="Shopping Cart icon" aria-label="button to access shopping cart">
+                <div id="cartUpdater" class="hiddenCartIcon">0</div>
+            </div>
+        </div>
+        <div id class="hiddenLinks" aria-label="website page links">
+                <div class="dropdownLinks">
+                    <a class="nav2 darkGreen headingType4" href="">PLANTS</a>
+                    <a class="nav2 darkGreen headingType4" href="">GIFTS</a>
+                    <a class="nav2 darkGreen headingType4" href="../HTML/about.html">ABOUT</a>
+                    <a class="nav2 darkGreen headingType4" href="">LEARN</a>
+                </div>
+        </div>
+        <!---->
+    </header>
+
+<!--Main Body Begins-->
+    <main id="main">
+        <!--ShoppingCart Slide Out Modal-->
+
+        <modal id="shoppingCartPopOut" class="hiddenModal marginModalTop">
+            <div class="headerSection">
+                <h1 class="headingType2 offWhite">Your Cart</h1>
+                <div id="shoppingModal">
+                    <i class="fas fa-times" alt="hamburger dropdown menu"></i>
+                </div>
+                
+            </div>
+            <div class="itemsSection">
+                <div class="indivItem">
+                    <p class="headingType6 offWhite">Nothing to see here!</p>
+                </div>
+            </div>
+            <div class="subtotalSection tripleMarginTop">
+                <h3 class="headingType3 offWhite">Subtotal:</h3>
+                <h3 id="subtotal"class="headingType3 offWhite"></h3>
+            </div>
+            <button id= "checkoutButton" class="noMarginLeftRight long beige darkGreen headingType4 doubleMarginTop">CHECKOUT</button>
+        </modal>
+        
+        <section class="shopBody">
+           
+            <section class="mainHeading">
+                <h2 class="headingType1 darkGreen">Beginner-Friendly Plants</h2>
+
+                 <!--Sort Button--> 
+                <div class="sortBox" aria-label="dropdown of options to sort products">
+                    <div class="dropdown">
+                        <div class="dropbtn">
+                            <p class="headingType4 darkGrey marginx2 paddingLRight">SORT BY</p>
+                            <img class= "arrowNav" src="../Assets/iconArrowDown.png" alt="dropdown arrow">
+                        </div> 
+                        <!--Hidden Dropdown Content-->
+                        <div class="dropdown-content">
+                            <div class="sortNewest">
+                                <p class="headingType4 darkGrey marginx2 paddingLRight">SORT BY NEWEST</p>
+                            </div>
+                            <div class="sortAZ">
+                                <p class="headingType4 darkGrey marginx2 paddingRight">SORT BY A-Z</p>
+                            </div>
+                            <div class="sortZA">
+                                <p class="headingType4 darkGrey marginx2 paddingRight">SORT BY Z-A</p>
+                            </div>
+                            <div class="sortLowHigh">
+                                <p class="headingType4 darkGrey marginx2 ">SORT BY PRICE LOW-HIGH</p>
+                            </div>
+                            <div class="sortHighLow">
+                                <p class="headingType4 darkGrey marginx2 ">SORT BY PRICE HIGH-LOW</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mainBodyCardBlock">
+                <!--Product Filter (Left Side of Page)-->
+                <div class="productFilter" aria-label="dropdown options to filter products on page">
+                    <ul class= "dropNav">
+                        <li id="buttonSize"class= "sizeButton">
+                            <div class="filterButtonArea">
+                                <h4 class="headingType4 darkGreen">SIZE</h4>
+                                <img id= "sizeArrow" src="../Assets/iconArrowDown.png" alt="dropdown arrow">
+                            </div>
+                        </li>
+                        <!--Hidden dropdown SIZE-->
+                            <ul class= "clickableDropDownSize">
+                                <li>
+                                    <div class="dropdownOption_SmallSize">
+                                        <img class= "dropDownIcon"src="../Assets/iconSizeSmall.png" alt="small plant">
+                                        <p class="headingType4 darkGreenReducedOp">Small</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="dropdownOption_MedSize">
+                                        <img class= "dropDownIcon"src="../Assets/iconMedSize.png" alt="medium plant">
+                                        <p class="headingType4 darkGreenReducedOp">Medium</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="dropdownOption_LargeSize">
+                                        <img class= "dropDownIcon"src="../Assets/iconSizeLarge.png" alt="large plant">
+                                        <p class="headingType4 darkGreenReducedOp">Large</p>
+                                    </div>
+                                </li>
+                            </ul>
+            
+                            <li class= "sunButton">
+                                <div class="filterButtonArea">
+                                    <h4 class="headingType4 darkGreen">SUNLIGHT</h4>
+                                    <img id= "sunArrow" src="../Assets/iconArrowDown.png" alt="dropdown arrow">
+                                </div>
+                            </li>
+                            <!--Hidden dropdown SUNLIGHT-->
+                                <ul class= "clickableDropDownSunlight">
+                                    <li>
+                                        <div class="dropdownOption_LowSun">
+                                            <img class= "dropDownIcon"src="../Assets/iconLowSun.png" alt="small plant">
+                                            <p class="headingType4 darkGreenReducedOp">Low</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdownOption_MedSun">
+                                            <img class= "dropDownIcon"src="../Assets/iconHighSun.png" alt="medium plant">
+                                            <p class="headingType4 darkGreenReducedOp">Medium</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="dropdownOption_HighSun">
+                                            <img class= "dropDownIcon"src="../Assets/iconMediumSun.png" alt="large plant">
+                                            <p class="headingType4 darkGreenReducedOp">High</p>
+                                        </div>
+                                    </li>
+                                </ul>
+            
+                                <li class= "maintButton">
+                                    <div class="filterButtonArea">
+                                        <h4 class="headingType4 darkGreen">MAINTENANCE</h4>
+                                        <img id= "mainArrow" src="../Assets/iconArrowDown.png" alt="dropdown arrow">
+                                    </div>
+                                </li>
+                                <!--Hidden dropdown SUNLIGHT-->
+                                    <ul class= "clickableDropDownMaintenance">
+                                        <li>
+                                            <div class="dropdownOption_LowMain">
+                                                <img class= "dropDownIcon"src="../Assets/IconLowMaintenance.png" alt="small plant">
+                                                <p class="headingType4 darkGreenReducedOp">Low</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="dropdownOption_MedMain">
+                                                <img class= "dropDownIcon"src="../Assets/iconMedMaintenance.png" alt="medium plant">
+                                                <p class="headingType4 darkGreenReducedOp">Medium</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="dropdownOption_HighMain">
+                                                <img class= "dropDownIcon"src="../Assets/iconHighMaintenance.png" alt="large plant">
+                                                <p class="headingType4 darkGreenReducedOp">High</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <!--Checkbox Pet Friendly-->
+                                    <li>
+                                        <div class="filterCheckbox">
+                                            <h4 class="headingType4 darkGreen">PET FRIENDLY </h4>
+                                            <form>
+                                                <label class="checkbox">
+                                                    <input class="petFriendly" type="checkbox" name="petFriendly" value="petFriendly">
+                                                </label>
+                                            </form>
+                                            
+                                        </div>
+                                    </li>
+                                    <!--Checkbox Air Purifying-->
+                                    <li>
+                                        <div class="filterCheckbox">
+                                            <h4 class="headingType4 darkGreen noMargin">AIR PURIFYING</h4>
+                                            <form>
+                                                <label class="checkbox">
+                                                    <input class="airPurifying" type="checkbox" name="airPurifying" value="airPurifying">
+                                                </label>
+                                            </form>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <button id="clearFiltersButton" class="noMarginLeftRight marginTop clearFilters headingType4 darkGreen">CLEAR FILTERS</button>
+                                        </div>
+                                    </li>
+                                    
+                    </ul>
+                   
+                </div>  
+
+        <!--Plant Gallery Begins-->
+                <section class="cardFlexContainer">
+                    <div class="plantCardItem snakePlant">
+                        <img class="plantCardImg" src="../Assets/snakePlant.jpg" alt="Snake Plant">
+                        <div class="cardText">
+                            <h4 class="plantName headingType6 darkGreen noMargin">Snake Plant</h4>
+                            <p class="plantPrice headingType6 darkGreen noMargin">$16</p>
+                        </div>
+                        <p class="plantSize headingType5 darkGreenReducedOp">MEDIUM</p>
+                        <button class="hoverAddToCart headingType4 darkGreen" data-name="Snake Plant" data-price="16" data-src="../Assets/snakePlant.jpg">ADD TO CART</button>
+                    </div>
+                    <div class="plantCardItem zzPlant">
+                        <img class="plantCardImg" src="../Assets/zzPlant.jpg" alt="ZZ Plant">
+                        <div class="cardText">
+                            <h4 class="plantName headingType6 darkGreen noMargin">ZZ Plant</h4>
+                            <p class="plantPrice headingType6 darkGreen noMargin">$26</p>
+                        </div>
+                        <p class="plantSize headingType5 darkGreenReducedOp">LARGE</p>
+                        <button class="hoverAddToCart headingType4 darkGreen" data-name="ZZ Plant" data-price="26" data-src="../Assets/zzPlant.jpg">ADD TO CART</button>
+                    </div>
+                    <div class="plantCardItem dragonTree">
+                        <img class="plantCardImg" src="../Assets/dragonTree.jpeg" alt="Dragon Tree">
+                        <div class="cardText">
+                            <h4 class="plantName headingType6 darkGreen noMargin">Dragon Tree</h4>
+                            <p class="plantPrice headingType6 darkGreen noMargin">$20</p>
+                        </div>
+                        <p class="plantSize headingType5 darkGreenReducedOp">LARGE</p>
+                        <button class="hoverAddToCart headingType4 darkGreen" data-name="Dragon Tree" data-price="20" data-src="../Assets/dragonTree.jpeg">ADD TO CART</button>
+                    </div>
+                    <div class="plantCardItem sagoPalm">
+                        <img class="plantCardImg" src="../Assets/sagoPalm.jpeg" alt="Sago Palm">
+                        <div class="cardText">
+                            <h4 class="plantName headingType6  darkGreen noMargin">Sago Palm</h4>
+                            <p class="plantPrice headingType6  darkGreen noMargin">$10</p>
+                        </div>
+                        <p class="plantSize headingType5 darkGreenReducedOp">SMALL</p>
+                        <button class="hoverAddToCart headingType4 darkGreen" data-name="Sago Palm" data-price="10" data-src="../Assets/sagoPalm.jpeg">ADD TO CART</button>
+                    </div>
+                    <div class="plantCardItem devilsIvy">
+                        <img class="plantCardImg" src="../Assets/devilsIvy.jpeg" alt="Devil's Ivy">
+                        <div class="cardText">
+                            <h4 class="plantName headingType6  darkGreen noMargin">Devil's Ivy</h4>
+                            <p class="plantPrice headingType6 darkGreen noMargin">$30</p>
+                        </div>
+                        <p class="plantSize headingType5 darkGreenReducedOp">LARGE</p>
+                        <button class="hoverAddToCart headingType4 darkGreen" data-name="Devil's Ivy" data-price="30" data-src="../Assets/devilsIvy.jpeg">ADD TO CART</button>
+                    </div>
+                    <div class="plantCardItem blueStarFern">
+                        <img class="plantCardImg" src="../Assets/blueStarFern.jpeg" alt="Blue Star Fern">
+                        <div class="cardText">
+                            <h4 class="plantName headingType6  darkGreen noMargin">Blue Star Fern</h4>
+                            <p class="plantPrice headingType6  darkGreen noMargin">$15</p>
+                        </div>
+                        <p class="plantSize headingType5 darkGreenReducedOp">MEDIUM</p>
+                        <button class="hoverAddToCart headingType4 darkGreen" data-name="Blue Star Fern" data-price="15" data-src="../Assets/blueStarFern.jpeg"data-plant="blueStarFern">ADD TO CART</button>
+                    </div>
+                    <div class="plantCardItem jadeSucculent">
+                        <img class="plantCardImg" src="../Assets/succulentJade.jpeg" alt="Jade Succulent">
+                        <div class="cardText">
+                            <h4 class="plantName headingType6  darkGreen noMargin">Jade Succulent</h4>
+                            <p class="plantPrice headingType6  darkGreen noMargin">$25</p>
+                        </div>
+                        <p class="plantSize headingType5 darkGreenReducedOp">LARGE</p> 
+                        <button class="hoverAddToCart headingType4 darkGreen" data-name="Jade Succulent" data-price="25" data-src="../Assets/succulentJade.jpeg">ADD TO CART</button>
+                    </div>
+                    <div class="plantCardItem pilea">
+                        <img class="plantCardImg" src="../Assets/pilea.jpeg" alt="Pilea">
+                        <div class="cardText">
+                            <h4 class="plantName headingType6  darkGreen noMargin">Pilea</h4>
+                            <p class="plantPrice headingType6  darkGreen noMargin">$15</p>
+                        </div>
+                        <p class="plantSize headingType5 darkGreenReducedOp">SMALL</p> 
+                        <button class="hoverAddToCart headingType4 darkGreen" data-name="Pilea" data-price="15" data-src="../Assets/pilea.jpeg">ADD TO CART</button>
+                    </div>
+                    <div class="plantCardItem rubberPlant">
+                        <img class="plantCardImg" src="../Assets/fiscus.jpeg" alt="Rubber Plant">
+                        <div class="cardText">
+                            <h4 class="plantName headingType6  darkGreen noMargin">Rubber Plant</h4>
+                            <p class="plantPrice headingType6  darkGreen noMargin">$25</p>
+                        </div>
+                        <p class="plantSize headingType5 darkGreenReducedOp">MEDIUM</p> 
+                        <button class="hoverAddToCart headingType4 darkGreen" data-name="Rubber Plant" data-price="25" data-src="../Assets/fiscus.jpeg">ADD TO CART</button>
+                    </div>
+                    <div class="plantCardItem watermellonPeperomelia">
+                        <img class="plantCardImg" src="../Assets/watermellon.jpeg" alt="Watermellon Pepperomelia">
+                        <div class="cardText">
+                            <h4 class="plantName headingType6  darkGreen noMargin">Watermellon Pepperomelia</h4>
+                            <p class="plantPrice headingType6  darkGreen noMargin">$22</p>
+                        </div>
+                        <p class="plantSize headingType5 darkGreenReducedOp">MEDIUM</p> 
+                        <button class="hoverAddToCart headingType4 darkGreen" data-name="Watermellon Pepperomelia" data-price="22" data-src="../Assets/watermellon.jpeg">ADD TO CART</button>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <!--Footer-->
+    <footer>
+        <div class="footerFlexContainer_Top">
+            <div class="footerFlexItem">
+                <h5 class="headingType5 lightGreen">STAY IN THE LOOP</h5>
+                <p class="bodyType2 offWhite">Stay in the loop with special offers, plant tips, and more.</p>
+                <form>
+                    <input class= "bodyType2" name="email address" required="required" type="email" placeholder="Enter your email" aria-label="Enter your email address"/>
+                </form>
+            </div>
+            <div class="footerFlexItem">
+                <h5 class="headingType5 lightGreen">COMPANY</h4>
+                <a class="bodyType2 offWhite linkNoUnderline margin" href="">About</a> 
+                <a class="bodyType2 offWhite linkNoUnderline margin" href="">Careers</a> 
+                <a class="bodyType2 offWhite linkNoUnderline margin" href="">Press</a> 
+                <a class="bodyType2 offWhite linkNoUnderline margin" href="">Wholesale Orders</a> 
+                <a class="bodyType2 offWhite linkNoUnderline margin" href="">Our Guarantee</a> 
+            </div>
+            <div class="footerFlexItem">
+                <h4 class="headingType5 lightGreen">SUPPORT</h4>
+                <a class="bodyType2 offWhite linkNoUnderline margin" href="">Help & FAQs</a> 
+                <a class="bodyType2 offWhite linkNoUnderline margin" href="">Track Your Order</a> 
+                <a class="bodyType2 offWhite linkNoUnderline margin" href="">Shipping</a> 
+                <a class="bodyType2 offWhite linkNoUnderline margin" href="">Returns</a> 
+                <a class="bodyType2 offWhite linkNoUnderline margin" href="">Contact Us</a> 
+            </div>
+            <div class="footerFlexItem">
+                <h4 class="headingType5 lightGreen">SITE</h4>
+                <a class="bodyType2 offWhite linkNoUnderline margin" href="">Plants</a> 
+                <a class="bodyType2 offWhite linkNoUnderline margin" href="">Gifts</a> 
+                <a class="bodyType2 offWhite linkNoUnderline margin" href="">About</a> 
+                <a class="bodyType2 offWhite linkNoUnderline margin" href="">Learn</a> 
+            </div>
+        </div>
+    
+        <div class="footerFlexContainer_Bottom">
+            <div class="termsTextBlock">
+                <a class="bodyType2 offWhite linkNoUnderline marginx2" href="">Terms</a>
+                <a class="bodyType2 offWhite linkNoUnderline marginx2" href="">Privacy Policy</a>
+                <a class="bodyType2 offWhite linkNoUnderline marginx2" href="">Accessibility</a>
+            </div>
+            <div>
+                <img class="socialicon" src="../Assets/iconFacebook.png" alt="Facebook icon">
+                <img class="socialicon" src="../Assets/iconInstagram.png" alt="Instagram icon">
+                <img class="socialicon" src="../Assets/iconTwitter.png" alt="Twitter icon">
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

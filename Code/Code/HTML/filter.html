@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/NavBar.css" />
+    <link rel="stylesheet" href="../CSS/PlantPages.css">
+    <link rel="stylesheet" href="..//CSS/Footer.css">
+    <link rel="stylesheet" href="../CSS/buttons.css">
+    <link rel="stylesheet" href="../CSS/filter.css">
+    <link rel="stylesheet" href="..//CSS/typefaces.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito&family=Poppins:ital,wght@0,500;0,600;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="productFilter">
+        <ul class= "dropNav">
+            <li>
+                <div class="filterButtonArea">
+                    <h4 class="headingType4 darkGreen">SIZE</h4>
+                    <img class= "arrowDropdownIcon" src="../icons/arrow_down_icon 2.10.13 PM.png" alt="dropdown arrow">
+                </div>
+            </li>
+             <!--Hidden dropdown SIZE-->
+                <ul class= "clickableDropDownSize">
+                    <li>
+                        <div class="dropdownOption_SmallSize">
+                            <img class= "dropDownIcon"src="../icons/small_plant_icon.png" alt="small plant">
+                            <p class="headingType4 darkGreenReducedOp">Small</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdownOption_MedSize">
+                            <img class= "dropDownIcon"src="../icons/med_size_icon.png" alt="medium plant">
+                            <p class="headingType4 darkGreenReducedOp">Medium</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdownOption_LargeSize">
+                            <img class= "dropDownIcon"src="../icons/large_size_icon.png" alt="large plant">
+                            <p class="headingType4 darkGreenReducedOp">Large</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <li>
+                    <div class="filterButtonArea">
+                        <h4 class="headingType4 darkGreen">SUNLIGHT</h4>
+                        <img class= "arrowDropdownIcon" src="../icons/arrow_down_icon 2.10.13 PM.png" alt="dropdown arrow">
+                    </div>
+                </li>
+                 <!--Hidden dropdown SUNLIGHT-->
+                    <ul class= "clickableDropDownSunlight">
+                        <li>
+                            <div class="dropdownOption_LowSun">
+                                <img class= "dropDownIcon"src="../icons/low_sun_icon.png" alt="small plant">
+                                <p class="headingType4 darkGreenReducedOp">Low</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdownOption_MedSun">
+                                <img class= "dropDownIcon"src="../icons/med_sun_icon.png" alt="medium plant">
+                                <p class="headingType4 darkGreenReducedOp">Medium</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdownOption_HighSun">
+                                <img class= "dropDownIcon"src="../icons/high_sun_icon.png" alt="large plant">
+                                <p class="headingType4 darkGreenReducedOp">High</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <li>
+                        <div class="filterButtonArea">
+                            <h4 class="headingType4 darkGreen">MAINTENANCE</h4>
+                            <img class= "arrowDropdownIcon" src="../icons/arrow_down_icon 2.10.13 PM.png" alt="dropdown arrow">
+                        </div>
+                    </li>
+                     <!--Hidden dropdown SUNLIGHT-->
+                        <ul class= "clickableDropDownMaintenance">
+                            <li>
+                                <div class="dropdownOption_LowMain">
+                                    <img class= "dropDownIcon"src="../icons/low_maintenance_icon.png" alt="small plant">
+                                    <p class="headingType4 darkGreenReducedOp">Low</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdownOption_MedMain">
+                                    <img class= "dropDownIcon"src="../icons/med_maintenance_icon.png" alt="medium plant">
+                                    <p class="headingType4 darkGreenReducedOp">Medium</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="dropdownOption_HighMain">
+                                    <img class= "dropDownIcon"src="../icons/high_maintenance_icon.png" alt="large plant">
+                                    <p class="headingType4 darkGreenReducedOp">High</p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <li>
+                            <div class="filterCheckbox">
+                                <h4 class="headingType4 darkGreen">PET FRIENDLY </h4>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                </label>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="filterCheckbox">
+                                <h4 class="headingType4 darkGreen noMargin">AIR PURIFYING</h4>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                </label>
+                            </div>
+                        </li>
+        </ul>
+    </div>  
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $('.clickableDropDownSize'). on ('click', function() {
+        $('.clickableDropDownSize').attr ('display', 'flexbox')
+        });
+    </script>
+
+    
+</body>
+</html>

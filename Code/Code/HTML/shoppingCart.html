@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About</title>
+    
+        <link rel="icon" type="image/jpeg" href="../Assets/iconTabBar.png"/>
+        <link rel="stylesheet" href="../CSS/NavBar.css" />
+        <link rel="stylesheet" href="../CSS/PlantPages.css">
+        <link rel="stylesheet" href="..//CSS/Footer.css">
+        <link rel="stylesheet" href="../CSS/buttons.css">
+        <link rel="stylesheet" href="../CSS/filter.css">
+        <link rel="stylesheet" href="..//CSS/typefaces.css">
+        <link rel="stylesheet" href="..//CSS/about.css">
+        <link rel="stylesheet" href="..//CSS/shoppingCart.css">
+        <link rel="stylesheet" href="..//CSS/sortBox.css">
+        <link rel="stylesheet" href="../CSS/newsletterPopUp.css">
+        <link rel="stylesheet" href="../CSS/homepage.css">
+        <link rel="stylesheet" href="../CSS/cartModal.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="../JS/filter.js"></script>
+        <script src="../JS/APIs.js"></script>
+        <script src="../JS/buttonsAndNav.js"></script>
+        <script src="../JS/newsletterAndForms.js"></script>
+        <script src="../JS/shoppingCart.js"></script>
+        <script src="../JS/slideshow.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"data-auto-a11y="true"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Nunito&family=Poppins:ital,wght@0,500;0,600;1,600&display=swap" rel="stylesheet">
+    </head>
+<body>
+
+    <header>
+        
+        <a class="skip-link" href='#main'>Skip to Content</a>
+
+        <div class="promoBanner">
+            <p class="bodyType2 offWhite">Get 20% Off Selected Plants <a class= "bodyType2 linkUnderlined offWhite" href="">Shop Now</a></p>
+        </div>
+<!--Nav Bar Desktop-->
+    
+        <nav class="navbar">
+            <ul class="leftNav">
+                <li id="plantsLink"><div class="navDropdown">
+                    <a id=""class="navLink headingType4 darkGreen" href="">PLANTS</a>
+                    <img class="arrowNav"src="../Assets/iconArrowDown.png">
+                    </div></li>
+                <li id="giftsLink"> <div class="navDropdown">
+                    <a class="navLink headingType4 darkGreen" href="">GIFTS</a>
+                    <img class="arrowNav"src="../Assets/iconArrowDown.png">
+                    </div></li>
+                <li id="aboutLink"><div class="navDropdown">
+                    <a class="navLink headingType4 darkGreen" href="">ABOUT</a>
+                    <img class="arrowNav"src="../Assets/iconArrowDown.png">
+                    </div></li>
+                <li id="learnLink"><div class="navDropdown">
+                    <a class="navLink headingType4 darkGreen" href="">LEARN</a>
+                    <img class="arrowNav"src="../Assets/iconArrowDown.png">
+                    </div></li>
+            </ul>
+            <a class="logoActive" href="../HTML/homepage.html" title="Link to Homepage">
+                <div>
+                    <img class="logoLarge" src="../Assets/logo.png" alt="Foliage company logo">
+                </div>
+            </a>
+            <div class="iconSection">
+                <img class="iconButtons cart"src="../Assets/iconCart.png" alt="Shopping Cart">
+                <div id="cartUpdater" class="hiddenCartIcon">0</div>
+            </div>
+        </nav>
+
+        <!--Nav Bar Desktop Dropdowns-->
+
+        <nav class= "navDropdownOverlayPlant" aria-label="dropdown menu for Plants">
+            <div class="navOverlayContainer">
+                <div class="navOverlayLinks">
+                    <a class="darkGreen headingType4"href="">INDOOR PLANTS</a>
+                    <a class="darkGreen headingType4"href="">NEW ARRIVALS</a>
+                    <a class="darkGreen headingType4"href="">LAST CHANCE PLANTS</a>
+                    <a class="darkGreen headingType4"href="../HTML/beginnerPlants.html">BEGINNER-FRIENDLY PLANTS</a>
+                    <a class="darkGreen headingType4"href="">PET-FRIENDLY PLANTS</a>
+                    <a class="darkGreen headingType4"href="">LARGE + XL PLANTS</a>
+                    <a class="darkGreen headingType4"href="">SHOP ALL</a>
+                </div>
+                <div class="navOverlayPhotos">
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Assets/plants1.jpg">
+                        <a class="darkGreen headingType4">BEST SELLERS</a>
+                    </div>
+                    <div id="beginnerPlantButton" class="navPhotoContainer">
+                        <img class="navPhoto" src="../Assets/plants2.jpg">
+                        <a class="darkGreen headingType4" href="../HTML/beginnerPlants.html">BEGINNER-FRIENDLY PLANTS</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <nav class= "navDropdownOverlayGifts" aria-label="dropdown menu for Gifts">
+            <div class="navOverlayContainer">
+                <div class="navOverlayLinks">
+                    <a class="darkGreen headingType4"href="">GIFTS</a>
+                    <a class="darkGreen headingType4"href="">NEW ARRIVALS</a>
+                    <a class="darkGreen headingType4"href="">LAST CHANCE GIFTS</a>
+                    <a class="darkGreen headingType4"href="">HOUSEWARMING GIFTS</a>
+                    <a class="darkGreen headingType4"href="">SHOP ALL GIFTS</a>
+                </div>
+                <div class="navOverlayPhotos">
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Assets/gifts1.jpg">
+                        <a class="darkGreen headingType4">BEST SELLERS</a>
+                    </div>
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Assets/gifts2.jpg">
+                        <a class="darkGreen headingType4">HOUSEWARMING GIFTS</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <nav class= "navDropdownOverlayLearn" aria-label="dropdown menu for Learn">
+            <div class="navOverlayContainer">
+                <div class="navOverlayLinks">
+                    <a class="darkGreen headingType4"href="">LEARN</a>
+                    <a class="darkGreen headingType4"href="">PLANT CARE GUIDES</a>
+                    <a class="darkGreen headingType4"href="">INDOOR PLANT CARE</a>
+                    <a class="darkGreen headingType4"href="">GREEN LIVING INSPIRATION</a>
+                </div>
+                <div class="navOverlayPhotos">
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Assets/learn1.jpg">
+                        <a class="darkGreen headingType4">GREEN LIVING BLOG</a>
+                    </div>
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Assets/learn2.jpg">
+                        <a class="darkGreen headingType4">PLANT CARE GUIDES</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <nav class= "navDropdownOverlayAbout" aria-label="dropdown menu for About">
+            <div class="navOverlayContainer">
+                <div class="navOverlayLinks">
+                    <a class="darkGreen headingType4"href="../HTML/about.html">STORE HOURS & LOCATION</a>
+                </div>
+                <div class="navOverlayPhotos">
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Assets/about1.jpg">
+                        <a class="darkGreen headingType4">OUR TEAM</a>
+                    </div>
+                    <div class="navPhotoContainer">
+                        <img class="navPhoto" src="../Assets/about2.jpg">
+                        <a class="darkGreen headingType4">COMMUNITY CALENDAR</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+    <!--Nav Bar for Tablet/Mobile-->
+        <div class="navbar2" aria-label="navigation bar">
+            <i id="hamburgerIcon" class="fas fa-bars fa-2x" aria-label="hamburger menu button to open navigation links"></i>
+            <img class="logo" src="../Assets/logo.png" alt="foliage business logo">
+            <div class="iconSection">
+                <img class="iconButtons cart"src="../Assets/iconCart.png" alt="Shopping Cart icon" aria-label="button to access shopping cart">
+                <div id="cartUpdater" class="hiddenCartIcon">0</div>
+            </div>
+        </div>
+        <div id class="hiddenLinks" aria-label="website page links">
+                <div class="dropdownLinks">
+                    <a class="nav2 darkGreen headingType4" href="">PLANTS</a>
+                    <a class="nav2 darkGreen headingType4" href="">GIFTS</a>
+                    <a class="nav2 darkGreen headingType4" href="../HTML/about.html">ABOUT</a>
+                    <a class="nav2 darkGreen headingType4" href="">LEARN</a>
+                </div>
+        </div>
+        <!---->
+    </header>
+
+    <!--Shopping Cart Modal-->
+
+    <modal id="shoppingCartPopOut" class="hiddenModal marginModalTop">
+        <div class="headerSection">
+            <h1 class="headingType2 offWhite">Your Cart</h1>
+            <div id="shoppingModal">
+                <i class="fas fa-times" alt="hamburger dropdown menu"></i>
+            </div>
+            
+        </div>
+        <div class="itemsSection">
+            <div class="indivItem">
+                <p class="headingType6 offWhite">Nothing to see here!</p>
+            </div>
+        </div>
+        <div class="subtotalSection tripleMarginTop">
+            <h3 class="headingType3 offWhite">Subtotal:</h3>
+            <h3 id="subtotal" class="headingType3 offWhite"></h3>
+        </div>
+        <button id= "checkoutButton" class="noMarginLeftRight long beige darkGreen headingType4 doubleMarginTop">CHECKOUT</button>
+    </modal>
+
+
+    <main id="main">
+        
+        <section class="cartContainer">
+            <h2 class="headingType1 darkGreen">Your Cart</h2>
+            <div class="tableContainer">
+                <table class="tableCart">
+                    <tr>
+                        <th class="darkGreen headingType5" colspan="4">Product</th>
+                        <th class="darkGreen headingType5">Price</th>
+                        <th class="darkGreen headingType5">Quantity</th>
+                        <th class="darkGreen headingType5">Total</th>
+                    </tr>
+                    <tr id="table item">
+                        <td colspan="4">
+                            <div class="cartProduct">
+                                <p class="darkGreen bodyType3">Your cart is empty!</p>
+                            </div>
+                        </td>
+                        <td>
+
+                         </td>
+                         <td>
+                          
+                         </td> 
+                         <td>
+                        </td>
+                    </tr>
+                </table>
+
+            <aside class="subtotalArea">
+                <div class="subtotalAmount">
+                    <p class="bodyType3 darkGreen">Subtotal</p>
+                    <p id= "cartSubTotal" class="bodyType3 darkGreen">$16</p>
+                </div>
+                <p class="bodyType3 darkGreen">Taxes and shipping calculated at checkout</p>
+                <button class="noMarginLeftRight standard green offWhite headingType4 doubleMarginTop">CHECKOUT</button>
+            </aside>
+        </section>
+
+    </main>
+
+
+    
+        <!--Footer-->
+<footer>
+    <div class="footerFlexContainer_Top">
+        <div class="footerFlexItem">
+            <h5 class="headingType5 lightGreen">STAY IN THE LOOP</h5>
+            <p class="bodyType2 offWhite">Stay in the loop with special offers, plant tips, and more.</p>
+            <form>
+                <input class= "bodyType2" name="email address" required="required" type="email" placeholder="Enter your email" aria-label="Enter your email address"/>
+            </form>
+        </div>
+        <div class="footerFlexItem">
+            <h5 class="headingType5 lightGreen">COMPANY</h4>
+            <a class="bodyType2 offWhite linkNoUnderline margin" href="">About</a> 
+            <a class="bodyType2 offWhite linkNoUnderline margin" href="">Careers</a> 
+            <a class="bodyType2 offWhite linkNoUnderline margin" href="">Press</a> 
+            <a class="bodyType2 offWhite linkNoUnderline margin" href="">Wholesale Orders</a> 
+            <a class="bodyType2 offWhite linkNoUnderline margin" href="">Our Guarantee</a> 
+        </div>
+        <div class="footerFlexItem">
+            <h4 class="headingType5 lightGreen">SUPPORT</h4>
+            <a class="bodyType2 offWhite linkNoUnderline margin" href="">Help & FAQs</a> 
+            <a class="bodyType2 offWhite linkNoUnderline margin" href="">Track Your Order</a> 
+            <a class="bodyType2 offWhite linkNoUnderline margin" href="">Shipping</a> 
+            <a class="bodyType2 offWhite linkNoUnderline margin" href="">Returns</a> 
+            <a class="bodyType2 offWhite linkNoUnderline margin" href="">Contact Us</a> 
+        </div>
+        <div class="footerFlexItem">
+            <h4 class="headingType5 lightGreen">SITE</h4>
+            <a class="bodyType2 offWhite linkNoUnderline margin" href="">Plants</a> 
+            <a class="bodyType2 offWhite linkNoUnderline margin" href="">Gifts</a> 
+            <a class="bodyType2 offWhite linkNoUnderline margin" href="">About</a> 
+            <a class="bodyType2 offWhite linkNoUnderline margin" href="">Learn</a> 
+        </div>
+    </div>
+
+    <div class="footerFlexContainer_Bottom">
+        <div class="termsTextBlock">
+            <a class="bodyType2 offWhite linkNoUnderline marginx2" href="">Terms</a>
+            <a class="bodyType2 offWhite linkNoUnderline marginx2" href="">Privacy Policy</a>
+            <a class="bodyType2 offWhite linkNoUnderline marginx2" href="">Accessibility</a>
+        </div>
+        <div>
+            <img class="socialicon" src="../Assets/iconFacebook.png" alt="Facebook icon">
+            <img class="socialicon" src="../Assets/iconInstagram.png" alt="Instagram icon">
+            <img class="socialicon" src="../Assets/iconTwitter.png" alt="Twitter icon">
+        </div>
+    </div>
+</footer>
+</body>
+</html>

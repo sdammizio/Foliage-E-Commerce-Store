@@ -1,0 +1,450 @@
+#homepage {
+    margin-top: 40px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0;
+    padding: 0px;
+}
+
+.skip-link {
+    background: white;
+    color: darkgreen;
+    font-weight: normal;
+    padding: 5px;
+    position: absolute;
+    left: 46%;
+    font-size: 16px;
+    font-size: 1rem;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+  }
+  
+  .skip-link:focus {
+    transform: translateY(0%);
+  }
+
+  .addedMargin {
+      margin-top: 150px;
+  }
+
+.instaPostsContainer{
+    max-width: 75%;
+}
+
+.hero{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-image: url("../Assets/mastheadDesktop.jpg");
+    height: 100vh;
+    width:100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.hero2{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.bannerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 25%;
+    top: 65%;
+    left: 10%;
+}
+
+.bannerContent2{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.hero2ImageContainer {
+    max-width: 100vw;
+}
+
+.hero2Image {
+    max-width: -webkit-fill-available;
+    width: 100%;
+    width: -moz-available;          
+    width: -webkit-fill-available;  
+    width: fill-available;
+}
+
+.overlay {
+    background-color: black;
+    opacity: 30%;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.rotatingBannerImage{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-image: url("../Assets/slideshowImage1.jpg");
+    height: 100vh;
+    width:100%;
+    position: relative;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+}
+
+.rotatingBannerContent{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 20%;
+    top: 35%;
+    right: 20%;
+}
+
+.topBlockImage{
+    max-width: 35%;
+}
+
+.collectionButton{
+    width: -webkit-fill-available;  
+    max-width: -webkit-fill-available;
+    width: 100%;
+    width: -moz-available;          
+    width: fill-available;
+}
+
+.collectionButton:hover{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.collectionsFlexContainer{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 80%;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.collectionsButtons{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.buttonContainer{
+    max-width: 30%;
+}
+
+.topBlock{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+}
+
+.mainContentArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 100px;
+}
+
+.foliagePromiseImg{
+    width: -webkit-fill-available;  
+    max-width: -webkit-fill-available;
+    width: 100%;
+    width: -moz-available;          
+    width: fill-available;
+}
+
+.foliagePromise{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    
+}
+
+.promiseListContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
+#cartUpdator {
+    background-color: RGB(12, 62, 48);
+    color: #FCF9F3;
+    border-radius: 50%;
+}
+
+.promiseItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.promiseIcon{
+    max-width: 28px;
+    margin-right: 20px;
+}
+
+.promiseDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.instagramSection {
+    background-color: #FCF9F3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom:100px;
+}
+
+.reviewsSection{
+    background-color: #D0E1BE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom:100px;
+}
+
+.reviewsFlexbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+}
+
+.instagramFlexbox{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80%;
+}
+
+.reviewerCommentsContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    max-width: 100%;
+    margin-top: 25px;
+   
+}
+
+.reviewerItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 35%;
+
+}
+
+.reviewerImageContainer{
+    width: 30%;
+}
+
+.reviewerImage{
+    max-width: -webkit-fill-available;
+    width: 100%;
+    width: -moz-available;          
+    width: -webkit-fill-available;  
+    width: fill-available;
+}
+
+.reviewerTextContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 50%;
+    text-align: center;
+    
+}
+
+#curator-feed-default-feed-layout{
+    max-width: 70vw;
+}
+
+/*Responsive Design */
+
+@media (min-width:481px) AND (max-width:1470px) {
+
+    .rotatingBannerContent {
+        width: 30%;
+    }
+
+    .bannerContent{
+        width: 25%;
+        top:60%;
+    }
+
+}
+
+@media (min-width:481px) AND (max-width:1121px) {
+
+    .bannerContent h1{
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-size: 32px;
+    }
+
+}
+
+
+@media  (max-width:1054px) {
+.hero {
+    display: none;
+}
+
+.hero2 {
+    display:flex;
+}
+
+.addedMargin {
+    margin-top: 150px;
+}
+
+
+
+}
+
+@media  (min-width:1055px) {
+    .hero {
+        display: flex;
+    }
+    
+    .hero2 {
+        display:none;
+    }
+
+    
+    }
+
+@media (min-width:840px) AND (max-width:960px){
+    .addedMargin {
+        margin-top: 80px;
+    }
+}
+
+
+
+@media (max-width:840px) {
+    .topBlock {
+        flex-direction: column;
+    }
+
+    .collectionsButtons{
+        flex-direction: column;
+    }
+
+    .buttonContainer {
+        max-width: 70%;
+    }
+
+    .buttonContainer{
+        margin-bottom: 10px;
+    }
+
+    .reviewerCommentsContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .reviewerItem {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .collectionsFlexContainer {
+        align-items: center;
+    }
+
+    .collectionsFlexContainer h2 {
+        text-align: center;
+    }
+
+    .foliagePromise h2 {
+        text-align: center;
+    }
+
+    .footerFlexContainer_Top{
+        flex-direction: column;
+    }
+
+    .footerFlexContainer_Bottom {
+        flex-direction: column;
+    }
+
+    .footerFlexItem {
+        margin-bottom: 20px;
+    }
+
+    .hero{
+        background-size: contain;
+    }
+
+    .reviewsFlexbox h3 {
+        text-align: center;
+    }
+
+    .instagramFlexbox h3 {
+        text-align: center;
+    }
+
+    .hero2 {
+        margin-top: 50px;
+    }
+
+    .bannerContent2 {
+        align-items: flex-start;
+        margin: 20px;
+    }
+
+    .rotatingBannerContent {
+        width: 40%;
+        left: 10%;
+    }
+
+    .addedMargin {
+        margin-top: 70px;
+    }
+
+}
