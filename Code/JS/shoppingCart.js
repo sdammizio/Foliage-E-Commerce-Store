@@ -56,7 +56,7 @@ shoppingCartOperations.appendCartModal =function(){
                         <h2 class="offWhite headingType6 fixedWidth">${item.name}</h2>
                         <p class="bodyType2 offWhite noMargin noPadding">Qty: 1</p>
                     </div>
-                    <button id="removeButton" data-plant= "${item.name}" class="picker headingType4">REMOVE</button>
+                    <button id="removeButton" data-plant= "${item.name}" data-price= "${item.price}" class="picker headingType4">REMOVE</button>
                 </div>
         `
         $(".itemsSection").append(cartModalHTML);
@@ -151,10 +151,15 @@ shoppingCartOperations.removeButton =function(){
     $("#shoppingCartPopOut").on("click","#removeButton", function() {
         shoppingCartOperations.shoppingCart = shoppingCartOperations.shoppingCart.filter((item)=>{
             return item.name !== $(this).data().plant
-        })
-        shoppingCartOperations.cartItemPrices = shoppingCartOperations.cartItemPrices.filter((item)=>{
-            return item.data !== this.data
-        })
+        });
+        
+        const index = shoppingCartOperations.cartItemPrices.indexOf($(this).data("price"));
+        shoppingCartOperations.cartItemPrices.splice(index,1);
+        console.log(index)
+        console.log(shoppingCartOperations.cartItemPrices)
+
+        
+    shoppingCartOperations.sumCalculator();
     shoppingCartOperations.appendCartModal();
     shoppingCartOperations.appendCheckoutPage();
     shoppingCartOperations.cartCountAmount();
@@ -219,10 +224,9 @@ shoppingCartOperations.addToCart=function(){
     //add that data to the price array 
     shoppingCartOperations.cartItemPrices.push(itemPrice);
     //calculate sum of price array= subtotal amt
-    sum = shoppingCartOperations.cartItemPrices.reduce(function(a, b){
-        return a + b;
-    }, 0);
+    console.log(shoppingCartOperations.cartItemPrices)
     
+    shoppingCartOperations.sumCalculator();
     shoppingCartOperations.appendCartModal();
     shoppingCartOperations.appendCheckoutPage();
 });
@@ -230,6 +234,13 @@ shoppingCartOperations.addToCart=function(){
 }
 
 shoppingCartOperations.addToCart();
+
+shoppingCartOperations.sumCalculator = function(){
+    sum = shoppingCartOperations.cartItemPrices.reduce(function(a, b){
+        return a + b;
+    }, 0);
+}
+shoppingCartOperations.sumCalculator();
 
 
 });

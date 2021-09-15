@@ -22,19 +22,10 @@ $(document).ready(function(){
             position: location,
             map: map
         });
-    // JS API is loaded and available
     };
 
     // Append the 'script' element to 'head'
     document.head.appendChild(script);
-
-
-
-
-//Meetup.com API
-
-
-
 
 
 

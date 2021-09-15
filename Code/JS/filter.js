@@ -68,7 +68,7 @@ plantFilterApp.init();
                                     <p class="plantPrice headingType6 darkGreen noMargin">$${plant.price}</p>
                                 </div>
                                 <p class="plantSize headingType5 darkGreenReducedOp">${plant.size}</p>
-                                <button class="hoverAddToCart headingType4 darkGreen ${plant.className}">ADD TO CART</button>
+                                <button class="hoverAddToCart headingType4 darkGreen" data-name="${plant.name}" data-price="${plant.price}" data-src="${plant.imgSRC}">ADD TO CART</button>
                             </div>`
             //display container with plant cards that are from the sorted array
             $(".cardFlexContainer").append(html)
@@ -222,7 +222,7 @@ plantFilterApp.init();
                                 <p class="plantPrice headingType6 darkGreen noMargin">$${plant.price}</p>
                             </div>
                             <p class="plantSize headingType5 darkGreenReducedOp">${plant.size}</p>
-                            <button class="hoverAddToCart headingType4 darkGreen ${plant.className}">ADD TO CART</button>
+                            <button class="hoverAddToCart headingType4 darkGreen" data-name="${plant.name}" data-price="${plant.price}" data-src="${plant.imgSRC}">ADD TO CART</button>
                         </div>`
         //display container with plant cards that are from the filtered array
         $(".cardFlexContainer").append(html);
@@ -307,6 +307,7 @@ plantFilterApp.init();
     $("#clearFiltersButton").on("click", function(){
         location.reload();
     })
+ 
 
     $('.dropdownOption_SmallSize').on("click", function(){
         //create activeFilter class (an empty class not visible on page only used to indicate whether filter active)
