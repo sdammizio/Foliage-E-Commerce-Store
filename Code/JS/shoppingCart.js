@@ -56,7 +56,7 @@ shoppingCartOperations.appendCartModal =function(){
                         <h2 class="offWhite headingType6 fixedWidth">${item.name}</h2>
                         <p class="bodyType2 offWhite noMargin noPadding">Qty: 1</p>
                     </div>
-                    <button id="removeButton" class="picker headingType4">REMOVE</button>
+                    <button id="removeButton" data-plant= "${item.name}" class="picker headingType4">REMOVE</button>
                 </div>
         `
         $(".itemsSection").append(cartModalHTML);
@@ -150,13 +150,11 @@ shoppingCartOperations.removeButton =function(){
 
     $("#shoppingCartPopOut").on("click","#removeButton", function() {
         shoppingCartOperations.shoppingCart = shoppingCartOperations.shoppingCart.filter((item)=>{
-            return item.data !== this.data
+            return item.name !== $(this).data().plant
         })
         shoppingCartOperations.cartItemPrices = shoppingCartOperations.cartItemPrices.filter((item)=>{
             return item.data !== this.data
         })
-        console.log(shoppingCartOperations.shoppingCart)
-        console.log(shoppingCartOperations.cartItemPrices)
     shoppingCartOperations.appendCartModal();
     shoppingCartOperations.appendCheckoutPage();
     shoppingCartOperations.cartCountAmount();
@@ -167,12 +165,13 @@ shoppingCartOperations.removeButton();
 
 shoppingCartOperations.cartCountAmount=function(){
     if (shoppingCartOperations.shoppingCart.length ===0){
-        $(".iconSection > #cartUpdater.hiddenCartIcon").hide();
+        $(".iconSection > #cartUpdater").hide();
         setTimeout(function(){
             iconValue=shoppingCartOperations.shoppingCart.length;
             $(".iconSection > #cartUpdater").text(`${iconValue}`)
          }, 10); 
     } else {
+        $(".iconSection > #cartUpdater").show();
         setTimeout(function(){
             iconValue=shoppingCartOperations.shoppingCart.length;
             $(".iconSection > #cartUpdater").text(`${iconValue}`)

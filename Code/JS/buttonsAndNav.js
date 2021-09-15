@@ -74,14 +74,10 @@ buttonOperations.buttonRedirections=function(){
         window.location.href = '../HTML/beginnerPlants.html';
     }) 
 
-    $("#checkoutButton").on("click", function(){
-        window.location.href = '../HTML/shoppingCart.html';
-    })
 
-    $("#shoppingCartPopOut").on("click","#checkoutButton", function(){
-        console.log("hi")
-        window.location.href = '../HTML/shoppingCart.html';
-    })
+    // $("#shoppingCartPopOut").on("click","#checkoutButton", function(){
+    //     window.location.href = '../HTML/shoppingCart.html';
+    // })
 
 }
 
