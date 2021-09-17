@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>About</title>
+        <title>Green Living Inspiration</title>
     
         <link rel="icon" type="image/jpeg" href="../Assets/iconTabBar.png"/>
         <link rel="stylesheet" href="../CSS/NavBar.css" />
@@ -37,7 +37,7 @@
 
     <header>
         
-        <a class="skip-link" href='#main'>Skip to Content</a>
+        <a class="skip-link" href='#inspirationMainContent'>Skip to Content</a>
 
         <div class="promoBanner">
             <p class="bodyType2 offWhite">Get 20% Off Selected Plants <a class= "bodyType2 linkUnderlined offWhite" href="">Shop Now</a></p>
@@ -182,9 +182,9 @@
         <!---->
     </header>
 
-    <main id="main">
+    <main id="inspirationMainContent">
 
-        <!--ShoppingCart Slide Out Modal-->
+    <!--ShoppingCart Slide Out Modal-->
 
         <modal id="shoppingCartPopOut" class="hiddenModal marginModalTop">
             <div class="headerSection">
@@ -205,50 +205,32 @@
             </div>
             <button id= "checkoutButton" class="noMarginLeftRight long beige darkGreen headingType4 doubleMarginTop">CHECKOUT</button>
         </modal>
+
+    <!--Main Content-->
         
+        <section class="inspiration">
+            <div class="inspirationContainer">
+                <h1 class="darkGreen headingType2">Green Living Inspiration</h1>
+                <select>
+                    <option value="flower pot">FLOWER POTS</option>
+                    <option value="succulents">SUCCULENTS</option>
+                    <option value="flowers">FLOWERS</option>
+                    <option value="cacti">CACTI</option>
+                    <option value="garden">GARDEN</option>
+                </select>
+            </div>
+            <div class="photoContainer"> 
+                <!-- dynamic content goes here -->
+            </div>
 
-        <section class="about">
-            <div class="aboutContainer">
-                <h1 class="darkGreen headingType2">Visit Us in Person!</h1>
-                <div class="mapImageContainer">
-                    <div id=map aria-label="interactive Google Map of store location"></div>
-                </div>
-                <div class="storeInfoContainer">
-                    <div class="storeInfoLeftCol">
-                        <h2 class="darkGreen headingType3">Drop Us a Line</h2>
-                        <form id="aboutForm" action="">
-                            <div class="aboutFormFields">
-                                <label class="darkGreen headingType4"for="name">YOUR NAME</label><br>
-                                <input type="text" id="name" name="name"><br>
-                                <label class="darkGreen headingType4"for="phoneNum">YOUR PHONE</label><br>
-                                <input type="number" id="phone" name="phone"><br>
-                                <label class="darkGreen headingType4"for="email">YOUR EMAIL</label><br>
-                                <input type="text" id="email" name="email"><br>
-                                <label class="darkGreen headingType4"for="comment">YOUR COMMENT</label><br>
-                                <textarea type="text" id="comment" rows = "5" cols = "60" name = "comment"></textarea>
-                            </div>
-                        </form>
-                        <button id="aboutFormSubmitButton" class="noMarginLeftRight marginTop standard offWhite green">SUBMIT</button>
-                    </div>
-                    <div class="storeInfoLRightCol">
-                        <h2 class="darkGreen headingType3">Store Info</h2>
-                        <p class="bodyType3 darkGreen" >We love to answer questions and receive feedback on our products and services. Feel free to use the form below or give us a call! </p>
-                        <address class="bodyType3 darkGreen">821 Wellesley St. E.<br>
-                            Toronto, Ontario  <br>
-                            M5H 2Y8 <br>
-                            Canada<br><br>
-                        </address>
-                        <p class="bodyType3 darkGreen">Email: foliagestore@gmail.com <br>Phone: (416) 321-0877<br></p>
-                        <p class="bodyType3 darkGreen" >Opening Hours <br><br>
-
-                            Monday to Sunday 9am-7pm<br>
-                            Sunday 11am-6pm</p>
-                    </div>
-                </div>
+            <div>
+                <p class="darkGreen bodyType2">Images courtesy of the Pixabay API</p>
+                <a href="https://pixabay.com/"><img class="pixabayLogo"src="../Assets/pixabayLogo.png" alt="Pixabay logo"></a>
             </div>
         </section>
 
     </main>
+
     
     <!--Footer-->
 <footer>
@@ -298,6 +280,7 @@
         </div>
     </div>
 </footer>
+
 
 </body>
 </html>
