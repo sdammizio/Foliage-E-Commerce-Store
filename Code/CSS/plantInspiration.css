@@ -1,0 +1,105 @@
+#inspirationMainContent{
+    width:75vw;
+}
+
+.inspiration{
+    margin-top:50px;
+    margin-bottom:150px;
+    width:100%
+}
+
+.inspirationContainer{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 250px;
+}
+
+.imageContainer {
+    max-width: -webkit-fill-available;
+    width: 100%;
+    width: -moz-available;          
+    width: -webkit-fill-available;  
+    width: fill-available;
+    display: flex;
+    justify-content: center;
+}
+
+.plantImage {
+  max-width: 100%;
+}
+
+.pixabayLogo{
+    max-width: 100px;
+}
+
+
+.plantCard {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.photoContainer{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 75vw;
+}
+
+
+select {
+    color:rgb(68, 68, 68);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600px;
+    font-size: 14px;
+    font-size:0.875rem;
+    box-sizing: border-box;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: solid 2px #DEDED6;
+    border-radius: 4px;
+    background-color: #FCF9F3;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 40px;
+    text-align: left;
+    width:20vw;
+    background: url("../Assets/iconArrowDown.png");
+    background-repeat: no-repeat, repeat;
+    background-position: right 0.7em top 60%, 0 0;
+    background-size: 0.75rem;
+    outline: none;
+    
+}
+
+@media (max-width: 1000px) {
+    .plantCard {
+      width: 100%;
+      margin:0px;
+      margin-top: 30px;
+    }
+
+    .inspirationContainer{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: 80px;
+    }
+
+    select {
+        width:50vw;
+    }
+  }
+
+  @media (max-width: 1600px) AND (min-width: 1001px) {
+   .plantCard{
+       width: 25%;
+   }
+  }
+

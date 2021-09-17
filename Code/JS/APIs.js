@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 
-//Google Map API 
+//Google Map API (used on about.html pg)
 
     // Create the script tag, set the appropriate attributes
     const script = document.createElement('script');  
@@ -28,5 +28,69 @@ $(document).ready(function(){
     document.head.appendChild(script);
 
 
+//Pixabay API (used on plantinspiration.html pg)
+
+const app= {};
+
+      app.appendImages= (images)=>{
+        
+        images.hits.forEach((image)=>{
+          const item = image.largeImageURL
+          const altText= image.tags
+          const htmlToAppend = `
+            <div class="plantCard">
+              <div class="imageContainer">
+                <img class="plantImage" src="${item}" alt="${altText}">
+              </div>
+            </div>`;
+          $(".photoContainer").append(htmlToAppend);
+          console.log(images)
+        });
+      };
+
+      app.getPhotos =(input)=>{
+        $.ajax({
+          url:"http://proxy.hackeryou.com",
+          method:"GET",
+          dataType:"json",
+          data: {
+            reqUrl:"https://pixabay.com/api/",
+              params: {
+                key:"23422245-e413e42831ec9f7a5c9a38ee7",
+                method:"GET",
+                dataType:"json",
+                q:`${input}`,
+                lang:"en",
+                image_type:"photo",
+                orientation:"horizontal",
+                safesearch:true,
+                page:1,
+                per_page:24,
+                min_height:4500
+          }
+        } 
+        }).then(res =>{
+          app.appendImages(res);
+        });
+      }
+
+      app.getSelectValue=()=> {
+        //add event listener when change dropdown option selected
+        $("select").change(()=>{
+          const selection = $("option:selected").val()
+          $(".photoContainer").empty();
+          app.getPhotos(selection);
+        })
+      }
+
+      app.init =()=>{
+        app.getPhotos("flower pot");
+        app.getSelectValue();
+      }
+
+
+      $(function(){
+        app.init();
+      });
 
 });
